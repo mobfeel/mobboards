@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app/app_routes.dart';
 import '../../component/drawer.dart';
+import '../custom_colors.dart';
 import '../views.dart';
 import '../custom_colors.dart';
 
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildTextButton('Ilustrações', 0),
+          buildTextButton('Símbolos', 0),
           SizedBox(
             height: 20,
           ),
@@ -93,6 +94,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(Constant.APP_NAME),
+        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: ListView(

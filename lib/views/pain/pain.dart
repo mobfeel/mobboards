@@ -10,7 +10,6 @@ class Pain extends StatelessWidget {
       title: Constant.APP_NAME,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.green,
       ),
       home: PainPage(Constant.APP_NAME),
       onGenerateRoute: App().getAppRoutes().getRoutes,

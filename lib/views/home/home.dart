@@ -11,9 +11,6 @@ class Home extends StatelessWidget {
     return MaterialApp(
       title: Constant.APP_NAME,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: CustomColors.primaryMobfeel,
-      ),
       home: HomePage(Constant.APP_NAME),
       onGenerateRoute: App().getAppRoutes().getRoutes,
     );
