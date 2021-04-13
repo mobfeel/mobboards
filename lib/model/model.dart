@@ -1,0 +1,1 @@
+export 'generic_pitogram_card.dart';
