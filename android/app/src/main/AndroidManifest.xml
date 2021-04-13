@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.mobfeel.mobcards">
    <application
-        android:label="mobcards"
+        android:label="MobCards"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
