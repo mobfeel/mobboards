@@ -13,7 +13,7 @@ class DrawerComponent extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.green,
               image: DecorationImage(
                 scale: 4,
                 alignment: Alignment.bottomLeft,

@@ -56,7 +56,7 @@ class Constant {
   static final String ABOUT_US_TEXT =
       'Eduardo Cardoso e a aluna do Programa de Pós-Graduação em Design e terapeuta ocupacional Daianne Serafim Martins, que fazem coordenação da equipe, que também conta com a fisioterapeuta Rita Bersch, a fonoaudióloga Michelle Borges e a enfermeira Ana Beust da Silva.';
   static final String WELCOME_TO_MOBECARDS =
-      'Seja bem vindo ao App MobCards Hospitalar';
+      'Seja bem vindo ao App MobCards';
   static final String EFFECT_PHRASE =
       '"Comunicação não é o que você fala,\nmas o que o outro '
       'compreende do que foi dito"';

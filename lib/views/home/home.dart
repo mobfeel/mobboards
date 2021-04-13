@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
       title: Constant.APP_NAME,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: HomePage(Constant.APP_NAME),
       onGenerateRoute: App().getAppRoutes().getRoutes,

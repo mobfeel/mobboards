@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
   Widget buildTextButton(String buttonName, int cod) {
     return TextButton(
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.blue),
+            backgroundColor: MaterialStateProperty.all(Colors.green),
             padding: MaterialStateProperty.all(
                 EdgeInsets.only(top: 15, bottom: 15))),
         onPressed: () {

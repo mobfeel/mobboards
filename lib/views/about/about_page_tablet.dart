@@ -10,7 +10,7 @@ class _AboutPageTabletState extends State<AboutPageTablet> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blue,
+        color: Colors.green,
       ),
     );
   }
