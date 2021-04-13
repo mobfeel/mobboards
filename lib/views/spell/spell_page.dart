@@ -209,6 +209,7 @@ class _SpellPageState extends State<SpellPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: Column(
