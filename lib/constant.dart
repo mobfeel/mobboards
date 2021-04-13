@@ -49,6 +49,7 @@ class Constant {
   static final String SPACE = 'assets/space.png';
   static final String CARDS = 'assets/cards.png';
   static final String LOGO_MOBFEEL = 'assets/logo_mobfeel_v.png';
+  static final String LOGO_APP = 'assets/logo.png';
   static final String BODY_FRONT = 'assets/front.png';
   static final String BODY_BACK = 'assets/back.png';
 

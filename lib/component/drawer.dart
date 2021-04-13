@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:mobcards/app/app_routes.dart';
+import 'package:mobcards/views/custom_colors.dart';
 
 import '../constant.dart';
 
@@ -13,12 +14,12 @@ class DrawerComponent extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: CustomColors.primaryMobfeel,
               image: DecorationImage(
                 scale: 4,
                 alignment: Alignment.bottomLeft,
                 image: AssetImage(
-                  'assets/help.png',
+                  Constant.LOGO_APP
                 ),
               ),
             ),

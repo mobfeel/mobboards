@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app/app_routes.dart';
 import '../../component/drawer.dart';
+import '../custom_colors.dart';
 import '../views.dart';
 
 class SpellPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SpellPageState extends State<SpellPage> {
     return TextButton(
         style: TextButton.styleFrom(
           padding: EdgeInsets.all(0),
-          primary: Colors.teal,
+          primary: CustomColors.primaryMobfeel,
           shadowColor: Colors.grey,
           elevation: 3,
         ),
@@ -59,7 +60,7 @@ class _SpellPageState extends State<SpellPage> {
   Widget _buttonAux(String message, {Color color, String image}) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.green,
+        primary: CustomColors.primaryMobfeel,
         shadowColor: Colors.blueAccent,
         padding: EdgeInsets.all(0),
         elevation: 3,

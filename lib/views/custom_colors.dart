@@ -8,4 +8,6 @@ class CustomColors {
   static const Color red = Color.fromRGBO(208, 162, 156, 1);
   static const Color purple = Color.fromRGBO(218, 212, 222, 1);
   static const Color blue2 = Color.fromRGBO(183, 212, 216, 1);
+
+  static const Color primaryMobfeel = Color.fromRGBO(0, 191, 165, 1);
 }

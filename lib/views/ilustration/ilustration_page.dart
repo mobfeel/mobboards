@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobcards/component/drawer.dart';
-import 'package:mobcards/views/colors.dart';
+import 'package:mobcards/views/custom_colors.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
 
@@ -22,7 +22,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
       aspectRatio: 1,
       child: TextButton(
         style: TextButton.styleFrom(
-          primary: Colors.teal,
+          primary: CustomColors.primaryMobfeel,
           shadowColor: Colors.grey,
           padding: EdgeInsets.all(0),
           elevation: 3,

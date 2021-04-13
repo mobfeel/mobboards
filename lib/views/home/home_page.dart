@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_routes.dart';
 import '../../component/drawer.dart';
 import '../views.dart';
+import '../custom_colors.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(Constant.HELP),
+                image: AssetImage(Constant.LOGO_APP),
               ),
             ),
           ),
@@ -69,11 +70,11 @@ class _HomePageState extends State<HomePage> {
   Widget buildTextButton(String buttonName, int cod) {
     return TextButton(
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.green),
+            backgroundColor: MaterialStateProperty.all(CustomColors.primaryMobfeel),
             padding: MaterialStateProperty.all(
                 EdgeInsets.only(top: 15, bottom: 15))),
         onPressed: () {
-          print('Navegation');
+          print('Navigation');
           if (cod == 0) {
             Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ILUSTRATION);
           } else {
