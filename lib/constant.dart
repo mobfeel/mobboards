@@ -1,5 +1,7 @@
 class Constant {
   //criado a constant com o nome do app
+  static bool APP_HOMOLOG = true;
+
   static final String APP_NAME = 'Mobcards';
 
   //criado as constants de todas as IMAGES
@@ -56,8 +58,7 @@ class Constant {
   //About Screen
   static final String ABOUT_US_TEXT =
       'Eduardo Cardoso e a aluna do Programa de Pós-Graduação em Design e terapeuta ocupacional Daianne Serafim Martins, que fazem coordenação da equipe, que também conta com a fisioterapeuta Rita Bersch, a fonoaudióloga Michelle Borges e a enfermeira Ana Beust da Silva.';
-  static final String WELCOME_TO_MOBECARDS =
-      'Seja bem vindo ao App MobCards';
+  static final String WELCOME_TO_MOBECARDS = 'Seja bem vindo ao App MobCards';
   static final String EFFECT_PHRASE =
       '"Comunicação não é o que você fala,\nmas o que o outro '
       'compreende do que foi dito"';
@@ -72,6 +73,7 @@ class Constant {
       'Centro Universitário da Serra - FSG, Caxias do Sul)';
 
   static final String HOMOLOGATION_KEY = '';
+  static final String VOLUME = 'volume';
   static final String ILUSTRATIONS = 'Ilustrações';
   static final String SPELL = 'Soletrar';
   static final String ABOUT_US = 'Sobre';

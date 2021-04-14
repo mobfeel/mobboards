@@ -69,23 +69,25 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildTextButton(String buttonName, int cod) {
     return TextButton(
-        style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(CustomColors.primaryMobfeel),
-            padding: MaterialStateProperty.all(
-                EdgeInsets.only(top: 15, bottom: 15))),
-        onPressed: () {
-          print('Navigation');
-          if (cod == 0) {
-            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ILUSTRATION);
-          } else {
-            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-          }
-        },
-        child: Text(
-          buttonName,
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
-        ));
+      style: ButtonStyle(
+          backgroundColor:
+              MaterialStateProperty.all(CustomColors.primaryMobfeel),
+          padding:
+              MaterialStateProperty.all(EdgeInsets.only(top: 15, bottom: 15))),
+      onPressed: () {
+        print('Navigation');
+        if (cod == 0) {
+          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ILUSTRATION);
+        } else {
+          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+        }
+      },
+      child: Text(
+        buttonName,
+        style: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+      ),
+    );
   }
 
   @override
