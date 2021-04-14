@@ -9,13 +9,13 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Container(
       width: 100,
       height: 100,
-      child: Image.asset(Constant.LOGO_APP),
+      child: Image.asset(Constant.logo),
     );
   }
 
   Widget _rowImageTwo() {
     return Image.asset(
-      Constant.LOGO_MOBFEEL,
+      Constant.logo2,
       width: 80,
       height: 80,
     );

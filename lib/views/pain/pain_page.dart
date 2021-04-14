@@ -119,9 +119,9 @@ class _PainPageState extends State<PainPage> {
 
   testWherePain() {
     if (_where == 'Frente') {
-      return Constant.BODY_FRONT;
+      return Constant.front;
     } else {
-      return Constant.BODY_BACK;
+      return Constant.back;
     }
   }
 
@@ -300,7 +300,7 @@ class _PainPageState extends State<PainPage> {
                     ),
 
                     //Imagem do corpo humano na lateral
-                    _containerRow('${Constant.BODY_FRONT}'),
+                    _containerRow('${Constant.front}'),
                   ],
                 ),
 
@@ -311,8 +311,8 @@ class _PainPageState extends State<PainPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    buildButtonFrontBack('Frente', Constant.BODY_FRONT),
-                    buildButtonFrontBack('Costas', Constant.BODY_BACK),
+                    buildButtonFrontBack('Frente', Constant.front),
+                    buildButtonFrontBack('Costas', Constant.back),
                   ],
                 )
               ],
