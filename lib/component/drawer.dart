@@ -18,9 +18,7 @@ class DrawerComponent extends StatelessWidget {
               image: DecorationImage(
                 scale: 4,
                 alignment: Alignment.bottomLeft,
-                image: AssetImage(
-                  Constant.LOGO_APP
-                ),
+                image: AssetImage(Constant.LOGO_APP),
               ),
             ),
             child: Text(
@@ -55,6 +53,13 @@ class DrawerComponent extends StatelessWidget {
             title: Text('${Constant.ABOUT_US}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.ring_volume),
+            title: Text('${Constant.VOLUME}'),
+            onTap: () {
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_VOLUME);
             },
           ),
           ListTile(

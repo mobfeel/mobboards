@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobcards/bloc/text_to_speech.dart';
 import 'package:mobcards/component/drawer.dart';
 import 'package:mobcards/views/custom_colors.dart';
 import '../../app/app_routes.dart';
@@ -16,6 +17,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
   List<Widget> _buttons;
   List<String> _words = [];
   TextEditingController _text;
+  TextToSpeech textToSpeech = TextToSpeech();
 
   Widget _button(Color color, String message, {String image}) {
     return AspectRatio(
@@ -92,19 +94,26 @@ class _IlustrationPageState extends State<IlustrationPage> {
             /// teste para apagar o que já foi escrito
             case 'Apagar':
               {
-                setState(() {
-                  _words.removeAt(_words.length - 1);
-                  _text = TextEditingController(text: _showWords());
-                });
+                setState(
+                  () {
+                    _words.removeAt(_words.length - 1);
+                    _text = TextEditingController(text: _showWords());
+                  },
+                );
                 break;
               }
 
             /// inserindo a nova palavra na tela
             default:
-              setState(() {
-                _words.add(' $message,');
-                _text = TextEditingController(text: _showWords());
-              });
+              setState(
+                () {
+                  _words.add('$message,');
+                  textToSpeech.speechMessage = message;
+                  textToSpeech.speak();
+
+                  _text = TextEditingController(text: _showWords());
+                },
+              );
           }
         },
         onLongPress: () {
@@ -126,6 +135,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
   @override
   void initState() {
     super.initState();
+    textToSpeech.stop();
     _buttons = [
       //blue
       _button(CustomColors.red, 'Dor', image: Constant.PAIN),
@@ -204,6 +214,11 @@ class _IlustrationPageState extends State<IlustrationPage> {
         image: Constant.BACKSPACE,
       ),
     ];
+  }
+
+  void dispose() {
+    super.dispose();
+    textToSpeech.stop();
   }
 
   @override

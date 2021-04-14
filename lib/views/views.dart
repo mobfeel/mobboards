@@ -12,3 +12,5 @@ export 'about/about_page_mobile.dart';
 export 'about/about_page_tablet.dart';
 export 'about/about_page_desktop.dart';
 
+export 'volume/volume.dart';
+export 'volume/volume_page.dart';

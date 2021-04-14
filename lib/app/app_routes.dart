@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/views/about/about_page.dart';
 import 'package:mobcards/views/pain/pain.dart';
 import 'package:mobcards/views/views.dart';
 
@@ -9,6 +8,7 @@ class AppRoutes {
   static const String APP_ROUTE_ILUSTRATION = '/ilustration';
   static const String APP_ROUTE_SPELL = '/spell';
   static const String APP_ROUTE_PAIN = '/pain';
+  static const String APP_ROUTE_VOLUME = '/volume';
 
   Route getRoutes(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -49,6 +49,13 @@ class AppRoutes {
           return MaterialPageRoute<void>(
             settings: routeSettings,
             builder: (BuildContext context) => Spell(),
+          );
+        }
+      case APP_ROUTE_VOLUME:
+        {
+          return MaterialPageRoute<void>(
+            settings: routeSettings,
+            builder: (BuildContext context) => Volume(),
           );
         }
 
