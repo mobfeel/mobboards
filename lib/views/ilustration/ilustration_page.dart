@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/bloc/text_to_speech.dart';
+import 'package:mobcards/utils/text_to_speech.dart';
 import 'package:mobcards/component/drawer.dart';
 import 'package:mobcards/views/custom_colors.dart';
 import '../../app/app_routes.dart';
