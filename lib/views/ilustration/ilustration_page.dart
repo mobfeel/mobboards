@@ -137,82 +137,65 @@ class _IlustrationPageState extends State<IlustrationPage> {
     super.initState();
     textToSpeech.stop();
     _buttons = [
-      //blue
-      _button(CustomColors.red, 'Dor', image: Constant.PAIN),
-      _button(CustomColors.blue, 'Falta de ar',
-          image: Constant.SHORTNESS_OF_BREATHE),
-      _button(CustomColors.blue, 'Náusea', image: Constant.NAUSEA),
+      //background blue2
+      _button(CustomColors.blue2, 'Ligar luz', image: Constant.turnOnTheLight),
+      _button(CustomColors.blue2, 'Ligar ou desligar', image: Constant.turnOnTurnOff),
+      _button(CustomColors.blue2, 'Silêncio', image: Constant.silence),
+      _button(CustomColors.blue2, 'Caneca e Papel', image: Constant.penAndPaper),
+      _button(CustomColors.blue2, 'Óculos', image: Constant.glasses),
+      _button(CustomColors.blue2, 'Fralda', image: Constant.diaper),
+      _button(CustomColors.blue2, 'Brinquedos', image: Constant.toys),
+      _button(CustomColors.blue2, 'Música', image: Constant.music),
+      _button(CustomColors.blue2, 'Leitura', image: Constant.reading),
+      _button(CustomColors.blue2, 'TV', image: Constant.tv),
+      _button(CustomColors.blue2, 'Tablet', image: Constant.tablet),
+      _button(CustomColors.blue2, 'Celular', image: Constant.cellphone),
 
-      //amber
-      _button(CustomColors.amber, 'Fralda', image: Constant.DIAPER),
-      _button(CustomColors.amber, 'Ligar luz',
-          image: Constant.TURN_ON_THE_LIGHT),
-      _button(CustomColors.amber, 'Apagar luz',
-          image: Constant.TURN_OFF_THE_LIGHT),
+      //background green
+      _button(CustomColors.green, 'Beber', image: Constant.drink),
+      _button(CustomColors.green, 'Comer', image: Constant.eat),
+      _button(CustomColors.green, 'Umedecer Boca', image: Constant.moistenYourMonth),
+      _button(CustomColors.green, 'Fazer xixi', image: Constant.pee),
+      _button(CustomColors.green, 'Fazer cocô', image: Constant.poop),
+      _button(CustomColors.green, 'Ir andar', image: Constant.walk),
+      _button(CustomColors.green, 'Lavar rosto', image: Constant.washTheFace),
+      _button(CustomColors.green, 'Higiene oral', image: Constant.oralHygiene),
+      _button(CustomColors.green, 'Banho', image: Constant.shower),
+      _button(CustomColors.green, 'Reposicionar', image: Constant.reposition),
+      _button(CustomColors.green, 'Dormir', image: Constant.sleep),
+      _button(CustomColors.green, 'Vestir', image: Constant.dress),
 
-      //blue
-      _button(CustomColors.blue, 'Calor', image: Constant.WARM),
-      _button(CustomColors.blue, 'Frio', image: Constant.COLD),
-      _button(CustomColors.blue, 'Medo', image: Constant.SCARY),
+      //background blue
+      _button(CustomColors.blue, 'Calor', image: Constant.warm),
+      _button(CustomColors.blue, 'Frio', image: Constant.cold),
+      _button(CustomColors.blue, 'Medo', image: Constant.scary),
+      _button(CustomColors.blue, 'Bem', image: Constant.well),
+      _button(CustomColors.blue, 'Mal', image: Constant.bad),
+      _button(CustomColors.blue, 'Roupa molhada', image: Constant.wetClothes),
+      _button(CustomColors.blue, 'Roupa molhada', image: Constant.wetClothes),
+      _button(CustomColors.blue, 'Oxigênio', image: Constant.oxygen),
+      _button(CustomColors.blue, 'Remédios', image: Constant.medicine),
+      _button(CustomColors.blue, 'Aspiração', image: Constant.aspiration),
 
-      //amber
-      _button(CustomColors.amber, 'Oxigênio', image: Constant.OXYGEN),
-      _button(CustomColors.amber, 'Urinol', image: Constant.URINAL),
-      _button(CustomColors.amber, 'Remédio', image: Constant.MEDICINE),
+      //background amber
+      _button(CustomColors.amber, 'Chamar médico', image: Constant.callDoctor),
+      _button(CustomColors.amber, 'Chamar enfermeira', image: Constant.callNurse),
+      _button(CustomColors.amber, 'Chamar família', image: Constant.callFamily),
+      _button(CustomColors.amber, 'Ajuda', image: Constant.help),
+      _button(CustomColors.amber, 'Segura minha mão', image: Constant.holdMyHand),
+      _button(CustomColors.amber, 'Visita família', image: Constant.visitFamily),
+      _button(CustomColors.amber, 'Quanto tempo?', image: Constant.howMuchTime),
+      _button(CustomColors.amber, 'Como estou?', image: Constant.howAmI1),
+      _button(CustomColors.amber, 'E agora?', image: Constant.andThen),
 
-      //blue
-      _button(CustomColors.blue, 'Bem', image: Constant.WELL),
-      _button(CustomColors.blue, 'Cansado', image: Constant.TIRED),
-      _button(CustomColors.blue, 'Coceira', image: Constant.SCRATH),
-
-      //amber
-      _button(CustomColors.amber, 'Água', image: Constant.WATER),
-      _button(CustomColors.amber, 'Óculos', image: Constant.GLASSES),
-      _button(CustomColors.amber, 'Cobertor', image: Constant.BLANKET),
-
-      //green
-      _button(CustomColors.green, 'Reposicionar', image: Constant.REPOSITION),
-      _button(CustomColors.green, 'Aspiração', image: Constant.ASPIRATION),
-      _button(CustomColors.green, 'Confortável', image: Constant.CONFORTABLE),
-
-      //yellow
-      _button(CustomColors.yellow, 'Ajuda', image: Constant.HELP),
-      _button(CustomColors.yellow, 'Chamar família',
-          image: Constant.CALL_FAMILY),
-      _button(CustomColors.yellow, 'Chamar médico',
-          image: Constant.CALL_DOCTOR),
-
-      //green
-      _button(CustomColors.green, 'Usar Banheiro',
-          image: Constant.USE_BATHROOM),
-      _button(CustomColors.green, 'Dormir', image: Constant.SLEEP),
-      _button(CustomColors.green, 'Vestir', image: Constant.DRESS),
-
-      //yellow
-      _button(CustomColors.yellow, 'Pergunta', image: Constant.QUESTION),
-      _button(CustomColors.yellow, 'Visita família',
-          image: Constant.VISIT_FAMILY),
-      _button(CustomColors.yellow, 'Obrigado', image: Constant.THANK_YOU),
-
-      //green
-      _button(CustomColors.green, 'Lavar Rosto', image: Constant.WASH_THE_FACE),
-      _button(CustomColors.green, 'Roupa Molhada', image: Constant.WET_CLOTHES),
-      _button(CustomColors.green, 'Higiene oral', image: Constant.ORAL_HYGIENE),
-
-      _button(CustomColors.yellow, 'Quanto tempo?',
-          image: Constant.HOW_MUCH_TIME),
-      _button(CustomColors.yellow, 'Como estou?', image: Constant.HOW_AM_I),
-      _button(CustomColors.yellow, 'E depois?', image: Constant.AND_THEN),
-      _button(CustomColors.green, 'Sim', image: Constant.YES),
-      _button(CustomColors.red, 'Não', image: Constant.NO),
-      _button(CustomColors.yellow, 'Não sei', image: Constant.I_DONT_KNOW),
-      _button(CustomColors.purple, 'Sim ou Não', image: Constant.YES_OR_NO),
-      _button(CustomColors.blue2, 'Soletrar', image: Constant.ALPHABET),
-      _button(
-        Colors.white,
-        'Apagar',
-        image: Constant.BACKSPACE,
-      ),
+      //background blue2
+      _button(CustomColors.blue2, 'Mais', image: Constant.more),
+      _button(CustomColors.blue2, 'Outra coisa', image: Constant.anotherThing),
+      _button(CustomColors.blue2, 'Não sei', image: Constant.iDontKnow),
+      _button(CustomColors.blue2, 'Obrigado', image: Constant.thankYou),
+      _button(CustomColors.blue2, 'Pergunta sim ou não', image: Constant.questionYesOrNo),
+      _button(CustomColors.blue2, 'Soletrar', image: Constant.alphabet),
+      _button(CustomColors.blue2, 'Apagar', image: Constant.backspace),
     ];
   }
 

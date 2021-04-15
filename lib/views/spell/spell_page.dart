@@ -194,12 +194,12 @@ class _SpellPageState extends State<SpellPage> {
       _button('8'),
       _button('9'),
       _button('0'),
-      _buttonAux('Dor', image: Constant.PAIN, color: Colors.redAccent),
-      _buttonAux('Sim', image: Constant.YES),
-      _buttonAux('Não', image: Constant.NO),
-      _buttonAux('Ilustracao', image: Constant.CARDS),
-      _buttonAux('Espaço', image: Constant.SPACE),
-      _buttonAux('Apagar', image: Constant.BACKSPACE),
+      _buttonAux('Dor', image: Constant.pain, color: Colors.redAccent),
+      _buttonAux('Sim', image: Constant.yes),
+      _buttonAux('Não', image: Constant.no),
+      _buttonAux('Ilustracao', image: Constant.cards),
+      _buttonAux('Espaço', image: Constant.space),
+      _buttonAux('Apagar', image: Constant.backspace),
     ];
   }
 

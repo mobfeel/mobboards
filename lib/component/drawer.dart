@@ -16,7 +16,7 @@ class DrawerComponent extends StatelessWidget {
               image: DecorationImage(
                 scale: 4,
                 alignment: Alignment.bottomLeft,
-                image: AssetImage(Constant.LOGO_APP),
+                image: AssetImage(Constant.logo),
               ),
             ),
             child: Text(
