@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:mobcards/app/app_routes.dart';
 import 'package:mobcards/views/views.dart';
@@ -47,17 +46,17 @@ class DrawerComponent extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('${Constant.SETTINGS}'),
+            onTap: () {
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_VOLUME);
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.info),
             title: Text('${Constant.ABOUT_US}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.ring_volume),
-            title: Text('${Constant.VOLUME}'),
-            onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_VOLUME);
             },
           ),
           ListTile(

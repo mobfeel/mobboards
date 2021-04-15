@@ -19,9 +19,9 @@ export 'about/about_page_mobile.dart';
 export 'about/about_page_tablet.dart';
 export 'about/about_page_desktop.dart';
 
-//volume
-export 'volume/volume.dart';
-export 'volume/volume_page.dart';
+//settings
+export 'settings/settings.dart';
+export 'settings/settings_page.dart';
 
 //pain
 export 'package:mobcards/views/pain/pain.dart';

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mobcards/component/component.dart';
+import 'package:mobcards/utils/text_to_speech.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
 
 class SpellPage extends StatefulWidget {
-  final String title;
-
-  SpellPage(this.title);
-
   @override
   _SpellPageState createState() => _SpellPageState();
 }
 
 class _SpellPageState extends State<SpellPage> {
+
   List<Widget> _buttons;
   List<String> _words = [];
   TextEditingController _textSpell;
@@ -207,7 +205,7 @@ class _SpellPageState extends State<SpellPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(Constant.SCREEN_SPELL_TITLE),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

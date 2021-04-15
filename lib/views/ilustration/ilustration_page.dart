@@ -5,9 +5,6 @@ import '../../app/app_routes.dart';
 import '../views.dart';
 
 class IlustrationPage extends StatefulWidget {
-  final String title;
-  IlustrationPage(this.title);
-
   @override
   _IlustrationPageState createState() => _IlustrationPageState();
 }
@@ -77,23 +74,15 @@ class _IlustrationPageState extends State<IlustrationPage> {
         ),
         onPressed: () {
           switch (message) {
-
             /// teste para navegar para a tela sobre
             case 'Soletrar':
-              {
                 Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
                 break;
-              }
-
             case 'Dor':
-              {
                 Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
                 break;
-              }
-
             /// teste para apagar o que já foi escrito
             case 'Apagar':
-              {
                 setState(
                   () {
                     _words.removeAt(_words.length - 1);
@@ -101,19 +90,19 @@ class _IlustrationPageState extends State<IlustrationPage> {
                   },
                 );
                 break;
-              }
-
             /// inserindo a nova palavra na tela
             default:
-              setState(
-                () {
+              setState(() {
                   _words.add('$message,');
-                  textToSpeech.speechMessage = message;
-                  textToSpeech.speak();
+
+                  print("uollll -> ${TextToSpeech.onOff}");
+                  if(TextToSpeech.onOff) {
+                    textToSpeech.speechMessage = message;
+                    textToSpeech.speak();
+                  }
 
                   _text = TextEditingController(text: _showWords());
-                },
-              );
+              },);
           }
         },
         onLongPress: () {
@@ -204,11 +193,27 @@ class _IlustrationPageState extends State<IlustrationPage> {
     textToSpeech.stop();
   }
 
+  _feito() {
+    print("->> ${TextToSpeech.onOff}");
+
+    if(TextToSpeech.onOff)
+      setState(() {
+        TextToSpeech.onOff = false;
+      });
+    else
+      setState(() {
+        TextToSpeech.onOff = true;
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${widget.title}'),
+        title: Text(Constant.SCREEN_SYMBOLS_TITLE),
+        actions: [
+          IconButton(icon: Icon(TextToSpeech.onOff ? Icons.volume_up : Icons.volume_off), onPressed: _feito)
+        ],
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

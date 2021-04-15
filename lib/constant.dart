@@ -1,24 +1,25 @@
 class Constant {
-  //criado a constant com o nome do app
+
+  // criado a constant com o nome do app
   static bool APP_HOMOLOG = true;
 
   static final String APP_NAME = 'Mobcards';
 
-  //sensation pictograms
-  static final String amazed = 'assets/amazed.jpg';
-  static final String angry = 'assets/angry.jpg';
-  static final String bad = 'assets/bad.jpg';
-  static final String bored = 'assets/bored.jpg';
-  static final String confused = 'assets//confused.jpg';
-  static final String fever = 'assets/fever.jpg';
-  static final String happy = 'assets/happy.jpg';
-  static final String howIFeel = 'assets/_how_i_feel.jpg';
-  static final String sad = 'assets/sad.jpg';
-  static final String tired = 'assets/tired.jpg';
-  static final String warm = 'assets/warm.jpg';
-  static final String well = 'assets/well.jpg';
+  // sensation pictograms
+  static final String amazed            =         'assets/amazed.jpg';
+  static final String angry             =         'assets/angry.jpg';
+  static final String bad               =         'assets/bad.jpg';
+  static final String bored             =         'assets/bored.jpg';
+  static final String confused          =         'assets//confused.jpg';
+  static final String fever             =         'assets/fever.jpg';
+  static final String happy             =         'assets/happy.jpg';
+  static final String howIFeel          =         'assets/_how_i_feel.jpg';
+  static final String sad               =         'assets/sad.jpg';
+  static final String tired             =         'assets/tired.jpg';
+  static final String warm              =         'assets/warm.jpg';
+  static final String well              =         'assets/well.jpg';
 
-  //ilustration page pictograms
+  // ilustration page pictograms
   static final String abdominalPain = 'assets/abdominal_pain.jpg';
   static final String alphabet = 'assets/alphabet.jpg';
   static final String andThen = 'assets/and_then.jpg';
@@ -141,13 +142,20 @@ class Constant {
       'Joana Eberle Dorigan - (Estudante do curso de Terapia Ocupacional pelo '
       'Centro Universitário da Serra - FSG, Caxias do Sul)';
 
+  // Menu
   static final String HOMOLOGATION_KEY = '';
-  static final String VOLUME = 'volume';
+  static final String HOME = 'Home';
   static final String ILUSTRATIONS = 'Ilustrações';
   static final String SPELL = 'Soletrar';
+  static final String SETTINGS = 'Configurações';
   static final String ABOUT_US = 'Sobre';
-  static final String HOME = 'Home';
   static final String EXIT = 'Exit';
+
+  // Screen
+  static final String SCREEN_SPELL_TITLE = 'Soletrar';
+  static final String SCREEN_SYMBOLS_TITLE = 'Símbolos';
+  static final String SCREEN_SETTINGS_TITLE = 'Configurações';
+  static final String SCREEN_PAIN_TITLE = 'Indique a dor';
 
   // static final String ILUSTRATIONS = 'Ilustrações';
 

@@ -3,10 +3,6 @@ import 'package:mobcards/component/component.dart';
 import 'package:mobcards/views/views.dart';
 
 class PainPage extends StatefulWidget {
-  final String title;
-
-  PainPage(this.title);
-
   @override
   _PainPageState createState() => _PainPageState();
 }
@@ -172,7 +168,7 @@ class _PainPageState extends State<PainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(Constant.SCREEN_PAIN_TITLE),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

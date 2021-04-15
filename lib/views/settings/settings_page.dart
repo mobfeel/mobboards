@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/constant.dart';
-
 import 'package:mobcards/utils/text_to_speech.dart';
-
 import 'package:mobcards/component/component.dart';
+import 'package:mobcards/views/views.dart';
 
-class VolumePage extends StatefulWidget {
-  final String title;
-  VolumePage(this.title);
+class SettingsPage extends StatefulWidget {
+
   @override
-  _VolumePageState createState() => _VolumePageState();
+  _SettingsPageState createState() => _SettingsPageState();
 }
 
-class _VolumePageState extends State<VolumePage> {
+class _SettingsPageState extends State<SettingsPage> {
+
   TextToSpeech textToSpeech = new TextToSpeech();
 
   _volumeSliderRow() {
     return Slider(
       onChanged: (newVolume) {
         setState(
-          () {
+              () {
             TextToSpeech.volume = newVolume;
           },
         );
@@ -69,15 +67,11 @@ class _VolumePageState extends State<VolumePage> {
       style: ButtonStyle(
         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.zero),
       ),
-      child: Image.asset(
-        Constant.LOGO_APP,
-        height: 100,
-        width: 100,
-      ),
+      child: Text('Clique aqui para testar o som'),
       onPressed: () {
         setState(
-          () {
-            textToSpeech.speechMessage = 'Teste';
+              () {
+            textToSpeech.speechMessage = 'Olá, esse é um teste de volume e velocidade.';
             textToSpeech.speak();
           },
         );
@@ -89,7 +83,7 @@ class _VolumePageState extends State<VolumePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(Constant.SCREEN_SETTINGS_TITLE),
       ),
       drawer: DrawerComponent(),
       body: SingleChildScrollView(
@@ -103,9 +97,7 @@ class _VolumePageState extends State<VolumePage> {
               _pitchSliderRow(),
               Text('Velocidade'),
               _rateSliderRow(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.2,
-              ),
+
               _testConfigRow()
             ],
           ),

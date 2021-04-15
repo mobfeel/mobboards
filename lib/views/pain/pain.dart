@@ -7,11 +7,11 @@ class Pain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constant.APP_NAME,
+      title: Constant.SCREEN_PAIN_TITLE,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
       ),
-      home: PainPage(Constant.APP_NAME),
+      home: PainPage(),
       onGenerateRoute: App().getAppRoutes().getRoutes,
     );
   }
