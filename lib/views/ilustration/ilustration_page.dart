@@ -93,7 +93,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
             /// inserindo a nova palavra na tela
             default:
               setState(() {
-                  _words.add('$message,');
+                  _words.add('$message ');
 
                   print("uollll -> ${TextToSpeech.onOff}");
                   if(TextToSpeech.onOff) {
