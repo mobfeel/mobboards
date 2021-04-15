@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobcards/constant.dart';
+
 import 'package:mobcards/utils/text_to_speech.dart';
 
-import '../../component/drawer.dart';
+import 'package:mobcards/component/component.dart';
 
 class VolumePage extends StatefulWidget {
   final String title;
@@ -13,44 +15,74 @@ class VolumePage extends StatefulWidget {
 class _VolumePageState extends State<VolumePage> {
   TextToSpeech textToSpeech = new TextToSpeech();
 
-  _volumeSlider() {
+  _volumeSliderRow() {
     return Slider(
-      value: textToSpeech.volume,
+      onChanged: (newVolume) {
+        setState(
+          () {
+            TextToSpeech.volume = newVolume;
+          },
+        );
+      },
+      value: TextToSpeech.volume,
       min: 0.0,
       max: 1.0,
       divisions: 10,
-      label: 'Volume: ${textToSpeech.volume}',
-      onChanged: (newVolume) {
-        setState(() => textToSpeech.volume = newVolume);
-      },
+      activeColor: Colors.green,
     );
   }
 
-  _pitchSlider() {
+  _pitchSliderRow() {
     return Slider(
-      value: textToSpeech.pitch,
-      min: 0.5,
-      max: 2.0,
-      divisions: 15,
-      label: 'Pitch: ${textToSpeech.pitch}',
+      value: TextToSpeech.pitch,
+      min: 0,
+      max: 1.0,
+      divisions: 10,
+      label: 'Pitch: ${TextToSpeech.pitch}',
       onChanged: (newPitch) {
-        setState(() => textToSpeech.pitch = newPitch);
+        setState(() {
+          TextToSpeech.pitch = newPitch;
+        });
       },
       activeColor: Colors.red,
     );
   }
 
-  _rateSlider() {
+  _rateSliderRow() {
     return Slider(
-        value: textToSpeech.rate,
-        min: 0.0,
-        max: 1.0,
-        divisions: 10,
-        label: 'Velocidade: ${textToSpeech.rate}',
-        onChanged: (newRate) {
-          setState(() => textToSpeech.rate = newRate);
-        },
-        activeColor: Colors.green);
+      value: TextToSpeech.rate,
+      onChanged: (newRate) {
+        setState(() {
+          TextToSpeech.rate = newRate;
+        });
+      },
+      min: 0.0,
+      max: 1.0,
+      divisions: 10,
+      label: "Rate: ${TextToSpeech.rate}",
+      activeColor: Colors.blue,
+    );
+  }
+
+  _testConfigRow() {
+    return TextButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.zero),
+      ),
+      child: Image.asset(
+        Constant.LOGO_APP,
+        height: 100,
+        width: 100,
+      ),
+      onPressed: () {
+        setState(
+          () {
+            textToSpeech.speechMessage = 'Teste';
+            textToSpeech.speak();
+          },
+        );
+      },
+    );
   }
 
   @override
@@ -61,12 +93,22 @@ class _VolumePageState extends State<VolumePage> {
       ),
       drawer: DrawerComponent(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _volumeSlider(),
-            _pitchSlider(),
-            _rateSlider(),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(32),
+          child: Column(
+            children: [
+              Text('Volume'),
+              _volumeSliderRow(),
+              Text('Tom'),
+              _pitchSliderRow(),
+              Text('Velocidade'),
+              _rateSliderRow(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.2,
+              ),
+              _testConfigRow()
+            ],
+          ),
         ),
       ),
     );

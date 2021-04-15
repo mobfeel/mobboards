@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobcards/constant.dart';
-import '../../component/drawer.dart';
-import '../../constant.dart';
-import '../custom_colors.dart';
+import 'package:mobcards/component/component.dart';
+import 'package:mobcards/views/views.dart';
 
 class PainPage extends StatefulWidget {
   final String title;

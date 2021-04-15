@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../app/app.dart';
-import '../custom_colors.dart';
 import '../views.dart';
 
 ///criado a stateless Spell para a navegação por routes

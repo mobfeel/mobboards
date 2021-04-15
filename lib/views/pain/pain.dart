@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/views/pain/pain_page.dart';
+import 'package:mobcards/views/views.dart';
 import '../../app/app.dart';
 import '../../constant.dart';
 
