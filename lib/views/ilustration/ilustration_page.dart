@@ -130,7 +130,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
       _button(CustomColors.blue2, 'Ligar luz', image: Constant.turnOnTheLight),
       _button(CustomColors.blue2, 'Ligar ou desligar', image: Constant.turnOnTurnOff),
       _button(CustomColors.blue2, 'Silêncio', image: Constant.silence),
-      _button(CustomColors.blue2, 'Caneca e Papel', image: Constant.penAndPaper),
+      _button(CustomColors.blue2, 'Caneta e Papel', image: Constant.penAndPaper),
       _button(CustomColors.blue2, 'Óculos', image: Constant.glasses),
       _button(CustomColors.blue2, 'Fralda', image: Constant.diaper),
       _button(CustomColors.blue2, 'Brinquedos', image: Constant.toys),
