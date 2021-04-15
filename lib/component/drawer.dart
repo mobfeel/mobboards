@@ -2,9 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:mobcards/app/app_routes.dart';
-import 'package:mobcards/views/custom_colors.dart';
-
-import '../constant.dart';
+import 'package:mobcards/views/views.dart';
 
 class DrawerComponent extends StatelessWidget {
   @override

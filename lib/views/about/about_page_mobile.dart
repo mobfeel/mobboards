@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/utils/version.dart';
-import '../custom_colors.dart';
+import 'package:mobcards/utils/utils.dart';
 import '../views.dart';
 
 ///criado a stateless About para a navegação por routes

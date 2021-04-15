@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/utils/text_to_speech.dart';
-import 'package:mobcards/component/drawer.dart';
-import 'package:mobcards/views/custom_colors.dart';
+import 'package:mobcards/utils/utils.dart';
+import 'package:mobcards/component/component.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
 
@@ -38,10 +37,11 @@ class _IlustrationPageState extends State<IlustrationPage> {
           color: color,
           child: Container(
             /// adicionado borda ao card 'DOR' para chamar a ateção do paciente
-            decoration: message == 'Dor' ? BoxDecoration(
-                border: Border.all(width: 3, color: Colors.red),
-              borderRadius: BorderRadius.circular(5)
-            ) : null,
+            decoration: message == 'Dor'
+                ? BoxDecoration(
+                    border: Border.all(width: 3, color: Colors.red),
+                    borderRadius: BorderRadius.circular(5))
+                : null,
             padding: EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[

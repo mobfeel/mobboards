@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobcards/component/component.dart';
 import '../../app/app_routes.dart';
-import '../../component/drawer.dart';
-import '../custom_colors.dart';
 import '../views.dart';
 
 class SpellPage extends StatefulWidget {
@@ -20,40 +19,40 @@ class _SpellPageState extends State<SpellPage> {
 
   Widget _button(String message) {
     return TextButton(
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.all(0),
-          primary: CustomColors.primaryMobfeel,
-          shadowColor: Colors.grey,
-          elevation: 3,
-        ),
-        child: Card(
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Center(
-                  child: Text(
-                    message,
-                    style: TextStyle(fontSize: 20, color: Colors.black),
-                  ),
+      style: TextButton.styleFrom(
+        padding: EdgeInsets.all(0),
+        primary: CustomColors.primaryMobfeel,
+        shadowColor: Colors.grey,
+        elevation: 3,
+      ),
+      child: Card(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Center(
+                child: Text(
+                  message,
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+            ],
           ),
         ),
-        onPressed: () {
-          setState(() {
-            _words.add('$message');
-            _textSpell = TextEditingController(text: _showWords());
-          });
-        },
+      ),
+      onPressed: () {
+        setState(() {
+          _words.add('$message');
+          _textSpell = TextEditingController(text: _showWords());
+        });
+      },
     );
   }
 
@@ -92,7 +91,7 @@ class _SpellPageState extends State<SpellPage> {
       onPressed: () {
         switch (message) {
 
-        /// teste para navegar para a tela sobre
+          /// teste para navegar para a tela sobre
           case 'Ilustracao':
             {
               Navigator.popAndPushNamed(
@@ -103,12 +102,11 @@ class _SpellPageState extends State<SpellPage> {
           /// introduzido a navegação paga a tela de dor
           case 'Dor':
             {
-              Navigator.popAndPushNamed(
-                  context, AppRoutes.APP_ROUTE_PAIN);
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
               break;
             }
 
-        /// teste para apagar o que já foi escrito
+          /// teste para apagar o que já foi escrito
           case 'Apagar':
             {
               setState(() {
@@ -125,7 +123,7 @@ class _SpellPageState extends State<SpellPage> {
               break;
             }
 
-        /// inserindo a nova palavra na tela
+          /// inserindo a nova palavra na tela
           default:
             setState(() {
               _words.add('$message');
@@ -144,12 +142,13 @@ class _SpellPageState extends State<SpellPage> {
               break;
             }
         }
-      },);
+      },
+    );
   }
 
   _showWords() {
-    String _text="";
-    for(String word in _words) {
+    String _text = "";
+    for (String word in _words) {
       _text += "$word";
     }
     return _text;
@@ -214,7 +213,10 @@ class _SpellPageState extends State<SpellPage> {
       drawer: DrawerComponent(),
       body: Column(
         children: [
-          SizedBox(height: 5,),
+          SizedBox(
+            height: 5,
+          ),
+
           ///inseridos um TextField para pegar os valores dos cards
           ///e proporcionar mais uma maneira de alterar os valores digitados
           ///através do teclado do TextFields
@@ -224,7 +226,9 @@ class _SpellPageState extends State<SpellPage> {
               border: OutlineInputBorder(),
             ),
           ),
-          SizedBox(height: 5,),
+          SizedBox(
+            height: 5,
+          ),
           Expanded(
             flex: 9,
             child: GridView.count(

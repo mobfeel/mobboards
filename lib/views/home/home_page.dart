@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobcards/component/component.dart';
 import '../../app/app_routes.dart';
-import '../../component/drawer.dart';
-import '../custom_colors.dart';
 import '../views.dart';
-import '../custom_colors.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
