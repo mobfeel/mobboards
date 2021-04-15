@@ -10,9 +10,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: DevicePreview.appBuilder,
-      title: Constant.APP_NAME,
+      title: Constant.appName,
       debugShowCheckedModeBanner: false,
-      home: HomePage(Constant.APP_NAME),
+      home: HomePage(Constant.appName),
       onGenerateRoute: App().getAppRoutes().getRoutes,
     );
   }

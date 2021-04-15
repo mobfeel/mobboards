@@ -7,7 +7,7 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constant.SCREEN_SETTINGS_TITLE,
+      title: Constant.screenSettingsTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: CustomColors.primaryMobfeel,

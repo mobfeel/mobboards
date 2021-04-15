@@ -7,7 +7,7 @@ class Pain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constant.SCREEN_PAIN_TITLE,
+      title: Constant.screenPainTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
       ),

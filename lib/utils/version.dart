@@ -10,7 +10,7 @@ class Version {
   }
 
   static String getBdVersion() {
-    var version = Constant.HOMOLOGATION_KEY;
+    var version = Constant.homologationKey;
     return version.isEmpty ? "PROD" : "HOML";
   }
 }

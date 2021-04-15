@@ -7,7 +7,7 @@ class Ilustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constant.SCREEN_SYMBOLS_TITLE,
+      title: Constant.screenSymbolsTitle,
       debugShowCheckedModeBanner: false,
       home: IlustrationPage(),
       onGenerateRoute: App().getAppRoutes().getRoutes,

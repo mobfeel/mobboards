@@ -19,20 +19,20 @@ class DrawerComponent extends StatelessWidget {
               ),
             ),
             child: Text(
-              Constant.APP_NAME,
+              Constant.appName,
               style: TextStyle(color: Colors.white),
             ),
           ),
           ListTile(
             leading: Icon(Icons.home),
-            title: Text('${Constant.HOME}'),
+            title: Text('${Constant.home}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
             },
           ),
           ListTile(
             leading: Icon(Icons.image),
-            title: Text('${Constant.SYMBOLS}'),
+            title: Text('${Constant.symbols}'),
             onTap: () {
               Navigator.popAndPushNamed(
                   context, AppRoutes.APP_ROUTE_ILUSTRATION);
@@ -40,28 +40,28 @@ class DrawerComponent extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.sort_by_alpha),
-            title: Text('${Constant.SPELL}'),
+            title: Text('${Constant.spell}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
             },
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('${Constant.SETTINGS}'),
+            title: Text('${Constant.settings}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_VOLUME);
             },
           ),
           ListTile(
             leading: Icon(Icons.info),
-            title: Text('${Constant.ABOUT_US}'),
+            title: Text('${Constant.aboutUs}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
             },
           ),
           ListTile(
             leading: Icon(Icons.directions_run),
-            title: Text('${Constant.EXIT}'),
+            title: Text('${Constant.exit}'),
             onTap: () {
               exit(0);
             },

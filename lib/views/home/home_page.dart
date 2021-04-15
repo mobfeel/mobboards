@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Text(
-          Constant.APP_NAME,
+          Constant.appName,
           style: TextStyle(
             fontSize: 32,
           ),
@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildTextButton(Constant.SYMBOLS, 0),
+          buildTextButton(Constant.symbols, 0),
           SizedBox(
             height: 20,
           ),
-          buildTextButton(Constant.SPELL, 1),
+          buildTextButton(Constant.spell, 1),
         ],
       ),
     );
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.APP_NAME),
+        title: Text(Constant.appName),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

@@ -7,7 +7,7 @@ class Spell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constant.SCREEN_SPELL_TITLE,
+      title: Constant.screenSpellTittle,
       debugShowCheckedModeBanner: false,
       home: SpellPage(),
       onGenerateRoute: App().getAppRoutes().getRoutes,

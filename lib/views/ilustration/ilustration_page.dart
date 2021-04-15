@@ -210,7 +210,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.SCREEN_SYMBOLS_TITLE),
+        title: Text(Constant.screenSymbolsTitle),
         actions: [
           IconButton(icon: Icon(TextToSpeech.onOff ? Icons.volume_up : Icons.volume_off), onPressed: _feito)
         ],
