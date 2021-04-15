@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobcards/utils/version.dart';
+import '../custom_colors.dart';
 import '../views.dart';
 
 ///criado a stateless About para a navegação por routes
@@ -97,6 +98,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sobre o App'),
+        backgroundColor: CustomColors.primaryMobfeel,
       ),
       body: SingleChildScrollView(
         child: Padding(

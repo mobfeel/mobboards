@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobcards/constant.dart';
 import '../../component/drawer.dart';
 import '../../constant.dart';
+import '../custom_colors.dart';
 
 class PainPage extends StatefulWidget {
   final String title;
@@ -175,6 +176,7 @@ class _PainPageState extends State<PainPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: ListView(

@@ -37,6 +37,11 @@ class _IlustrationPageState extends State<IlustrationPage> {
         child: Card(
           color: color,
           child: Container(
+            /// adicionado borda ao card 'DOR' para chamar a ateção do paciente
+            decoration: message == 'Dor' ? BoxDecoration(
+                border: Border.all(width: 3, color: Colors.red),
+              borderRadius: BorderRadius.circular(5)
+            ) : null,
             padding: EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[
@@ -133,7 +138,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
     textToSpeech.stop();
     _buttons = [
       //blue
-      _button(CustomColors.blue, 'Dor', image: Constant.PAIN),
+      _button(CustomColors.red, 'Dor', image: Constant.PAIN),
       _button(CustomColors.blue, 'Falta de ar',
           image: Constant.SHORTNESS_OF_BREATHE),
       _button(CustomColors.blue, 'Náusea', image: Constant.NAUSEA),
@@ -221,6 +226,7 @@ class _IlustrationPageState extends State<IlustrationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('${widget.title}'),
+        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: Column(

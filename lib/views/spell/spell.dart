@@ -10,9 +10,6 @@ class Spell extends StatelessWidget {
     return MaterialApp(
       title: Constant.APP_NAME,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: CustomColors.primaryMobfeel,
-      ),
       home: SpellPage(Constant.APP_NAME),
       onGenerateRoute: App().getAppRoutes().getRoutes,
     );
