@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildTextButton('Símbolos', 0),
+          buildTextButton(Constant.SYMBOLS, 0),
           SizedBox(
             height: 20,
           ),
-          buildTextButton('Soletrar', 1),
+          buildTextButton(Constant.SPELL, 1),
         ],
       ),
     );

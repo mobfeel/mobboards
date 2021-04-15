@@ -32,7 +32,7 @@ class DrawerComponent extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.image),
-            title: Text('${Constant.ILUSTRATIONS}'),
+            title: Text('${Constant.SYMBOLS}'),
             onTap: () {
               Navigator.popAndPushNamed(
                   context, AppRoutes.APP_ROUTE_ILUSTRATION);

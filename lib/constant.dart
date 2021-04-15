@@ -145,7 +145,7 @@ class Constant {
   // Menu
   static final String HOMOLOGATION_KEY = '';
   static final String HOME = 'Home';
-  static final String ILUSTRATIONS = 'Ilustrações';
+  static final String SYMBOLS = 'Símbolos';
   static final String SPELL = 'Soletrar';
   static final String SETTINGS = 'Configurações';
   static final String ABOUT_US = 'Sobre';
