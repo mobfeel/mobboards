@@ -23,9 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97608242-2ac1-4286-bc38-994e48c8b996" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/qustion_yes_or_no.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/question_yes_or_no.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/views/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home/home_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

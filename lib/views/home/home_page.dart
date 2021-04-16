@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobcards/component/component.dart';
 import '../../app/app_routes.dart';
+import '../../constant.dart';
 import '../views.dart';
 
 class HomePage extends StatefulWidget {
@@ -57,9 +58,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          '"Comunicação não é o que você fala,\nmas o que o outro '
-          'compreende do que foi dito"',
+        Text(Constant.description,
           textAlign: TextAlign.center,
         ),
       ],
