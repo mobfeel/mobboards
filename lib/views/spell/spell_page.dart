@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobcards/component/component.dart';
-import 'package:mobcards/utils/text_to_speech.dart';
+import 'package:mobcards/utils/utils.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
 
@@ -10,10 +10,10 @@ class SpellPage extends StatefulWidget {
 }
 
 class _SpellPageState extends State<SpellPage> {
-
   List<Widget> _buttons;
   List<String> _words = [];
   TextEditingController _textSpell;
+  TextToSpeech textToSpeech = TextToSpeech();
 
   Widget _button(String message) {
     return TextButton(
@@ -221,6 +221,13 @@ class _SpellPageState extends State<SpellPage> {
           TextField(
             controller: _textSpell,
             decoration: InputDecoration(
+              suffixIcon: IconButton(
+                icon: Icon(Icons.play_arrow),
+                onPressed: () {
+                  textToSpeech.speechMessage = _showWords();
+                  textToSpeech.speak();
+                },
+              ),
               border: OutlineInputBorder(),
             ),
           ),
