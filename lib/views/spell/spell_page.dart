@@ -205,7 +205,7 @@ class _SpellPageState extends State<SpellPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.SCREEN_SPELL_TITLE),
+        title: Text(Constant.screenSpellTittle),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

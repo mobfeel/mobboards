@@ -21,33 +21,33 @@ class AboutPageMobilePortrait extends StatelessWidget {
   }
 
   Widget _rowTextOne() {
-    return Text(Constant.WELCOME_TO_MOBECARDS);
+    return Text(Constant.welcomeToMobBoards);
   }
 
   Widget _rowTextTwo() {
     return Text(
-      Constant.EFFECT_PHRASE,
+      Constant.description,
       textAlign: TextAlign.center,
     );
   }
 
   Widget _rowTextThree() {
-    return Text(Constant.BASE_PROJECT);
+    return Text(Constant.baseProject);
   }
 
   Widget _rowTextFour() {
     return Text(
-      '${Constant.ABOUT_US_TEXT}',
+      '${Constant.aboutUsText}',
       textAlign: TextAlign.center,
     );
   }
 
   Widget _rowTextFive() {
-    return Text(Constant.DEVELOPMENT_BY);
+    return Text(Constant.developmentBy);
   }
 
   Widget _rowTextSix() {
-    return Text(Constant.NAMES);
+    return Text(Constant.names);
   }
 
   Widget _rowVersion() {

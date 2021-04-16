@@ -168,7 +168,7 @@ class _PainPageState extends State<PainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.SCREEN_PAIN_TITLE),
+        title: Text(Constant.screenPainTitle),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
@@ -212,7 +212,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   'Pior Dor Possível',
                                   Colors.red[900],
-                                  Constant.PAIN_FOUR),
+                                  Constant.painFour),
                               Column(
                                 children: [
                                   Container(
@@ -230,7 +230,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   'Dor Muito Severa',
                                   Colors.deepOrange,
-                                  Constant.PAIN_FOUR),
+                                  Constant.painFour),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red, 8),
@@ -242,7 +242,7 @@ class _PainPageState extends State<PainPage> {
                           Row(
                             children: [
                               buildContainerInformation(context, 'Dor Severa',
-                                  Colors.red[100], Constant.PAIN_THREE),
+                                  Colors.red[100], Constant.painThree),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red[100], 6),
@@ -255,7 +255,7 @@ class _PainPageState extends State<PainPage> {
                           Row(
                             children: [
                               buildContainerInformation(context, 'Dor Moderada',
-                                  Colors.yellow, Constant.PAIN_TWO),
+                                  Colors.yellow, Constant.painTwo),
                               Column(
                                 children: [
                                   buildContainerLevelPain(
@@ -268,7 +268,7 @@ class _PainPageState extends State<PainPage> {
                           Row(
                             children: [
                               buildContainerInformation(context, 'Dor Leve',
-                                  Colors.green[200], Constant.PAIN_TWO),
+                                  Colors.green[200], Constant.painTwo),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[400], 2),
@@ -280,7 +280,7 @@ class _PainPageState extends State<PainPage> {
                           Row(
                             children: [
                               buildContainerInformation(context, 'Sem Dor',
-                                  Colors.green[900], Constant.PAIN_ONE),
+                                  Colors.green[900], Constant.painOne),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[900], 0),

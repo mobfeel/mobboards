@@ -83,7 +83,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.SCREEN_SETTINGS_TITLE),
+        title: Text(Constant.screenSettingsTitle),
       ),
       drawer: DrawerComponent(),
       body: SingleChildScrollView(

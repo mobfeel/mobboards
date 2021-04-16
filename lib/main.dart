@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'views/views.dart';
 
 void main() {
-  Constant.APP_HOMOLOG = false;
+  Constant.appHomolog = false;
 
-  if (Constant.APP_HOMOLOG == true)
+  if (Constant.appHomolog == true)
     return runApp(
       DevicePreview(
         builder: (context) => Home(),
