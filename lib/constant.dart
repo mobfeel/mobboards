@@ -135,7 +135,7 @@ class Constant {
                                                     'Eduardo Rambo - (Aluno)\n'
                                                     'Welinton Prediger - (Aluno)\n'
                                                     'Joana Eberle Dorigan - (Estudante do curso de Terapia Ocupacional pelo '
-                                                    'Centro Universitário da Serra - FSG, Caxias do Sul)';
+                                                    'Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul)';
 
   // Menu
   static final String homologationKey      =        '';

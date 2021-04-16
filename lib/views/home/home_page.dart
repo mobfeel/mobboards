@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(Constant.logo),
+                image: AssetImage(Constant.logoOfficial),
               ),
             ),
           ),
