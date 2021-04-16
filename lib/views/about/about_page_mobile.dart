@@ -8,7 +8,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Container(
       width: 100,
       height: 100,
-      child: Image.asset(Constant.logo),
+      child: Image.asset(Constant.logoOfficial),
     );
   }
 

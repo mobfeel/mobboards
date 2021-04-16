@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97608242-2ac1-4286-bc38-994e48c8b996" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/views/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/about/about_page_mobile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/about/about_page_mobile.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
