@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:mobcards/utils/utils.dart';
+import '../../constant.dart';
 import '../views.dart';
 
 ///criado a stateless About para a navegação por routes
 class AboutPageMobilePortrait extends StatelessWidget {
   Widget _rowImage() {
     return Container(
-      width: 100,
-      height: 100,
-      child: Image.asset(Constant.logo),
+      width: 150,
+      height: 150,
+      child: Image.asset(Constant.logoOfficial),
     );
   }
 
-  Widget _rowImageTwo() {
-    return Image.asset(
-      Constant.logo2,
-      width: 80,
-      height: 80,
+  Widget _rowContributors(String image1, String image2, String image3) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Image.asset(image1, width: 100,),
+        Image.asset(image2, width: 100,),
+        Image.asset(image3, width: 100,),
+      ],
     );
   }
 
@@ -65,9 +69,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Column(
       children: [
         _rowImage(),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10,),
         _rowTextOne(),
         SizedBox(height: 10),
         _rowVersion(),
@@ -88,7 +90,13 @@ class AboutPageMobilePortrait extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        _rowImageTwo(),
+        Text('Parceiros', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),),
+        SizedBox(height: 15,),
+        _rowContributors(Constant.logo2, Constant.ufrgsLogo, Constant.isaacBrasil),
+        SizedBox(height: 15,),
+        _rowContributors(Constant.comAcessoLogo,Constant.assistivaLogo, Constant.boards),
+        SizedBox(height: 15,),
+        Text(Constant.arasaac)
       ],
     );
   }

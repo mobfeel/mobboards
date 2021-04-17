@@ -14,11 +14,13 @@ class Constant {
   static final String angry               =         'assets/angry.png';
   static final String anotherThing        =         'assets/another_thing.png';
   static final String aspiration          =         'assets/aspiration.png';
+  static final String assistivaLogo       =         'assets/assistiva_logo.jpeg';
   static final String back                =         'assets/back.png';
   static final String backPain            =         'assets/back_pain.png';
   static final String backspace           =         'assets/backspace.png';
   static final String bad                 =         'assets/bad.png';
   static final String blanket             =         'assets/blanket.png';
+  static final String boards              =         'assets/boards.jpeg';
   static final String bored               =         'assets/bored.png';
   static final String callDoctor          =         'assets/call_doctor.png';
   static final String callFamily          =         'assets/call_family.png';
@@ -27,6 +29,7 @@ class Constant {
   static final String cellphone           =         'assets/cellphone.png';
   static final String chestPain           =         'assets/chest_pain.png';
   static final String cold                =         'assets/cold.png';
+  static final String comAcessoLogo       =         'assets/com_acesso_logo.jpeg';
   static final String comfortable         =         'assets/comfortable.png';
   static final String confused            =         'assets//confused.png';
   static final String cough               =         'assets/cough.png';
@@ -53,6 +56,7 @@ class Constant {
   static final String iDontKnow           =         'assets/i_dont_know.png';
   static final String iWantSomething      =         'assets/i_want_something.png';
   static final String iWantToDo           =         'assets/i_want_to_do.png';
+  static final String isaacBrasil         =         'assets/isaac_brasil_logo.jpg';
   static final String leftSide            =         'assets/left_side.png';
   static final String lieDown             =         'assets/lie_down.png';
   static final String littlePain          =         'assets/lie_down.png';
@@ -105,6 +109,7 @@ class Constant {
   static final String turnOnTheLight      =         'assets/turn_on_the_light.png';
   static final String turnOnTurnOff       =         'assets/turn_on_turn_off.png';
   static final String tv                  =         'assets/tv.png';
+  static final String ufrgsLogo           =         'assets/ufrgs_logo.png';
   static final String urinal              =         'assets/urinal.png';
   static final String verySeverePain      =         'assets/very_severe_pain.png';
   static final String visitFamily         =         'assets/visit_family.png';
@@ -135,7 +140,12 @@ class Constant {
                                                     'Eduardo Rambo - (Aluno)\n'
                                                     'Welinton Prediger - (Aluno)\n'
                                                     'Joana Eberle Dorigan - (Estudante do curso de Terapia Ocupacional pelo '
-                                                    'Centro Universitário da Serra - FSG, Caxias do Sul)';
+                                                    'Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul)';
+
+  static final String arasaac              =        'Autor de pictogramas: Sergio Palao\n'
+                                                    'Origem: ARASAAC (http://www.arasaac.org)\n'
+                                                    'Licença: CC (BY-NC-SA)\n'
+                                                    'Proprietário: Governo de Aragão (Espanha)';
 
   // Menu
   static final String homologationKey      =        '';
