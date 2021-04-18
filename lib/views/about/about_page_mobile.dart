@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/utils/utils.dart';
+import 'package:mobboards/utils/utils.dart';
 import '../../constant.dart';
 import '../views.dart';
 
@@ -9,7 +9,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Container(
       width: 150,
       height: 150,
-      child: Image.asset(Constant.logoOfficial),
+      child: Image.asset(Constant.logoApp),
     );
   }
 
@@ -92,9 +92,9 @@ class AboutPageMobilePortrait extends StatelessWidget {
         ),
         Text('Parceiros', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),),
         SizedBox(height: 15,),
-        _rowContributors(Constant.logo2, Constant.ufrgsLogo, Constant.isaacBrasil),
+        _rowContributors(Constant.logoMobfeel, Constant.logoUfrgs, Constant.logoIsaacBrasil),
         SizedBox(height: 15,),
-        _rowContributors(Constant.comAcessoLogo,Constant.assistivaLogo, Constant.boards),
+        _rowContributors(Constant.logoComAcesso,Constant.logoAssistiva, Constant.boards),
         SizedBox(height: 15,),
         Text(Constant.arasaac)
       ],

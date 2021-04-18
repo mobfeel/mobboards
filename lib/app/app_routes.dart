@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/views/pain/pain.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/views/pain/pain.dart';
+import 'package:mobboards/views/views.dart';
 
 class AppRoutes {
 

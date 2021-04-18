@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/utils/orientation_layout.dart';
-import 'package:mobcards/utils/screen_type_layout.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/utils/orientation_layout.dart';
+import 'package:mobboards/utils/screen_type_layout.dart';
+import 'package:mobboards/views/views.dart';
 
 class AboutPage extends StatelessWidget {
   @override

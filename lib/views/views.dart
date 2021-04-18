@@ -1,5 +1,5 @@
 //constant
-export 'package:mobcards/constant.dart';
+export 'package:mobboards/constant.dart';
 
 //home
 export 'home/home.dart';
@@ -24,8 +24,8 @@ export 'settings/settings.dart';
 export 'settings/settings_page.dart';
 
 //pain
-export 'package:mobcards/views/pain/pain.dart';
-export 'package:mobcards/views/pain/pain_page.dart';
+export 'pain/pain.dart';
+export 'pain/pain_page.dart';
 
 //colors
 export 'custom_colors.dart';

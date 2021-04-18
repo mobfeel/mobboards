@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/component/component.dart';
+import 'package:mobboards/component/component.dart';
 import '../../app/app_routes.dart';
 import '../../constant.dart';
 import '../views.dart';
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(Constant.logoOfficial),
+                image: AssetImage(Constant.logoApp),
               ),
             ),
           ),

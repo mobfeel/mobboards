@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/component/component.dart';
-import 'package:mobcards/utils/utils.dart';
+import 'package:mobboards/component/component.dart';
+import 'package:mobboards/utils/utils.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
 

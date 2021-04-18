@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/views/views.dart';
 import '../../app/app.dart';
 import '../../constant.dart';
 
@@ -9,8 +9,7 @@ class Pain extends StatelessWidget {
     return MaterialApp(
       title: Constant.screenPainTitle,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-      ),
+      theme: ThemeData(),
       home: PainPage(),
       onGenerateRoute: App().getAppRoutes().getRoutes,
     );

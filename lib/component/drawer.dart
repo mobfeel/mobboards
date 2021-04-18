@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:mobcards/app/app_routes.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/views/views.dart';
 
 class DrawerComponent extends StatelessWidget {
   @override
@@ -12,15 +12,18 @@ class DrawerComponent extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(
               color: CustomColors.primaryMobfeel,
-              image: DecorationImage(
-                scale: 4,
-                alignment: Alignment.bottomLeft,
-                image: AssetImage(Constant.logo),
-              ),
+              // image: DecorationImage(
+              //   scale: 1,
+              //   alignment: Alignment.bottomLeft,
+              //   image: AssetImage(Constant.logoApp),
+              // ),
             ),
-            child: Text(
-              Constant.appName,
-              style: TextStyle(color: Colors.white),
+            child: Padding(
+              child: Text(
+                Constant.appName,
+                style: TextStyle(color: Colors.white, fontSize: 24.0),
+              ),
+              padding: EdgeInsets.all(45.0),
             ),
           ),
           ListTile(

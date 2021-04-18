@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/component/component.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/component/component.dart';
+import 'package:mobboards/views/views.dart';
 
 class PainPage extends StatefulWidget {
   @override

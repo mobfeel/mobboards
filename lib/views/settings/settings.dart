@@ -9,9 +9,7 @@ class Settings extends StatelessWidget {
     return MaterialApp(
       title: Constant.screenSettingsTitle,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: CustomColors.primaryMobfeel,
-      ),
+      theme: ThemeData(),
       home: SettingsPage(),
       onGenerateRoute: App().getAppRoutes().getRoutes,
     );

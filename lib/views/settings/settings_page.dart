@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/utils/text_to_speech.dart';
-import 'package:mobcards/component/component.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/utils/text_to_speech.dart';
+import 'package:mobboards/component/component.dart';
+import 'package:mobboards/views/views.dart';
 
 class SettingsPage extends StatefulWidget {
 
@@ -84,6 +84,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(Constant.screenSettingsTitle),
+        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: SingleChildScrollView(

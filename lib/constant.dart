@@ -6,6 +6,14 @@ class Constant {
   // create constant AppName
   static final String appName             =         'MobBoards';
 
+  //Logo
+  static final String logoUfrgs           =         'assets/logo_ufrgs.png';
+  static final String logoAssistiva       =         'assets/logo_assistiva.jpeg';
+  static final String logoIsaacBrasil     =         'assets/logo_isaac_brasil.jpg';
+  static final String logoApp             =         'assets/logo_app.png';
+  static final String logoMobfeel         =         'assets/logo_mobfeel.png';
+  static final String logoComAcesso       =         'assets/logo_com_acesso.jpeg';
+
   // ilustration page pictograms
   static final String abdominalPain       =         'assets/abdominal_pain.png';
   static final String alphabet            =         'assets/alphabet.png';
@@ -14,7 +22,6 @@ class Constant {
   static final String angry               =         'assets/angry.png';
   static final String anotherThing        =         'assets/another_thing.png';
   static final String aspiration          =         'assets/aspiration.png';
-  static final String assistivaLogo       =         'assets/assistiva_logo.jpeg';
   static final String back                =         'assets/back.png';
   static final String backPain            =         'assets/back_pain.png';
   static final String backspace           =         'assets/backspace.png';
@@ -29,7 +36,6 @@ class Constant {
   static final String cellphone           =         'assets/cellphone.png';
   static final String chestPain           =         'assets/chest_pain.png';
   static final String cold                =         'assets/cold.png';
-  static final String comAcessoLogo       =         'assets/com_acesso_logo.jpeg';
   static final String comfortable         =         'assets/comfortable.png';
   static final String confused            =         'assets//confused.png';
   static final String cough               =         'assets/cough.png';
@@ -56,13 +62,9 @@ class Constant {
   static final String iDontKnow           =         'assets/i_dont_know.png';
   static final String iWantSomething      =         'assets/i_want_something.png';
   static final String iWantToDo           =         'assets/i_want_to_do.png';
-  static final String isaacBrasil         =         'assets/isaac_brasil_logo.jpg';
   static final String leftSide            =         'assets/left_side.png';
   static final String lieDown             =         'assets/lie_down.png';
   static final String littlePain          =         'assets/lie_down.png';
-  static final String logo                =         'assets/logo.png';
-  static final String logo2               =         'assets/logo2.png';
-  static final String logoOfficial        =         'assets/logo_official.png';
   static final String medicine            =         'assets/medicine.png';
   static final String moderatePain        =         'assets/moderate_pain.png';
   static final String moistenYourMonth    =         'assets/moisten_your_mouth.png';
@@ -109,7 +111,6 @@ class Constant {
   static final String turnOnTheLight      =         'assets/turn_on_the_light.png';
   static final String turnOnTurnOff       =         'assets/turn_on_turn_off.png';
   static final String tv                  =         'assets/tv.png';
-  static final String ufrgsLogo           =         'assets/ufrgs_logo.png';
   static final String urinal              =         'assets/urinal.png';
   static final String verySeverePain      =         'assets/very_severe_pain.png';
   static final String visitFamily         =         'assets/visit_family.png';
