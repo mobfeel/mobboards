@@ -3,6 +3,7 @@ import 'package:package_info/package_info.dart';
 import '../constant.dart';
 
 class Version {
+
   static Future<String> getVersion() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
@@ -13,4 +14,5 @@ class Version {
     var version = Constant.homologationKey;
     return version.isEmpty ? "PROD" : "HOML";
   }
+
 }

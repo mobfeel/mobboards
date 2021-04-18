@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/component/component.dart';
+import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utils/utils.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
@@ -10,12 +11,13 @@ class SpellPage extends StatefulWidget {
 }
 
 class _SpellPageState extends State<SpellPage> {
+
   List<Widget> _buttons;
   List<String> _words = [];
   TextEditingController _textSpell;
   TextToSpeech textToSpeech = TextToSpeech();
 
-  Widget _button(String message) {
+  Widget _button(String message, {Color color}) {
     return TextButton(
       style: TextButton.styleFrom(
         padding: EdgeInsets.all(0),
@@ -26,7 +28,7 @@ class _SpellPageState extends State<SpellPage> {
       child: Card(
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: color == null ? Colors.white : color,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -64,9 +66,15 @@ class _SpellPageState extends State<SpellPage> {
       ),
       child: Card(
         child: Container(
-          decoration: BoxDecoration(
+          decoration:
+          image != null ?
+          BoxDecoration(
               color: color == null ? Colors.white : color,
-              image: DecorationImage(image: AssetImage(image))),
+              image: DecorationImage(image: AssetImage(image))
+          ) :
+          BoxDecoration(
+              color: color == null ? Colors.white : color,
+          ),
           padding: EdgeInsets.all(32.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -88,40 +96,23 @@ class _SpellPageState extends State<SpellPage> {
       ),
       onPressed: () {
         switch (message) {
-
-          /// teste para navegar para a tela sobre
-          case 'Ilustracao':
-            {
+          case 'Symbols':
               Navigator.popAndPushNamed(
-                  context, AppRoutes.APP_ROUTE_ILUSTRATION);
+                  context, AppRoutes.APP_ROUTE_SYMBOLS);
               break;
-            }
-
-          /// introduzido a navegação paga a tela de dor
-          case 'Dor':
-            {
+          case 'Pain':
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
               break;
-            }
-
-          /// teste para apagar o que já foi escrito
-          case 'Apagar':
-            {
+          case 'Delete':
               setState(() {
                 _words.removeAt(_words.length - 1);
                 _textSpell = TextEditingController(text: _showWords());
               });
               break;
-            }
-
-          case 'Espaço':
-            {
+          case 'Backspace':
               _words.add(' ');
               _textSpell = TextEditingController(text: _showWords());
               break;
-            }
-
-          /// inserindo a nova palavra na tela
           default:
             setState(() {
               _words.add('$message');
@@ -131,14 +122,12 @@ class _SpellPageState extends State<SpellPage> {
       },
       onLongPress: () {
         switch (message) {
-          case 'Apagar':
-            {
+          case 'Delete':
               setState(() {
                 _words.clear();
                 _textSpell = TextEditingController(text: _showWords());
               });
               break;
-            }
         }
       },
     );
@@ -155,7 +144,20 @@ class _SpellPageState extends State<SpellPage> {
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
     _buttons = [
+
+      _buttonAux(AppLocalizations.of(context).translate("button_pain"), image: Constant.pain, color: Colors.redAccent),
+      _buttonAux(AppLocalizations.of(context).translate("button_yes"), image: Constant.yes),
+      _buttonAux(AppLocalizations.of(context).translate("button_no"), image: Constant.no),
+      _buttonAux(AppLocalizations.of(context).translate("button_symbols"), image: Constant.cards),
+      _buttonAux(AppLocalizations.of(context).translate("button_backspace"), image: Constant.space),
+      _buttonAux(AppLocalizations.of(context).translate("button_delete"), image: Constant.backspace),
+
       _button('A'),
       _button('B'),
       _button('C'),
@@ -182,30 +184,23 @@ class _SpellPageState extends State<SpellPage> {
       _button('X'),
       _button('Y'),
       _button('Z'),
-      _button('1'),
-      _button('2'),
-      _button('3'),
-      _button('4'),
-      _button('5'),
-      _button('6'),
-      _button('7'),
-      _button('8'),
-      _button('9'),
-      _button('0'),
-      _buttonAux('Dor', image: Constant.pain, color: Colors.redAccent),
-      _buttonAux('Sim', image: Constant.yes),
-      _buttonAux('Não', image: Constant.no),
-      _buttonAux('Ilustracao', image: Constant.cards),
-      _buttonAux('Espaço', image: Constant.space),
-      _buttonAux('Apagar', image: Constant.backspace),
-    ];
-  }
 
-  @override
-  Widget build(BuildContext context) {
+      _button('1', color: Colors.yellow),
+      _button('2', color: Colors.yellow),
+      _button('3', color: Colors.yellow),
+      _button('4', color: Colors.yellow),
+      _button('5', color: Colors.yellow),
+      _button('6', color: Colors.yellow),
+      _button('7', color: Colors.yellow),
+      _button('8', color: Colors.yellow),
+      _button('9', color: Colors.yellow),
+      _button('0', color: Colors.yellow),
+
+    ];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.screenSpellTittle),
+        title: Text(AppLocalizations.of(context).translate('screen_spell')),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
@@ -214,10 +209,6 @@ class _SpellPageState extends State<SpellPage> {
           SizedBox(
             height: 5,
           ),
-
-          ///inseridos um TextField para pegar os valores dos cards
-          ///e proporcionar mais uma maneira de alterar os valores digitados
-          ///através do teclado do TextFields
           TextField(
             controller: _textSpell,
             decoration: InputDecoration(

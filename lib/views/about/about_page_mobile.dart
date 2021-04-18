@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utils/utils.dart';
 import '../../constant.dart';
 import '../views.dart';
@@ -104,7 +105,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sobre o App'),
+        title: Text(AppLocalizations.of(context).translate('screen_about')),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       body: SingleChildScrollView(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/translate/translate.dart';
 import '../../component/drawer.dart';
 
 class About extends StatefulWidget {
-  final String title;
-  About(this.title);
-
   @override
   _AboutState createState() => _AboutState();
 }
@@ -20,11 +18,11 @@ class _AboutState extends State<About> {
       onWillPop: () => _willPop(context),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('${widget.title}'),
+          title: Text(AppLocalizations.of(context).translate('screen_about')),
         ),
-        /**adicionado o menu drawer na tela SOBRE
-         * para melhorar a experiência do user
-         * possibilitado uma navegação mais rápida no app */
+        /** adicionado o menu drawer na tela SOBRE
+         *  para melhorar a experiência do user
+         *  possibilitado uma navegação mais rápida no app */
         drawer: DrawerComponent(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,

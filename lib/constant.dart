@@ -3,6 +3,9 @@ class Constant {
   // criado a constant com o nome do app
   static bool appHomolog                  =         true;
 
+  // ...
+  static final String homologationKey      =        '';
+
   // create constant AppName
   static final String appName             =         'MobBoards';
 
@@ -14,7 +17,7 @@ class Constant {
   static final String logoMobfeel         =         'assets/logo_mobfeel.png';
   static final String logoComAcesso       =         'assets/logo_com_acesso.jpeg';
 
-  // ilustration page pictograms
+  // symbol page pictograms
   static final String abdominalPain       =         'assets/abdominal_pain.png';
   static final String alphabet            =         'assets/alphabet.png';
   static final String amazed              =         'assets/amazed.png';
@@ -43,7 +46,7 @@ class Constant {
   static final String diaper              =         'assets/diaper.png';
   static final String diarrhea            =         'assets/diarrhea.png';
   static final String dizziness           =         'assets/dizziness.png';
-  static final String dress               =         'assets/dress.png';
+  static final String wear                =         'assets/wear.png';
   static final String drink               =         'assets/drink.png';
   static final String eat                 =         'assets/eat.png';
   static final String fever               =         'assets/fever.png';
@@ -148,24 +151,9 @@ class Constant {
                                                     'Licença: CC (BY-NC-SA)\n'
                                                     'Proprietário: Governo de Aragão (Espanha)';
 
-  // Menu
-  static final String homologationKey      =        '';
-  static final String home                 =        'Home';
-  static final String symbols              =        'Símbolos';
-  static final String spell                =        'Soletrar';
-  static final String settings             =        'Configurações';
-  static final String aboutUs              =        'Sobre';
-  static final String exit                 =        'Exit';
+  static final String painOne              =        'assets/pain_one.png';
+  static final String painTwo              =        'assets/pain_two.png';
+  static final String painThree            =        'assets/pain_three.png';
+  static final String painFour             =        'assets/pain_four.png';
 
-  // Screen
-  static final String screenSpellTittle   =         'Soletrar';
-  static final String screenSymbolsTitle  =         'Símbolos';
-  static final String screenSettingsTitle =         'Configurações';
-  static final String screenPainTitle     =         'Indique a dor';
-
-
-  static final String painOne = 'assets/pain_one.png';
-  static final String painTwo = 'assets/pain_two.png';
-  static final String painThree = 'assets/pain_three.png';
-  static final String painFour = 'assets/pain_four.png';
 }

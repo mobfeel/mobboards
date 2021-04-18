@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utils/text_to_speech.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/views/views.dart';
@@ -83,7 +84,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.screenSettingsTitle),
+        title: Text(AppLocalizations.of(context).translate('screen_settings')),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

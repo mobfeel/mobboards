@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/views/views.dart';
 
 class DrawerComponent extends StatelessWidget {
@@ -28,43 +29,43 @@ class DrawerComponent extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.home),
-            title: Text('${Constant.home}'),
+            title: Text('${AppLocalizations.of(context).translate('screen_home')}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
             },
           ),
           ListTile(
             leading: Icon(Icons.image),
-            title: Text('${Constant.symbols}'),
+            title: Text('${AppLocalizations.of(context).translate('screen_symbols')}'),
             onTap: () {
               Navigator.popAndPushNamed(
-                  context, AppRoutes.APP_ROUTE_ILUSTRATION);
+                  context, AppRoutes.APP_ROUTE_SYMBOLS);
             },
           ),
           ListTile(
             leading: Icon(Icons.sort_by_alpha),
-            title: Text('${Constant.spell}'),
+            title: Text('${AppLocalizations.of(context).translate('screen_spell')}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
             },
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('${Constant.settings}'),
+            title: Text('${AppLocalizations.of(context).translate('screen_settings')}'),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_VOLUME);
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SETTINGS);
             },
           ),
           ListTile(
             leading: Icon(Icons.info),
-            title: Text('${Constant.aboutUs}'),
+            title: Text('${AppLocalizations.of(context).translate('screen_about')}'),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
             },
           ),
           ListTile(
             leading: Icon(Icons.directions_run),
-            title: Text('${Constant.exit}'),
+            title: Text('${AppLocalizations.of(context).translate('exit')}'),
             onTap: () {
               exit(0);
             },

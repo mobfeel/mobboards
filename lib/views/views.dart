@@ -5,9 +5,9 @@ export 'package:mobboards/constant.dart';
 export 'home/home.dart';
 export 'home/home_page.dart';
 
-//ilustration
-export 'ilustration/ilustration.dart';
-export 'ilustration/ilustration_page.dart';
+//symbol
+export 'symbol/symbols.dart';
+export 'symbol/symbols_page.dart';
 
 //spell
 export 'spell/spell.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/component/component.dart';
+import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/views/views.dart';
 
 class PainPage extends StatefulWidget {
@@ -8,6 +9,7 @@ class PainPage extends StatefulWidget {
 }
 
 class _PainPageState extends State<PainPage> {
+
   String _text = "";
   String _where = "Frente";
   Color _color = Colors.white;
@@ -20,7 +22,6 @@ class _PainPageState extends State<PainPage> {
     super.initState();
   }
 
-  /// lista de niveis de dor com icones
   buildContainerInformation(
       BuildContext context, String message, Color color, String image) {
     return Container(
@@ -54,7 +55,6 @@ class _PainPageState extends State<PainPage> {
     );
   }
 
-  /// tabela de niveis de cores de 0 a 10
   buildContainerLevelPain(Color color, int level) {
     return Container(
       color: color,
@@ -62,7 +62,6 @@ class _PainPageState extends State<PainPage> {
       height: _height,
       child: TextButton(
         onPressed: () {
-          print('clicou');
           setState(() {
             _text = "$level";
             _color = color;
@@ -76,7 +75,6 @@ class _PainPageState extends State<PainPage> {
     );
   }
 
-  /// botões para informar onde a dor se encontra
   buildButtonFrontBack(String wherePain, String image) {
     return Container(
       decoration: BoxDecoration(
@@ -91,7 +89,6 @@ class _PainPageState extends State<PainPage> {
       height: 150,
       child: TextButton(
         onPressed: () {
-          print('clicou');
           setState(
             () {
               _where = wherePain;
@@ -135,9 +132,7 @@ class _PainPageState extends State<PainPage> {
   Widget _containerRow(String icon) {
     return GestureDetector(
       onTap: () {
-        setState(
-          () {
-            print('clicou');
+        setState(() {
             _alertBody(context);
           },
         );
@@ -168,7 +163,7 @@ class _PainPageState extends State<PainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.screenPainTitle),
+        title: Text(AppLocalizations.of(context).translate('screen_pain')),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
@@ -178,7 +173,6 @@ class _PainPageState extends State<PainPage> {
             padding: const EdgeInsets.all(12.0),
             child: Column(
               children: [
-                ///Text dor e nota
                 Padding(
                   padding: const EdgeInsets.only(bottom: 15),
                   child: Row(
@@ -197,7 +191,6 @@ class _PainPageState extends State<PainPage> {
                     ],
                   ),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -291,8 +284,6 @@ class _PainPageState extends State<PainPage> {
                         ],
                       ),
                     ),
-
-                    //Imagem do corpo humano na lateral
                     _containerRow('${Constant.front}'),
                   ],
                 ),

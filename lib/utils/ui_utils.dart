@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 DeviceScreenType getDeviceType(MediaQueryData mediaQuery) {
+
   var orientation = mediaQuery.orientation;
 
   double deviceWidth = 0;
@@ -21,4 +22,5 @@ DeviceScreenType getDeviceType(MediaQueryData mediaQuery) {
   }
 
   return DeviceScreenType.mobile;
+
 }

@@ -29,4 +29,5 @@ class TextToSpeech {
   Future paused(String message) async {
     await flutterTts.pause();
   }
+
 }

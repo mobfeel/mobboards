@@ -6,10 +6,10 @@ class AppRoutes {
 
   static const String APP_ROUTE_HOME = '/home';
   static const String APP_ROUTE_ABOUT = '/about';
-  static const String APP_ROUTE_ILUSTRATION = '/ilustration';
+  static const String APP_ROUTE_SYMBOLS = '/symbols';
   static const String APP_ROUTE_SPELL = '/spell';
   static const String APP_ROUTE_PAIN = '/pain';
-  static const String APP_ROUTE_VOLUME = '/volume';
+  static const String APP_ROUTE_SETTINGS = '/settings';
 
   Route getRoutes(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -34,11 +34,11 @@ class AppRoutes {
             builder: (BuildContext context) => AboutPageMobilePortrait(),
           );
 
-      case APP_ROUTE_ILUSTRATION:
+      case APP_ROUTE_SYMBOLS:
 
           return MaterialPageRoute<void>(
             settings: routeSettings,
-            builder: (BuildContext context) => Ilustration(),
+            builder: (BuildContext context) => SymbolPage(),
           );
 
       case APP_ROUTE_SPELL:
@@ -48,7 +48,7 @@ class AppRoutes {
             builder: (BuildContext context) => Spell(),
           );
 
-      case APP_ROUTE_VOLUME:
+      case APP_ROUTE_SETTINGS:
 
           return MaterialPageRoute<void>(
             settings: routeSettings,
