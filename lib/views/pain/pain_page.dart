@@ -21,8 +21,7 @@ class _PainPageState extends State<PainPage> {
   }
 
   /// lista de niveis de dor com icones
-  buildContainerInformation(
-      BuildContext context, String message, Color color, String image) {
+  buildContainerInformation({BuildContext context, String message, String image}) {
     return Container(
       width: MediaQuery.of(context).size.width / 2,
       child: Row(
@@ -42,7 +41,6 @@ class _PainPageState extends State<PainPage> {
               height: 50,
               child: Image.asset(
                 image,
-                color: color,
               ),
             ),
           ),
@@ -94,6 +92,7 @@ class _PainPageState extends State<PainPage> {
           print('clicou');
           setState(
             () {
+              _alertBody(context, image);
               _where = wherePain;
             },
           );
@@ -118,14 +117,14 @@ class _PainPageState extends State<PainPage> {
     }
   }
 
-  void _alertBody(BuildContext context) {
+  void _alertBody(BuildContext context, String image) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text('Onde dói?'),
           content: SingleChildScrollView(
-            child: Image.asset(testWherePain()),
+            child: Image.asset(image),
           ),
         );
       },
@@ -138,7 +137,7 @@ class _PainPageState extends State<PainPage> {
         setState(
           () {
             print('clicou');
-            _alertBody(context);
+            //_alertBody(context, Constant.front);
           },
         );
       },
@@ -209,10 +208,12 @@ class _PainPageState extends State<PainPage> {
                           Row(
                             children: [
                               buildContainerInformation(
-                                  context,
-                                  'Pior Dor Possível',
-                                  Colors.red[900],
-                                  Constant.painFour),
+                                context: context,
+                                message: 'Pior Dor Possível',
+                                image: Constant.worstPossiblePain,
+                              ),
+
+
                               Column(
                                 children: [
                                   Container(
@@ -227,10 +228,10 @@ class _PainPageState extends State<PainPage> {
                           Row(
                             children: [
                               buildContainerInformation(
-                                  context,
-                                  'Dor Muito Severa',
-                                  Colors.deepOrange,
-                                  Constant.painFour),
+                                context: context,
+                                message: 'Dor Muito Severa',
+                                image: Constant.verySeverePain,
+                              ),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red, 8),
@@ -241,8 +242,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Dor Severa',
-                                  Colors.red[100], Constant.painThree),
+                              buildContainerInformation(
+                                context: context,
+                                message: 'Dor Severa',
+                                image: Constant.severePain,
+                              ),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red[100], 6),
@@ -254,8 +258,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Dor Moderada',
-                                  Colors.yellow, Constant.painTwo),
+                              buildContainerInformation(
+                                context: context,
+                                message: 'Dor Moderada',
+                                image: Constant.moderatePain
+                              ),
                               Column(
                                 children: [
                                   buildContainerLevelPain(
@@ -267,8 +274,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Dor Leve',
-                                  Colors.green[200], Constant.painTwo),
+                              buildContainerInformation(
+                                context: context,
+                                message: 'Dor Leve',
+                                image: Constant.littlePain
+                              ),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[400], 2),
@@ -279,8 +289,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Sem Dor',
-                                  Colors.green[900], Constant.painOne),
+                              buildContainerInformation(
+                                context: context,
+                                message: 'Sem Dor',
+                                image: Constant.noPain
+                              ),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[900], 0),

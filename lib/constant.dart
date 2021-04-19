@@ -55,7 +55,7 @@ class Constant {
   static final String iWantToDo           =         'assets/i_want_to_do.png';
   static final String leftSide            =         'assets/left_side.png';
   static final String lieDown             =         'assets/lie_down.png';
-  static final String littlePain          =         'assets/lie_down.png';
+  static final String littlePain          =         'assets/little_pain.png';
   static final String logo                =         'assets/logo.png';
   static final String logo2               =         'assets/logo2.png';
   static final String logoOfficial        =         'assets/logo_official.png';
@@ -152,9 +152,9 @@ class Constant {
   static final String screenSettingsTitle =         'Configurações';
   static final String screenPainTitle     =         'Indique a dor';
 
-
-  static final String painOne = 'assets/pain_one.png';
-  static final String painTwo = 'assets/pain_two.png';
-  static final String painThree = 'assets/pain_three.png';
-  static final String painFour = 'assets/pain_four.png';
+//Não existe mais
+  // static final String painOne = 'assets/pain_one.png';
+  // static final String painTwo = 'assets/pain_two.png';
+  // static final String painThree = 'assets/pain_three.png';
+  // static final String painFour = 'assets/pain_four.png';
 }
