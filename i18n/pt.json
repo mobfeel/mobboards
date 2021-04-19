@@ -1,11 +1,41 @@
 {
   "app_title": "MobBoards",
+
   "screen_about" : "Sobre",
   "screen_home" : "Página inicial",
   "screen_symbols" : "Símbolos",
   "screen_pain" : "Indique a Dor",
   "screen_settings" : "Configurações",
   "screen_spell" : "Soletrar",
+
+  "home_page_description" : "Fazer uma descrição do App neste espaço",
+
+  "pain_page_where_is_the_pain" : "Onde está a dor?",
+  "pain_page_pain_location" : "Local da Dor: ",
+  "pain_page_front" : "Frente",
+  "pain_page_back" : "Costas",
+  "pain_page_grade" : "Nota",
+  "pain_page_worst_pain" : "Pior dor possível",
+  "pain_page_very_severe_pain" : "Dor muito severa",
+  "pain_page_severe_pain" : "Dor severa",
+  "pain_page_moderate_pain" : "Dor moderada",
+  "pain_page_mild pain" : "Dor leve",
+  "pain_page_no_pain" : "Sem dor",
+  
+  "settings_page_volume" : "Volume",
+  "settings_page_pitch" : "Tom",
+  "settings_page_rate" : "Velocidade",
+  "settings_page_test_sound" : "Clique aqui para testar o som",
+  "settings_page_test_sound_message" : "Olá, esse é um teste de volume, tom e velocidade",
+
+  "about_page_welcome_to_MobBoards" : "Seja bem vindo ao App MobCards",
+  "about_page_description" : "Fazer uma descrição do App neste espaço",
+  "about_page_base_project" : "O app foi desenvolvido com base no projeto de",
+  "about_page_developed_by" : "Desenvolvido por",
+  "about_page_about_us_text" : "Eduardo Cardoso e a aluna do Programa de Pós-Graduação em Design e terapeuta ocupacional Daianne Serafim Martins, que fazem coordenação da equipe, que também conta com a fisioterapeuta Rita Bersch, a fonoaudióloga Michelle Borges e a enfermeira Ana Beust da Silva",
+  "about_page_names" : "Thiago Cury - (Prof.)\n Eduardo Rambo - (Aluno)\nWelinton Prediger - (Aluno)\nJoana Eberle Dorigan - (Estudante do curso de Terapia Ocupacional pelo Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul)",
+  "about_page_partnership" : "Parceiros",
+  "about_page_arasaac" : "Autor de pictogramas: Sergio Palao\nOrigem: ARASAAC (http://www.arasaac.org)\nLicença: CC (BY-NC-SA)\nProprietário: Governo de Aragão (Espanha)",
 
   "button_turn_on_the_light" : "Ligar a luz",
   "button_turn_on_turn_off" : "Ligar ou desligar",

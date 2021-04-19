@@ -8,6 +8,36 @@
   "screen_settings" : "Settings",
   "screen_spell" : "Spell",
 
+  "home_page_description" : "Make a description of the App in this space",
+
+  "pain_page_where_is_the_pain" : "Where is the pain?",
+  "pain_page_pain_location" : "Pain Location: ",
+  "pain_page_front" : "Front",
+  "pain_page_back" : "Back",
+  "pain_page_grade" : "Grade",
+  "pain_page_worst_pain" : "Worst pain possible",
+  "pain_page_very_severe_pain" : "Very severe pain",
+  "pain_page_severe_pain" : "Severe pain",
+  "pain_page_moderate_pain" : "Moderate pain",
+  "pain_page_mild pain" : "Mild pain",
+  "pain_page_no_pain" : "No pain",
+
+  "settings_page_volume" : "Volume",
+  "settings_page_pitch" : "Pitch",
+  "settings_page_rate" : "Rate",
+  "settings_page_test_sound" : "Click here to test sound",
+  "settings_page_test_sound_message" : "Hello, this is a test of volume, pitch and speed",
+
+  "about_page_welcome_to_MobBoards" : "Welcome To MobBoards",
+  "about_page_description" : "Make a description of the App in this space",
+  "about_page_base_project" : "The app was developed based on the project of",
+  "about_page_developed_by" : "Developed by",
+  "about_page_about_us_text" : "Eduardo Cardoso and the student of the Graduate Program in Design and occupational therapist Daianne Serafim Martins, who coordinate the team, which also has the physiotherapist Rita Bersch, the speech therapist Michelle Borges and the nurse Ana Beust da Silva",
+  "about_page_names" : "Thiago Cury - (Teacher)\nEduardo Rambo - (Student)\nWelinton Prediger - (Student) \nJoana Eberle Dorigan - (Student of the Occupational Therapy course at the University Center of Serra Gaúcha - FSG, Caxias do Sul) ",
+  "about_page_partnership" : "Partnership",
+  "about_page_arasaac" : "Author of pictograms: Sergio Palao \nSource: ARASAAC (http://www.arasaac.org) \nLicense: CC (BY-NC-SA) \nOwner: Government of Aragon (Spain)",
+
+
   "button_turn_on_the_light" : "Turn on the Light",
   "button_turn_on_turn_off" : "Turn On Turn Off",
   "button_silence" : "Silence",

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobboards/utils/orientation_layout.dart';
-import 'package:mobboards/utils/screen_type_layout.dart';
+import 'package:mobboards/utilities/utilities.dart';
 import 'package:mobboards/views/views.dart';
 
 class AboutPage extends StatelessWidget {

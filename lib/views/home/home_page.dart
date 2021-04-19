@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Text(
-          Constant.appName,
+          AppLocalizations.of(context).translate("app_title"),
           style: TextStyle(
             fontSize: 32,
           ),
@@ -55,7 +55,8 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(Constant.description,
+        Text(
+          AppLocalizations.of(context).translate("home_page_description"),
           textAlign: TextAlign.center,
         ),
       ],
@@ -71,8 +72,8 @@ class _HomePageState extends State<HomePage> {
               MaterialStateProperty.all(EdgeInsets.only(top: 15, bottom: 15))),
       onPressed: () {
         cod == 0
-        ? Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS)
-        : Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+            ? Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS)
+            : Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
       },
       child: Text(
         buttonName,
@@ -95,9 +96,13 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: [
               columnLogo(),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               columnEffectPhrase(),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               columnButtons(context),
             ],
           ),
