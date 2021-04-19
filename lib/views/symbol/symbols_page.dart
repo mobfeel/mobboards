@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/translate/translate.dart';
-import 'package:mobboards/utils/utils.dart';
+import 'package:mobboards/utilities/utilities.dart';
 import 'package:mobboards/component/component.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
@@ -11,7 +11,6 @@ class SymbolPage extends StatefulWidget {
 }
 
 class _SymbolPageState extends State<SymbolPage> {
-
   List<Widget> _buttons;
   List<String> _words = [];
   TextEditingController _text;
@@ -52,9 +51,6 @@ class _SymbolPageState extends State<SymbolPage> {
                     ),
                   ),
                 ),
-                // SizedBox(
-                //   height: 5,
-                // ),
                 AspectRatio(
                   aspectRatio: 1.4,
                   child: Container(
@@ -76,35 +72,38 @@ class _SymbolPageState extends State<SymbolPage> {
         onPressed: () {
           switch (message) {
             case 'Spell':
-                Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-                break;
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+              break;
             case 'Pain':
-                Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-                break;
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+              break;
             case 'Delete':
-                setState(() {
-                    _words.removeAt(_words.length - 1);
-                    _text = TextEditingController(text: _showWords());
-                  },
-                );
-                break;
+              setState(
+                () {
+                  _words.removeAt(_words.length - 1);
+                  _text = TextEditingController(text: _showWords());
+                },
+              );
+              break;
             default:
-              setState(() {
+              setState(
+                () {
                   _words.add('$message ');
-                  if(TextToSpeech.onOff) {
+                  if (TextToSpeech.onOff) {
                     textToSpeech.speechMessage = message;
                     textToSpeech.speak();
                   }
                   _text = TextEditingController(text: _showWords());
-              },);
+                },
+              );
           }
         },
         onLongPress: () {
           switch (message) {
             case 'Delete':
-                setState(() => _words.clear());
-                _text = TextEditingController(text: _showWords());
-                break;
+              setState(() => _words.clear());
+              _text = TextEditingController(text: _showWords());
+              break;
           }
         },
       ),
@@ -125,74 +124,172 @@ class _SymbolPageState extends State<SymbolPage> {
 
   @override
   Widget build(BuildContext context) {
-
     _buttons = [
-
       //background blue2
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_more"), image: Constant.more),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_another_thing"), image: Constant.anotherThing),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_i_dont_know"), image: Constant.iDontKnow),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_thank_you"), image: Constant.thankYou),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_alphabet"), image: Constant.alphabet),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_backspace"), image: Constant.backspace),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_turn_on_the_light"), image: Constant.turnOnTheLight),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_turn_on_turn_off"), image: Constant.turnOnTurnOff),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_question_yes_or_no"), image: Constant.questionYesOrNo),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_silence"), image: Constant.silence),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_pen_and_paper"), image: Constant.penAndPaper),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_glasses"), image: Constant.glasses),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_diaper"), image: Constant.diaper),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_toys"), image: Constant.toys),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_music"), image: Constant.music),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_reading"), image: Constant.reading),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_tv"), image: Constant.tv),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_tablet"), image: Constant.tablet),
-      _button(CustomColors.blue2, AppLocalizations.of(context).translate("button_cellphone"), image: Constant.cellphone),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_more"),
+          image: Constant.more),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_another_thing"),
+          image: Constant.anotherThing),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_i_dont_know"),
+          image: Constant.iDontKnow),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_thank_you"),
+          image: Constant.thankYou),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_alphabet"),
+          image: Constant.alphabet),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_backspace"),
+          image: Constant.backspace),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_turn_on_the_light"),
+          image: Constant.turnOnTheLight),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_turn_on_turn_off"),
+          image: Constant.turnOnTurnOff),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_question_yes_or_no"),
+          image: Constant.questionYesOrNo),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_silence"),
+          image: Constant.silence),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_pen_and_paper"),
+          image: Constant.penAndPaper),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_glasses"),
+          image: Constant.glasses),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_diaper"),
+          image: Constant.diaper),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_toys"),
+          image: Constant.toys),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_music"),
+          image: Constant.music),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_reading"),
+          image: Constant.reading),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_tv"),
+          image: Constant.tv),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_tablet"),
+          image: Constant.tablet),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_cellphone"),
+          image: Constant.cellphone),
 
       //background green
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_drink"), image: Constant.drink),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_eat"), image: Constant.eat),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_moisten_your_month"), image: Constant.moistenYourMonth),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_pee"), image: Constant.pee),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_poop"), image: Constant.poop),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_walk"), image: Constant.walk),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_wash_the_face"), image: Constant.washTheFace),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_oral_hygiene"), image: Constant.oralHygiene),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_shower"), image: Constant.shower),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_reposition"), image: Constant.reposition),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_sleep"), image: Constant.sleep),
-      _button(CustomColors.green, AppLocalizations.of(context).translate("button_wear"), image: Constant.wear),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_drink"),
+          image: Constant.drink),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_eat"),
+          image: Constant.eat),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_moisten_your_month"),
+          image: Constant.moistenYourMonth),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_pee"),
+          image: Constant.pee),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_poop"),
+          image: Constant.poop),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_walk"),
+          image: Constant.walk),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_wash_the_face"),
+          image: Constant.washTheFace),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_oral_hygiene"),
+          image: Constant.oralHygiene),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_shower"),
+          image: Constant.shower),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_reposition"),
+          image: Constant.reposition),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_sleep"),
+          image: Constant.sleep),
+      _button(CustomColors.green,
+          AppLocalizations.of(context).translate("button_wear"),
+          image: Constant.wear),
 
       //background blue
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_warm"), image: Constant.warm),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_cold"), image: Constant.cold),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_scary"), image: Constant.scary),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_well"), image: Constant.well),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_bad"), image: Constant.bad),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_wet_clothes"), image: Constant.wetClothes),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_warm"),
+          image: Constant.warm),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_cold"),
+          image: Constant.cold),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_scary"),
+          image: Constant.scary),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_well"),
+          image: Constant.well),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_bad"),
+          image: Constant.bad),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_wet_clothes"),
+          image: Constant.wetClothes),
       _button(CustomColors.blue, "...", image: Constant.wetClothes),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_oxygen"), image: Constant.oxygen),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_medicine"), image: Constant.medicine),
-      _button(CustomColors.blue, AppLocalizations.of(context).translate("button_aspiration"), image: Constant.aspiration),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_oxygen"),
+          image: Constant.oxygen),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_medicine"),
+          image: Constant.medicine),
+      _button(CustomColors.blue,
+          AppLocalizations.of(context).translate("button_aspiration"),
+          image: Constant.aspiration),
 
       //background amber
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_call_doctor"), image: Constant.callDoctor),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_call_nurse"), image: Constant.callNurse),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_call_family"), image: Constant.callFamily),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_help"), image: Constant.help),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_hold_my_hand"), image: Constant.holdMyHand),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_visit_family"), image: Constant.visitFamily),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_how_much_time"), image: Constant.howMuchTime),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_how_am_i"), image: Constant.howAmI1),
-      _button(CustomColors.amber, AppLocalizations.of(context).translate("button_and_then"), image: Constant.andThen),
-
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_call_doctor"),
+          image: Constant.callDoctor),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_call_nurse"),
+          image: Constant.callNurse),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_call_family"),
+          image: Constant.callFamily),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_help"),
+          image: Constant.help),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_hold_my_hand"),
+          image: Constant.holdMyHand),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_visit_family"),
+          image: Constant.visitFamily),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_how_much_time"),
+          image: Constant.howMuchTime),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_how_am_i"),
+          image: Constant.howAmI1),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_and_then"),
+          image: Constant.andThen),
     ];
 
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).translate('screen_symbols')),
         actions: [
-          IconButton(icon: Icon(TextToSpeech.onOff ? Icons.volume_up : Icons.volume_off), onPressed: _changeIconVolume)
+          IconButton(
+              icon:
+                  Icon(TextToSpeech.onOff ? Icons.volume_up : Icons.volume_off),
+              onPressed: _changeIconVolume)
         ],
         backgroundColor: CustomColors.primaryMobfeel,
       ),
@@ -232,7 +329,7 @@ class _SymbolPageState extends State<SymbolPage> {
   }
 
   _changeIconVolume() {
-    if(TextToSpeech.onOff)
+    if (TextToSpeech.onOff)
       setState(() {
         TextToSpeech.onOff = false;
       });
@@ -249,5 +346,4 @@ class _SymbolPageState extends State<SymbolPage> {
     }
     return _text;
   }
-
 }

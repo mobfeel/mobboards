@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
-import 'package:mobboards/utils/utils.dart';
+import 'package:mobboards/utilities/utilities.dart';
 import '../../app/app_routes.dart';
 import '../views.dart';
 
@@ -11,7 +11,6 @@ class SpellPage extends StatefulWidget {
 }
 
 class _SpellPageState extends State<SpellPage> {
-
   List<Widget> _buttons;
   List<String> _words = [];
   TextEditingController _textSpell;
@@ -66,15 +65,13 @@ class _SpellPageState extends State<SpellPage> {
       ),
       child: Card(
         child: Container(
-          decoration:
-          image != null ?
-          BoxDecoration(
-              color: color == null ? Colors.white : color,
-              image: DecorationImage(image: AssetImage(image))
-          ) :
-          BoxDecoration(
-              color: color == null ? Colors.white : color,
-          ),
+          decoration: image != null
+              ? BoxDecoration(
+                  color: color == null ? Colors.white : color,
+                  image: DecorationImage(image: AssetImage(image)))
+              : BoxDecoration(
+                  color: color == null ? Colors.white : color,
+                ),
           padding: EdgeInsets.all(32.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -97,22 +94,21 @@ class _SpellPageState extends State<SpellPage> {
       onPressed: () {
         switch (message) {
           case 'Symbols':
-              Navigator.popAndPushNamed(
-                  context, AppRoutes.APP_ROUTE_SYMBOLS);
-              break;
+            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
+            break;
           case 'Pain':
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-              break;
+            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+            break;
           case 'Delete':
-              setState(() {
-                _words.removeAt(_words.length - 1);
-                _textSpell = TextEditingController(text: _showWords());
-              });
-              break;
-          case 'Backspace':
-              _words.add(' ');
+            setState(() {
+              _words.removeAt(_words.length - 1);
               _textSpell = TextEditingController(text: _showWords());
-              break;
+            });
+            break;
+          case 'Backspace':
+            _words.add(' ');
+            _textSpell = TextEditingController(text: _showWords());
+            break;
           default:
             setState(() {
               _words.add('$message');
@@ -123,11 +119,11 @@ class _SpellPageState extends State<SpellPage> {
       onLongPress: () {
         switch (message) {
           case 'Delete':
-              setState(() {
-                _words.clear();
-                _textSpell = TextEditingController(text: _showWords());
-              });
-              break;
+            setState(() {
+              _words.clear();
+              _textSpell = TextEditingController(text: _showWords());
+            });
+            break;
         }
       },
     );
@@ -148,16 +144,19 @@ class _SpellPageState extends State<SpellPage> {
 
   @override
   Widget build(BuildContext context) {
-
     _buttons = [
-
-      _buttonAux(AppLocalizations.of(context).translate("button_pain"), image: Constant.pain, color: Colors.redAccent),
-      _buttonAux(AppLocalizations.of(context).translate("button_yes"), image: Constant.yes),
-      _buttonAux(AppLocalizations.of(context).translate("button_no"), image: Constant.no),
-      _buttonAux(AppLocalizations.of(context).translate("button_symbols"), image: Constant.cards),
-      _buttonAux(AppLocalizations.of(context).translate("button_backspace"), image: Constant.space),
-      _buttonAux(AppLocalizations.of(context).translate("button_delete"), image: Constant.backspace),
-
+      _buttonAux(AppLocalizations.of(context).translate("button_pain"),
+          image: Constant.pain, color: Colors.redAccent),
+      _buttonAux(AppLocalizations.of(context).translate("button_yes"),
+          image: Constant.yes),
+      _buttonAux(AppLocalizations.of(context).translate("button_no"),
+          image: Constant.no),
+      _buttonAux(AppLocalizations.of(context).translate("button_symbols"),
+          image: Constant.cards),
+      _buttonAux(AppLocalizations.of(context).translate("button_backspace"),
+          image: Constant.space),
+      _buttonAux(AppLocalizations.of(context).translate("button_delete"),
+          image: Constant.backspace),
       _button('A'),
       _button('B'),
       _button('C'),
@@ -184,7 +183,6 @@ class _SpellPageState extends State<SpellPage> {
       _button('X'),
       _button('Y'),
       _button('Z'),
-
       _button('1', color: Colors.yellow),
       _button('2', color: Colors.yellow),
       _button('3', color: Colors.yellow),
@@ -195,12 +193,13 @@ class _SpellPageState extends State<SpellPage> {
       _button('8', color: Colors.yellow),
       _button('9', color: Colors.yellow),
       _button('0', color: Colors.yellow),
-
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('screen_spell')),
+        title: Text(
+          AppLocalizations.of(context).translate('screen_spell'),
+        ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
