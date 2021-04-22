@@ -20,7 +20,8 @@ class _SpellPageState extends State<SpellPage> {
   onClickSnackbar(BuildContext context) {
     final snackBar = SnackBar(
       duration: Duration(seconds: 1),
-      content: Text('Campo Vazio!'),
+      content:
+          Text(AppLocalizations.of(context).translate("snackbar_empty_field")),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
