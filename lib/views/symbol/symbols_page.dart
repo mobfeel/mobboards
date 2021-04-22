@@ -70,32 +70,28 @@ class _SymbolPageState extends State<SymbolPage> {
           ),
         ),
         onPressed: () {
-          switch (message) {
-            case 'Spell':
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-              break;
-            case 'Pain':
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-              break;
-            case 'Delete':
-              setState(
-                () {
-                  _words.removeAt(_words.length - 1);
-                  _text = TextEditingController(text: _showWords());
-                },
-              );
-              break;
-            default:
-              setState(
-                () {
-                  _words.add('$message ');
-                  if (TextToSpeech.onOff) {
-                    textToSpeech.speechMessage = message;
-                    textToSpeech.speak();
-                  }
-                  _text = TextEditingController(text: _showWords());
-                },
-              );
+          if(message == AppLocalizations.of(context).translate("button_pain")){
+            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+          } else if(message == AppLocalizations.of(context).translate("button_alphabet")){
+            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+          } else if(message == AppLocalizations.of(context).translate("button_backspace")){
+            setState(
+                  () {
+                _words.removeAt(_words.length - 1);
+                _text = TextEditingController(text: _showWords());
+              },
+            );
+          } else {
+            setState(
+                  () {
+                _words.add('$message ');
+                if (TextToSpeech.onOff) {
+                  textToSpeech.speechMessage = message;
+                  textToSpeech.speak();
+                }
+                _text = TextEditingController(text: _showWords());
+              },
+            );
           }
         },
         onLongPress: () {
@@ -127,9 +123,6 @@ class _SymbolPageState extends State<SymbolPage> {
     _buttons = [
       //background blue2
       _button(CustomColors.blue2,
-          AppLocalizations.of(context).translate("button_more"),
-          image: Constant.more),
-      _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_another_thing"),
           image: Constant.anotherThing),
       _button(CustomColors.blue2,
@@ -138,12 +131,18 @@ class _SymbolPageState extends State<SymbolPage> {
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_thank_you"),
           image: Constant.thankYou),
+      _button(CustomColors.red,
+          AppLocalizations.of(context).translate("button_pain"),
+          image: Constant.pain),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_alphabet"),
           image: Constant.alphabet),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_backspace"),
           image: Constant.backspace),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_more"),
+          image: Constant.more),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_turn_on_the_light"),
           image: Constant.turnOnTheLight),

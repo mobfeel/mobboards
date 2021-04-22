@@ -22,7 +22,7 @@ class _PainPageState extends State<PainPage> {
   }
 
   buildContainerInformation(
-      BuildContext context, String message, Color color, String image) {
+      BuildContext context, String message, String image) {
     return Container(
       width: MediaQuery.of(context).size.width / 2,
       child: Row(
@@ -42,7 +42,6 @@ class _PainPageState extends State<PainPage> {
               height: 50,
               child: Image.asset(
                 image,
-                color: color,
               ),
             ),
           ),
@@ -93,6 +92,7 @@ class _PainPageState extends State<PainPage> {
           setState(
             () {
               _where = wherePain;
+              _alertBody(context);
             },
           );
         },
@@ -210,8 +210,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   AppLocalizations.of(context)
                                       .translate("pain_page_worst_pain"),
-                                  Colors.red[900],
-                                  Constant.painFour),
+                                  Constant.worstPossiblePain),
                               Column(
                                 children: [
                                   Container(
@@ -229,8 +228,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   AppLocalizations.of(context)
                                       .translate("pain_page_very_severe_pain"),
-                                  Colors.deepOrange,
-                                  Constant.painFour),
+                                  Constant.verySeverePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red, 8),
@@ -245,8 +243,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   AppLocalizations.of(context)
                                       .translate("pain_page_severe_pain"),
-                                  Colors.red[100],
-                                  Constant.painThree),
+                                  Constant.severePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red[100], 6),
@@ -262,8 +259,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   AppLocalizations.of(context)
                                       .translate("pain_page_moderate_pain"),
-                                  Colors.yellow,
-                                  Constant.painTwo),
+                                  Constant.moderatePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(
@@ -279,8 +275,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   AppLocalizations.of(context)
                                       .translate("pain_page_mild pain"),
-                                  Colors.green[200],
-                                  Constant.painTwo),
+                                  Constant.littlePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[400], 2),
@@ -295,8 +290,7 @@ class _PainPageState extends State<PainPage> {
                                   context,
                                   AppLocalizations.of(context)
                                       .translate("pain_page_no_pain"),
-                                  Colors.green[900],
-                                  Constant.painOne),
+                                  Constant.noPain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[900], 0),

@@ -66,7 +66,7 @@ class Constant {
   static final String iWantToDo = 'assets/i_want_to_do.png';
   static final String leftSide = 'assets/left_side.png';
   static final String lieDown = 'assets/lie_down.png';
-  static final String littlePain = 'assets/lie_down.png';
+  static final String littlePain = 'assets/little_pain.png';
   static final String medicine = 'assets/medicine.png';
   static final String moderatePain = 'assets/moderate_pain.png';
   static final String moistenYourMonth = 'assets/moisten_your_mouth.png';
@@ -153,9 +153,4 @@ class Constant {
       'Origem: ARASAAC (http://www.arasaac.org)\n'
       'Licença: CC (BY-NC-SA)\n'
       'Proprietário: Governo de Aragão (Espanha)';
-
-  static final String painOne = 'assets/pain.png';
-  static final String painTwo = 'assets/pain.png';
-  static final String painThree = 'assets/pain.png';
-  static final String painFour = 'assets/pain.png';
 }
