@@ -55,7 +55,7 @@ class _SpellPageState extends State<SpellPage> {
     );
   }
 
-  Widget _buttonAux(String message, {Color color, String image}) {
+  Widget _auxiliaryButton(String message, {Color color, String image}) {
     return TextButton(
       style: TextButton.styleFrom(
         primary: CustomColors.primaryMobfeel,
@@ -63,34 +63,70 @@ class _SpellPageState extends State<SpellPage> {
         padding: EdgeInsets.all(0),
         elevation: 3,
       ),
+      // child: Card(
+      //   child: Container(
+      //     decoration: image != null
+      //         ? BoxDecoration(
+      //             color: color == null ? Colors.white : color,
+      //             image: DecorationImage(image: AssetImage(image)))
+      //         : BoxDecoration(
+      //             color: color == null ? Colors.white : color,
+      //           ),
+      //     padding: EdgeInsets.all(8.0),
+      //     child: Column(
+      //       children: <Widget>[
+      //         Text(
+      //             message,
+      //             style: TextStyle(
+      //                 color: Colors.black, fontWeight: FontWeight.bold),
+      //           ),
+      //         SizedBox(
+      //           height: 10,
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
       child: Card(
+        color: color,
         child: Container(
-          decoration: image != null
-              ? BoxDecoration(
-                  color: color == null ? Colors.white : color,
-                  image: DecorationImage(image: AssetImage(image)))
-              : BoxDecoration(
-                  color: color == null ? Colors.white : color,
-                ),
-          padding: EdgeInsets.all(32.0),
+          // decoration: message == AppLocalizations.of(context).translate('button_pain')
+          //     ? BoxDecoration(
+          //         border: Border.all(width: 3, color: Colors.red),
+          //         borderRadius: BorderRadius.circular(5))
+          //     : null,
+          padding: EdgeInsets.all(8.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Center(
-                child: Text(
-                  message,
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+              AspectRatio(
+                aspectRatio: 3.5,
+                child: Container(
+                  child: Text(
+                    message,
+                    style: TextStyle(fontSize: 10),
+                  ),
                 ),
               ),
-              SizedBox(
-                height: 10,
+              AspectRatio(
+                aspectRatio: 1.4,
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
         ),
       ),
+
       onPressed: () {
         switch (message) {
           case 'Symbols':
@@ -145,18 +181,18 @@ class _SpellPageState extends State<SpellPage> {
   @override
   Widget build(BuildContext context) {
     _buttons = [
-      _buttonAux(AppLocalizations.of(context).translate("button_pain"),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_pain"),
           image: Constant.pain, color: Colors.redAccent),
-      _buttonAux(AppLocalizations.of(context).translate("button_yes"),
-          image: Constant.yes),
-      _buttonAux(AppLocalizations.of(context).translate("button_no"),
-          image: Constant.no),
-      _buttonAux(AppLocalizations.of(context).translate("button_symbols"),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_symbols"),
           image: Constant.cards),
-      _buttonAux(AppLocalizations.of(context).translate("button_backspace"),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_backspace"),
           image: Constant.space),
-      _buttonAux(AppLocalizations.of(context).translate("button_delete"),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_yes"),
+          image: Constant.yes),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_no"),
+          image: Constant.no),
       _button('A'),
       _button('B'),
       _button('C'),
@@ -227,7 +263,7 @@ class _SpellPageState extends State<SpellPage> {
           Expanded(
             flex: 9,
             child: GridView.count(
-              crossAxisCount: 6,
+              crossAxisCount: 4,
               children: List.generate(
                 _buttons.length,
                 (index) {

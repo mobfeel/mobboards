@@ -121,7 +121,7 @@ class _PainPageState extends State<PainPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Onde dói?'),
+          title: Text(AppLocalizations.of(context).translate('pain_page_where_is_the_pain')),
           content: SingleChildScrollView(
             child: Image.asset(testWherePain()),
           ),

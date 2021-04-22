@@ -34,11 +34,11 @@ class _SymbolPageState extends State<SymbolPage> {
         child: Card(
           color: color,
           child: Container(
-            decoration: message == 'Dor'
-                ? BoxDecoration(
-                    border: Border.all(width: 3, color: Colors.red),
-                    borderRadius: BorderRadius.circular(5))
-                : null,
+            // decoration: message == AppLocalizations.of(context).translate('button_pain')
+            //     ? BoxDecoration(
+            //         border: Border.all(width: 3, color: Colors.red),
+            //         borderRadius: BorderRadius.circular(5))
+            //     : null,
             padding: EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[
@@ -95,11 +95,9 @@ class _SymbolPageState extends State<SymbolPage> {
           }
         },
         onLongPress: () {
-          switch (message) {
-            case 'Delete':
-              setState(() => _words.clear());
-              _text = TextEditingController(text: _showWords());
-              break;
+          if(message == AppLocalizations.of(context).translate('button_backspace')) {
+            setState(() => _words.clear());
+            _text = TextEditingController(text: _showWords());
           }
         },
       ),
@@ -122,24 +120,24 @@ class _SymbolPageState extends State<SymbolPage> {
   Widget build(BuildContext context) {
     _buttons = [
       //background blue2
+      _button(CustomColors.red,
+          AppLocalizations.of(context).translate("button_pain"),
+          image: Constant.pain),
+      _button(CustomColors.amber,
+          AppLocalizations.of(context).translate("button_alphabet"),
+          image: Constant.alphabet),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_another_thing"),
           image: Constant.anotherThing),
+      _button(CustomColors.blue2,
+          AppLocalizations.of(context).translate("button_backspace"),
+          image: Constant.backspace),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_i_dont_know"),
           image: Constant.iDontKnow),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_thank_you"),
           image: Constant.thankYou),
-      _button(CustomColors.red,
-          AppLocalizations.of(context).translate("button_pain"),
-          image: Constant.pain),
-      _button(CustomColors.blue2,
-          AppLocalizations.of(context).translate("button_alphabet"),
-          image: Constant.alphabet),
-      _button(CustomColors.blue2,
-          AppLocalizations.of(context).translate("button_backspace"),
-          image: Constant.backspace),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_more"),
           image: Constant.more),
@@ -240,7 +238,6 @@ class _SymbolPageState extends State<SymbolPage> {
       _button(CustomColors.blue,
           AppLocalizations.of(context).translate("button_wet_clothes"),
           image: Constant.wetClothes),
-      _button(CustomColors.blue, "...", image: Constant.wetClothes),
       _button(CustomColors.blue,
           AppLocalizations.of(context).translate("button_oxygen"),
           image: Constant.oxygen),
@@ -310,7 +307,7 @@ class _SymbolPageState extends State<SymbolPage> {
           Expanded(
             flex: 9,
             child: GridView.count(
-              crossAxisCount: 6,
+              crossAxisCount: 4,
               children: List.generate(
                 _buttons.length,
                 (index) {
