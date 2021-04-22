@@ -261,18 +261,23 @@ class _SpellPageState extends State<SpellPage> {
           SizedBox(
             height: 5,
           ),
-          TextField(
-            controller: _textSpell,
-            decoration: InputDecoration(
-              suffixIcon: IconButton(
-                icon: Icon(Icons.play_arrow),
-                onPressed: () {
-                  textToSpeech.speechMessage = _showWords();
-                  textToSpeech.speak();
-                },
+          Row(
+            children: [
+              Flexible(
+                child: TextField(
+                  controller: _textSpell,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
+                ),
               ),
-              border: OutlineInputBorder(),
-            ),
+              IconButton(
+                  icon: Icon(Icons.play_arrow),
+                  onPressed: () {
+                    textToSpeech.speechMessage = _showWords();
+                    textToSpeech.speak();
+                  })
+            ],
           ),
           SizedBox(
             height: 5,
