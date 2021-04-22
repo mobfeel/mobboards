@@ -15,6 +15,15 @@ class _SymbolPageState extends State<SymbolPage> {
   List<String> _words = [];
   TextEditingController _text;
   TextToSpeech textToSpeech = TextToSpeech();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  onClickSnackbar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text('Campo Vazio!'),
+      duration: Duration(seconds: 1),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
 
   Widget _button(Color color, String message, {String image}) {
     return AspectRatio(
@@ -70,20 +79,26 @@ class _SymbolPageState extends State<SymbolPage> {
           ),
         ),
         onPressed: () {
-          if(message == AppLocalizations.of(context).translate("button_pain")){
+          if (message ==
+              AppLocalizations.of(context).translate("button_pain")) {
             Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-          } else if(message == AppLocalizations.of(context).translate("button_alphabet")){
+          } else if (message ==
+              AppLocalizations.of(context).translate("button_alphabet")) {
             Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-          } else if(message == AppLocalizations.of(context).translate("button_backspace")){
+          } else if (message ==
+              AppLocalizations.of(context).translate("button_backspace")) {
             setState(
-                  () {
-                _words.removeAt(_words.length - 1);
+              () {
+                if (_words.isEmpty)
+                  return onClickSnackbar(context);
+                else
+                  _words.removeAt(_words.length - 1);
                 _text = TextEditingController(text: _showWords());
               },
             );
           } else {
             setState(
-                  () {
+              () {
                 _words.add('$message ');
                 if (TextToSpeech.onOff) {
                   textToSpeech.speechMessage = message;
@@ -95,8 +110,14 @@ class _SymbolPageState extends State<SymbolPage> {
           }
         },
         onLongPress: () {
-          if(message == AppLocalizations.of(context).translate('button_backspace')) {
-            setState(() => _words.clear());
+          if (message ==
+              AppLocalizations.of(context).translate('button_backspace')) {
+            setState(() {
+              if (_words.isEmpty)
+                return onClickSnackbar(context);
+              else
+                _words.clear();
+            });
             _text = TextEditingController(text: _showWords());
           }
         },

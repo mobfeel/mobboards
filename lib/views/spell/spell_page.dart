@@ -15,6 +15,15 @@ class _SpellPageState extends State<SpellPage> {
   List<String> _words = [];
   TextEditingController _textSpell;
   TextToSpeech textToSpeech = TextToSpeech();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  onClickSnackbar(BuildContext context) {
+    final snackBar = SnackBar(
+      duration: Duration(seconds: 1),
+      content: Text('Campo Vazio!'),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
 
   Widget _button(String message, {Color color}) {
     return TextButton(
@@ -137,7 +146,10 @@ class _SpellPageState extends State<SpellPage> {
             break;
           case 'Delete':
             setState(() {
-              _words.removeAt(_words.length - 1);
+              if (_words.isEmpty)
+                return onClickSnackbar(context);
+              else
+                _words.removeAt(_words.length - 1);
               _textSpell = TextEditingController(text: _showWords());
             });
             break;
@@ -156,7 +168,10 @@ class _SpellPageState extends State<SpellPage> {
         switch (message) {
           case 'Delete':
             setState(() {
-              _words.clear();
+              if (_words.isEmpty)
+                return onClickSnackbar(context);
+              else
+                _words.clear();
               _textSpell = TextEditingController(text: _showWords());
             });
             break;
@@ -185,7 +200,8 @@ class _SpellPageState extends State<SpellPage> {
           image: Constant.pain, color: Colors.redAccent),
       _auxiliaryButton(AppLocalizations.of(context).translate("button_symbols"),
           image: Constant.cards),
-      _auxiliaryButton(AppLocalizations.of(context).translate("button_backspace"),
+      _auxiliaryButton(
+          AppLocalizations.of(context).translate("button_backspace"),
           image: Constant.space),
       _auxiliaryButton(AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),
