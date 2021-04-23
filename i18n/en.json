@@ -29,6 +29,7 @@
   "settings_page_rate" : "Rate",
   "settings_page_test_sound" : "Click here to test sound",
   "settings_page_test_sound_message" : "Hello, this is a test of volume, pitch and speed",
+  "settings_page_change_button" : "Change number of columns",
 
   "about_page_welcome_to_MobBoards" : "Welcome To MobBoards",
   "about_page_description" : "Make a description of the App in this space",
