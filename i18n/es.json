@@ -6,5 +6,7 @@
   "screen_pain" : "Indique la Dor",
   "screen_settings" : "Configuraciones",
   "screen_spell" : "Soletrar",
-  "exit": "Salir"
+  "exit": "Salir",
+
+  "home_page_description" : "La aplicación (Mob-Boards) es un proyecto colaborativo, de código abierto y en construcción que derivó del proyecto Pranchas Hospitalares de Comunicación Alternativa. La idea principal de la aplicación es transformar las tablas de surf comunicaciones impresas en pizarrones interactivos y con voz sintetizada, para acceder desde dispositivos móviles."
 }

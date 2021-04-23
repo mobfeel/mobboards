@@ -55,9 +55,13 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          AppLocalizations.of(context).translate("home_page_description"),
-          textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+          child: Text(
+            AppLocalizations.of(context).translate("home_page_description"),
+            textAlign: TextAlign.justify,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
       ],
     );
@@ -97,7 +101,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               columnLogo(),
               SizedBox(
-                height: 50,
+                height: 40,
               ),
               columnEffectPhrase(),
               SizedBox(

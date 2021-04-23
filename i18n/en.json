@@ -10,7 +10,7 @@
   "screen_settings" : "Settings",
   "screen_spell" : "Spell",
 
-  "home_page_description" : "Make a description of the App in this space",
+  "home_page_description" : "The application (Mob-Boards) is a collaborative project, open source and under construction that derived from the Pranchas Hospitalares de Alternative Communication project. The main idea of \u200B\u200Bthe application is to transform the surfboards communications printed on interactive boards and with synthesized voice, for access from mobile devices.",
 
   "pain_page_where_is_the_pain" : "Where is the pain??",
   "pain_page_pain_location" : "Pain Location: ",
@@ -39,7 +39,6 @@
   "about_page_names" : "Thiago Cury - (Teacher)\nEduardo Rambo - (Student)\nWelinton Prediger - (Student) \nJoana Eberle Dorigan - (Student of the Occupational Therapy course at the University Center of Serra Gaúcha - FSG, Caxias do Sul) ",
   "about_page_partnership" : "Partnership",
   "about_page_arasaac" : "Author of pictograms: Sergio Palao \nSource: ARASAAC (http://www.arasaac.org) \nLicense: CC (BY-NC-SA) \nOwner: Government of Aragon (Spain)",
-
 
   "button_turn_on_the_light" : "Turn on the Light",
   "button_turn_on_turn_off" : "Turn On Turn Off",
@@ -104,5 +103,4 @@
   "symbols" : "Symbols",
   "spell" : "Spell",
   "exit": "Exit"
-
 }
