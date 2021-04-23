@@ -137,7 +137,7 @@ class Constant {
       'e a enfermeira Ana Beust da Silva.';
   static final String welcomeToMobBoards =
       'Seja bem vindo ao App MobCards'; //-> feito
-  static final String description =
+  static final String shortDescription =
       'Fazer uma descrição do App neste espaço'; // -> feito
   static final String baseProject =
       'O app foi desenvolvido com base no projeto de'; // -> feito
