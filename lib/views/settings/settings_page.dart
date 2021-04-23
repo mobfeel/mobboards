@@ -88,7 +88,9 @@ class _SettingsPageState extends State<SettingsPage> {
       children: [
         Flexible(
           child: TextField(
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp('[1-9.,]+')),
+            ],
             keyboardType: TextInputType.number,
             maxLength: 1,
             controller: columnRowNumberController,
