@@ -29,6 +29,7 @@
   "settings_page_rate" : "Velocidade",
   "settings_page_test_sound" : "Clique aqui para testar o som",
   "settings_page_test_sound_message" : "Olá, esse é um teste de volume, tom e velocidade",
+  "settings_page_change_button" : "Alterar número de colunas",
 
   "about_page_welcome_to_MobBoards" : "Seja bem vindo ao App MobCards",
   "about_page_description" : "Fazer uma descrição do App neste espaço",

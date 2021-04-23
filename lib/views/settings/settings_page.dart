@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/views/views.dart';
@@ -11,6 +12,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   TextToSpeech textToSpeech = new TextToSpeech();
+  TextEditingController columnRowNumberController = TextEditingController();
 
   _volumeSliderRow() {
     return Slider(
@@ -81,6 +83,44 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  _columnNumberRow() {
+    return Row(
+      children: [
+        Flexible(
+          child: TextField(
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            keyboardType: TextInputType.number,
+            maxLength: 1,
+            controller: columnRowNumberController,
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 1),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(width: 1),
+              ),
+            ),
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            setState(
+              () {
+                if (columnRowNumberController.text.isNotEmpty)
+                  return ColumnSettings.columnNumber =
+                      int.parse(columnRowNumberController.text);
+              },
+            );
+          },
+          child: Text(
+            AppLocalizations.of(context)
+                .translate('settings_page_change_button'),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +148,11 @@ class _SettingsPageState extends State<SettingsPage> {
                 AppLocalizations.of(context).translate("settings_page_rate"),
               ),
               _rateSliderRow(),
-              _testConfigRow()
+              _testConfigRow(),
+              SizedBox(
+                height: 30,
+              ),
+              _columnNumberRow(),
             ],
           ),
         ),

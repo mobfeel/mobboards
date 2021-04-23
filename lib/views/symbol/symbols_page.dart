@@ -329,7 +329,7 @@ class _SymbolPageState extends State<SymbolPage> {
           Expanded(
             flex: 9,
             child: GridView.count(
-              crossAxisCount: 4,
+              crossAxisCount: ColumnSettings.columnNumber ?? 4,
               children: List.generate(
                 _buttons.length,
                 (index) {

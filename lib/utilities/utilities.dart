@@ -5,3 +5,4 @@ export 'sizing_information.dart';
 export 'text_to_speech.dart';
 export 'ui_utilities.dart';
 export 'version.dart';
+export 'column_settings.dart';
