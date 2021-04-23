@@ -24,7 +24,7 @@ Alunos Curso Técnico em Informática - QI Escolas e Faculdades
 
 - Welinton Prediger
 
-- [LinkedIn](https://#)
+- [LinkedIn](https://www.linkedin.com/in/welintonprediger/)
 - [Instagram](https://#)
 - [Facebook](https://#)
 
