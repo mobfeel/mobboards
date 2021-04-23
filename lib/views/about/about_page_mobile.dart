@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utilities/utilities.dart';
 import '../../constant.dart';
@@ -142,14 +144,24 @@ class AboutPageMobilePortrait extends StatelessWidget {
         ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 30),
-          child: Align(
-            alignment: Alignment.center,
-            child: _columnUI(context),
+      drawer: DrawerComponent(),
+      body: ListView(
+        children:[
+          Row(
+            children: [
+              IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
+                Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
+              }),
+            ],
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 30),
+            child: Align(
+              alignment: Alignment.center,
+              child: _columnUI(context),
+            ),
+          ),
+        ]
       ),
     );
   }

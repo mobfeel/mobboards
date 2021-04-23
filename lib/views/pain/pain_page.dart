@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/app/app_routes.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/views/views.dart';
@@ -15,11 +16,6 @@ class _PainPageState extends State<PainPage> {
 
   double _width = 50.0;
   double _height = 50.0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   buildContainerInformation(
       BuildContext context, String message, String image) {
@@ -163,6 +159,11 @@ class _PainPageState extends State<PainPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -181,17 +182,23 @@ class _PainPageState extends State<PainPage> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 15),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
+                        Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
+                      }),
                       Text(
                         "${AppLocalizations.of(context).translate('pain_page_pain_location')} $_where",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        "${AppLocalizations.of(context).translate('pain_page_grade')}: $_text",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: Text(
+                          "${AppLocalizations.of(context).translate('pain_page_grade')}: $_text",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ],
                   ),
