@@ -31,6 +31,7 @@ class DrawerComponent extends StatelessWidget {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.image),
             title: Text(
@@ -40,6 +41,7 @@ class DrawerComponent extends StatelessWidget {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.sort_by_alpha),
             title: Text(
@@ -49,6 +51,17 @@ class DrawerComponent extends StatelessWidget {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
             },
           ),
+
+          ListTile(
+            leading: Icon(Icons.perm_contact_calendar),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_pain'),
+            ),
+            onTap: () {
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+            },
+          ),
+
           ListTile(
             leading: Icon(Icons.settings),
             title: Text(
@@ -58,6 +71,7 @@ class DrawerComponent extends StatelessWidget {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SETTINGS);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.info),
             title: Text(
@@ -67,6 +81,7 @@ class DrawerComponent extends StatelessWidget {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.directions_run),
             title: Text(

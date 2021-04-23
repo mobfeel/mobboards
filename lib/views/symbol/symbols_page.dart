@@ -87,7 +87,7 @@ class _SymbolPageState extends State<SymbolPage> {
               AppLocalizations.of(context).translate("button_alphabet")) {
             Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
           } else if (message ==
-              AppLocalizations.of(context).translate("button_backspace")) {
+              AppLocalizations.of(context).translate("button_delete")) {
             setState(
               () {
                 if (_words.isEmpty)
@@ -112,7 +112,7 @@ class _SymbolPageState extends State<SymbolPage> {
         },
         onLongPress: () {
           if (message ==
-              AppLocalizations.of(context).translate('button_backspace')) {
+              AppLocalizations.of(context).translate('button_delete')) {
             setState(() {
               if (_words.isEmpty)
                 return onClickSnackbar(context);
@@ -152,7 +152,7 @@ class _SymbolPageState extends State<SymbolPage> {
           AppLocalizations.of(context).translate("button_another_thing"),
           image: Constant.anotherThing),
       _button(CustomColors.blue2,
-          AppLocalizations.of(context).translate("button_backspace"),
+          AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_i_dont_know"),

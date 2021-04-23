@@ -73,31 +73,6 @@ class _SpellPageState extends State<SpellPage> {
         padding: EdgeInsets.all(0),
         elevation: 3,
       ),
-      // child: Card(
-      //   child: Container(
-      //     decoration: image != null
-      //         ? BoxDecoration(
-      //             color: color == null ? Colors.white : color,
-      //             image: DecorationImage(image: AssetImage(image)))
-      //         : BoxDecoration(
-      //             color: color == null ? Colors.white : color,
-      //           ),
-      //     padding: EdgeInsets.all(8.0),
-      //     child: Column(
-      //       children: <Widget>[
-      //         Text(
-      //             message,
-      //             style: TextStyle(
-      //                 color: Colors.black, fontWeight: FontWeight.bold),
-      //           ),
-      //         SizedBox(
-      //           height: 10,
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-
       child: Card(
         color: color,
         child: Container(
@@ -138,44 +113,43 @@ class _SpellPageState extends State<SpellPage> {
       ),
 
       onPressed: () {
-        switch (message) {
-          case 'Symbols':
-            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
-            break;
-          case 'Pain':
-            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-            break;
-          case 'Delete':
-            setState(() {
-              if (_words.isEmpty)
-                return onClickSnackbar(context);
-              else
-                _words.removeAt(_words.length - 1);
-              _textSpell = TextEditingController(text: _showWords());
-            });
-            break;
-          case 'Backspace':
-            _words.add(' ');
+
+        if(message == AppLocalizations.of(context).translate("button_pain")) {
+        Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+
+        } else if(message == AppLocalizations.of(context).translate("button_symbols")){
+          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
+
+        } else if(message == AppLocalizations.of(context).translate("button_space")) {
+          _words.add(' ');
+          _textSpell = TextEditingController(text: _showWords());
+
+        } else if(message == AppLocalizations.of(context).translate("button_delete")) {
+          setState(() {
+            if (_words.isEmpty)
+              return onClickSnackbar(context);
+            else
+              _words.removeAt(_words.length - 1);
             _textSpell = TextEditingController(text: _showWords());
-            break;
-          default:
-            setState(() {
-              _words.add('$message');
-              _textSpell = TextEditingController(text: _showWords());
-            });
+          });
+
+        } else {
+          setState(() {
+            _words.add('$message');
+            _textSpell = TextEditingController(text: _showWords());
+          });
         }
       },
       onLongPress: () {
-        switch (message) {
-          case 'Delete':
-            setState(() {
-              if (_words.isEmpty)
-                return onClickSnackbar(context);
-              else
-                _words.clear();
-              _textSpell = TextEditingController(text: _showWords());
-            });
-            break;
+
+        if(message == AppLocalizations.of(context).translate("button_delete")){
+          setState(() {
+            if (_words.isEmpty)
+              return onClickSnackbar(context);
+            else
+              _words.clear();
+            _textSpell = TextEditingController(text: _showWords());
+          });
         }
       },
     );
@@ -202,7 +176,7 @@ class _SpellPageState extends State<SpellPage> {
       _auxiliaryButton(AppLocalizations.of(context).translate("button_symbols"),
           image: Constant.cards),
       _auxiliaryButton(
-          AppLocalizations.of(context).translate("button_backspace"),
+          AppLocalizations.of(context).translate("button_space"),
           image: Constant.space),
       _auxiliaryButton(AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),

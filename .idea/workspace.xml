@@ -22,11 +22,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97608242-2ac1-4286-bc38-994e48c8b996" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="97608242-2ac1-4286-bc38-994e48c8b996" name="Default Changelist" comment="README was changed with new informations about project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i18n/pt.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/pt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/app_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/component/drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/component/drawer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/about/about.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/about/about_page_mobile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/about/about_page_mobile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/pain/pain_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/pain/pain_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/spell/spell_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/spell/spell_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/symbol/symbols_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/symbol/symbols_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +52,11 @@
       <list>
         <option value="Thiago Cury &lt;thiagocury@gmail.com&gt;" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -90,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618662901905</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="README was changed with new informations about project">
+      <created>1619150747525</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619150747525</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,10 +138,10 @@
     </state>
     <state x="483" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1617585679468" />
     <state x="453" y="109" key="#com.intellij.ide.util.MemberChooser/0.23.1280.726@0.23.1280.726" timestamp="1617391578309" />
-    <state x="566" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617416316631">
+    <state x="566" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619153481487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="566" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1617416316631" />
+    <state x="566" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619153481487" />
     <state x="437" y="139" key="AndroidProcessChooserDialog" timestamp="1617394731915">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
@@ -135,40 +154,40 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="600" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619146314768" />
-    <state width="1015" height="171" key="GridCell.Tab.0.bottom" timestamp="1619146326910">
+    <state width="1015" height="174" key="GridCell.Tab.0.bottom" timestamp="1619154736763">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1015" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619146326910" />
+    <state width="1015" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619154736763" />
     <state width="1238" height="199" key="GridCell.Tab.0.bottom/0.23.1280.725@0.23.1280.725" timestamp="1618673190932" />
     <state width="1225" height="180" key="GridCell.Tab.0.bottom/0.23.1280.726@0.23.1280.726" timestamp="1618283739898" />
     <state width="1225" height="180" key="GridCell.Tab.0.bottom/0.23.1280.727@0.23.1280.727" timestamp="1618283214656" />
     <state width="1225" height="180" key="GridCell.Tab.0.bottom/0.23.1280.728@0.23.1280.728" timestamp="1618282052551" />
     <state width="1225" height="189" key="GridCell.Tab.0.bottom/0.23.1280.729@0.23.1280.729" timestamp="1618276525046" />
     <state width="1225" height="180" key="GridCell.Tab.0.bottom/0.23.1280.730@0.23.1280.730" timestamp="1618282303474" />
-    <state width="1015" height="171" key="GridCell.Tab.0.center" timestamp="1619146326910">
+    <state width="1015" height="174" key="GridCell.Tab.0.center" timestamp="1619154736763">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1015" height="171" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619146326910" />
+    <state width="1015" height="174" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619154736763" />
     <state width="1238" height="199" key="GridCell.Tab.0.center/0.23.1280.725@0.23.1280.725" timestamp="1618673190931" />
     <state width="1225" height="180" key="GridCell.Tab.0.center/0.23.1280.726@0.23.1280.726" timestamp="1618283739896" />
     <state width="1225" height="180" key="GridCell.Tab.0.center/0.23.1280.727@0.23.1280.727" timestamp="1618283214645" />
     <state width="1225" height="180" key="GridCell.Tab.0.center/0.23.1280.728@0.23.1280.728" timestamp="1618282052550" />
     <state width="1225" height="189" key="GridCell.Tab.0.center/0.23.1280.729@0.23.1280.729" timestamp="1618276525045" />
     <state width="1225" height="180" key="GridCell.Tab.0.center/0.23.1280.730@0.23.1280.730" timestamp="1618282303472" />
-    <state width="1015" height="171" key="GridCell.Tab.0.left" timestamp="1619146326909">
+    <state width="1015" height="174" key="GridCell.Tab.0.left" timestamp="1619154736763">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1015" height="171" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619146326909" />
+    <state width="1015" height="174" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619154736763" />
     <state width="1238" height="199" key="GridCell.Tab.0.left/0.23.1280.725@0.23.1280.725" timestamp="1618673190931" />
     <state width="1225" height="180" key="GridCell.Tab.0.left/0.23.1280.726@0.23.1280.726" timestamp="1618283739896" />
     <state width="1225" height="180" key="GridCell.Tab.0.left/0.23.1280.727@0.23.1280.727" timestamp="1618283214640" />
     <state width="1225" height="180" key="GridCell.Tab.0.left/0.23.1280.728@0.23.1280.728" timestamp="1618282052549" />
     <state width="1225" height="189" key="GridCell.Tab.0.left/0.23.1280.729@0.23.1280.729" timestamp="1618276525044" />
     <state width="1225" height="180" key="GridCell.Tab.0.left/0.23.1280.730@0.23.1280.730" timestamp="1618282303471" />
-    <state width="1015" height="171" key="GridCell.Tab.0.right" timestamp="1619146326910">
+    <state width="1015" height="174" key="GridCell.Tab.0.right" timestamp="1619154736763">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1015" height="171" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619146326910" />
+    <state width="1015" height="174" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619154736763" />
     <state width="1238" height="199" key="GridCell.Tab.0.right/0.23.1280.725@0.23.1280.725" timestamp="1618673190932" />
     <state width="1225" height="180" key="GridCell.Tab.0.right/0.23.1280.726@0.23.1280.726" timestamp="1618283739897" />
     <state width="1225" height="180" key="GridCell.Tab.0.right/0.23.1280.727@0.23.1280.727" timestamp="1618283214649" />
@@ -181,9 +200,10 @@
     <state x="321" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1617406333524" />
     <state x="294" y="26" key="SettingsEditor/0.23.1280.725@0.23.1280.725" timestamp="1618661644529" />
     <state x="294" y="27" key="SettingsEditor/0.23.1280.726@0.23.1280.726" timestamp="1617798762823" />
-    <state x="240" y="112" key="Vcs.Push.Dialog.v2" timestamp="1618662904397">
-      <screen x="0" y="23" width="1280" height="725" />
+    <state x="256" y="89" key="Vcs.Push.Dialog.v2" timestamp="1619150763809">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="256" y="89" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1619150763809" />
     <state x="240" y="112" key="Vcs.Push.Dialog.v2/0.23.1280.725@0.23.1280.725" timestamp="1618662904397" />
     <state x="453" y="77" key="git4idea.branch.GitSmartOperationDialog" timestamp="1618429575243">
       <screen x="0" y="0" width="1366" height="728" />
