@@ -20,7 +20,8 @@ class _SpellPageState extends State<SpellPage> {
   onClickSnackbar(BuildContext context) {
     final snackBar = SnackBar(
       duration: Duration(seconds: 1),
-      content: Text('Campo Vazio!'),
+      content:
+          Text(AppLocalizations.of(context).translate("snackbar_empty_field")),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -260,18 +261,23 @@ class _SpellPageState extends State<SpellPage> {
           SizedBox(
             height: 5,
           ),
-          TextField(
-            controller: _textSpell,
-            decoration: InputDecoration(
-              suffixIcon: IconButton(
-                icon: Icon(Icons.play_arrow),
-                onPressed: () {
-                  textToSpeech.speechMessage = _showWords();
-                  textToSpeech.speak();
-                },
+          Row(
+            children: [
+              Flexible(
+                child: TextField(
+                  controller: _textSpell,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
+                ),
               ),
-              border: OutlineInputBorder(),
-            ),
+              IconButton(
+                  icon: Icon(Icons.play_arrow),
+                  onPressed: () {
+                    textToSpeech.speechMessage = _showWords();
+                    textToSpeech.speak();
+                  })
+            ],
           ),
           SizedBox(
             height: 5,

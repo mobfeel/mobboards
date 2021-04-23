@@ -1,6 +1,8 @@
 {
   "app_title": "MobBoards",
 
+  "snackbar_empty_field": "Campo vazio!",
+
   "screen_about" : "Sobre",
   "screen_home" : "Página inicial",
   "screen_symbols" : "Símbolos",

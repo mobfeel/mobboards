@@ -19,7 +19,8 @@ class _SymbolPageState extends State<SymbolPage> {
 
   onClickSnackbar(BuildContext context) {
     final snackBar = SnackBar(
-      content: Text('Campo Vazio!'),
+      content:
+          Text(AppLocalizations.of(context).translate("snackbar_empty_field")),
       duration: Duration(seconds: 1),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
