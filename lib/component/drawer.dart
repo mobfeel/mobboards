@@ -1,7 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:mobcards/app/app_routes.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/translate/translate.dart';
+import 'package:mobboards/views/views.dart';
 
 class DrawerComponent extends StatelessWidget {
   @override
@@ -12,56 +13,80 @@ class DrawerComponent extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(
               color: CustomColors.primaryMobfeel,
-              image: DecorationImage(
-                scale: 4,
-                alignment: Alignment.bottomLeft,
-                image: AssetImage(Constant.logo),
-              ),
             ),
-            child: Text(
-              Constant.appName,
-              style: TextStyle(color: Colors.white),
+            child: Padding(
+              child: Text(
+                AppLocalizations.of(context).translate("app_title"),
+                style: TextStyle(color: Colors.white, fontSize: 24.0),
+              ),
+              padding: EdgeInsets.all(45.0),
             ),
           ),
           ListTile(
             leading: Icon(Icons.home),
-            title: Text('${Constant.home}'),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_home'),
+            ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.image),
-            title: Text('${Constant.symbols}'),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_symbols'),
+            ),
             onTap: () {
-              Navigator.popAndPushNamed(
-                  context, AppRoutes.APP_ROUTE_ILUSTRATION);
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.sort_by_alpha),
-            title: Text('${Constant.spell}'),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_spell'),
+            ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
             },
           ),
+
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('${Constant.settings}'),
+            leading: Icon(Icons.perm_contact_calendar),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_pain'),
+            ),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_VOLUME);
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
             },
           ),
+
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_settings'),
+            ),
+            onTap: () {
+              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SETTINGS);
+            },
+          ),
+
           ListTile(
             leading: Icon(Icons.info),
-            title: Text('${Constant.aboutUs}'),
+            title: Text(
+              AppLocalizations.of(context).translate('screen_about'),
+            ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
             },
           ),
+
           ListTile(
             leading: Icon(Icons.directions_run),
-            title: Text('${Constant.exit}'),
+            title: Text(
+              AppLocalizations.of(context).translate('exit'),
+            ),
             onTap: () {
               exit(0);
             },

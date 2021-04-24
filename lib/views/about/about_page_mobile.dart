@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/utils/utils.dart';
+import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/component/component.dart';
+import 'package:mobboards/translate/translate.dart';
+import 'package:mobboards/utilities/utilities.dart';
 import '../../constant.dart';
 import '../views.dart';
 
@@ -9,7 +12,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Container(
       width: 150,
       height: 150,
-      child: Image.asset(Constant.logoOfficial),
+      child: Image.asset(Constant.logoApp),
     );
   }
 
@@ -17,44 +20,61 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Image.asset(image1, width: 100,),
-        Image.asset(image2, width: 100,),
-        Image.asset(image3, width: 100,),
+        Image.asset(
+          image1,
+          width: 100,
+        ),
+        Image.asset(
+          image2,
+          width: 100,
+        ),
+        Image.asset(
+          image3,
+          width: 100,
+        ),
       ],
     );
   }
 
-  Widget _rowTextOne() {
-    return Text(Constant.welcomeToMobBoards);
+  Widget _rowTextOne(BuildContext context) {
+    return Text(
+      AppLocalizations.of(context).translate("about_page_welcome_to_MobBoards"),
+    );
   }
 
-  Widget _rowTextTwo() {
+  Widget _rowTextTwo(BuildContext context) {
     return Text(
-      Constant.description,
+      AppLocalizations.of(context).translate("about_page_description"),
       textAlign: TextAlign.center,
     );
   }
 
-  Widget _rowTextThree() {
-    return Text(Constant.baseProject);
+  Widget _rowTextThree(BuildContext context) {
+    return Text(
+      AppLocalizations.of(context).translate("about_page_base_project"),
+    );
   }
 
-  Widget _rowTextFour() {
+  Widget _rowTextFour(BuildContext context) {
     return Text(
-      '${Constant.aboutUsText}',
+      AppLocalizations.of(context).translate("about_page_about_us_text"),
       textAlign: TextAlign.center,
     );
   }
 
-  Widget _rowTextFive() {
-    return Text(Constant.developmentBy);
+  Widget _rowTextFive(BuildContext context) {
+    return Text(
+      AppLocalizations.of(context).translate("about_page_developed_by"),
+    );
   }
 
-  Widget _rowTextSix() {
-    return Text(Constant.names);
+  Widget _rowTextSix(BuildContext context) {
+    return Text(
+      AppLocalizations.of(context).translate("about_page_names"),
+    );
   }
 
-  Widget _rowVersion() {
+  Widget _rowVersion(BuildContext context) {
     return FutureBuilder(
       future: Version.getVersion(),
       builder: (context, AsyncSnapshot<String> snapshot) => Text(
@@ -65,38 +85,53 @@ class AboutPageMobilePortrait extends StatelessWidget {
     );
   }
 
-  Widget _columnUI() {
+  Widget _columnUI(BuildContext context) {
     return Column(
       children: [
         _rowImage(),
-        SizedBox(height: 10,),
-        _rowTextOne(),
+        SizedBox(
+          height: 10,
+        ),
+        _rowTextOne(context),
         SizedBox(height: 10),
-        _rowVersion(),
+        _rowVersion(context),
         SizedBox(height: 15),
-        _rowTextTwo(),
+        _rowTextTwo(context),
         SizedBox(height: 15),
-        _rowTextThree(),
+        _rowTextThree(context),
         SizedBox(height: 15),
-        _rowTextFour(),
+        _rowTextFour(context),
         SizedBox(
           height: 20,
         ),
-        _rowTextFive(),
+        _rowTextFive(context),
         SizedBox(
           height: 20,
         ),
-        _rowTextSix(),
+        _rowTextSix(context),
         SizedBox(
           height: 20,
         ),
-        Text('Parceiros', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),),
-        SizedBox(height: 15,),
-        _rowContributors(Constant.logo2, Constant.ufrgsLogo, Constant.isaacBrasil),
-        SizedBox(height: 15,),
-        _rowContributors(Constant.comAcessoLogo,Constant.assistivaLogo, Constant.boards),
-        SizedBox(height: 15,),
-        Text(Constant.arasaac)
+        Text(
+          AppLocalizations.of(context).translate("about_page_partnership"),
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        _rowContributors(
+            Constant.logoMobfeel, Constant.logoUfrgs, Constant.logoIsaacBrasil),
+        SizedBox(
+          height: 15,
+        ),
+        _rowContributors(
+            Constant.logoComAcesso, Constant.logoAssistiva, Constant.boards),
+        SizedBox(
+          height: 15,
+        ),
+        Text(
+          AppLocalizations.of(context).translate("about_page_arasaac"),
+        )
       ],
     );
   }
@@ -104,17 +139,29 @@ class AboutPageMobilePortrait extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sobre o App'),
+        title: Text(
+          AppLocalizations.of(context).translate("screen_about"),
+        ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 30),
-          child: Align(
-            alignment: Alignment.center,
-            child: _columnUI(),
+      drawer: DrawerComponent(),
+      body: ListView(
+        children:[
+          Row(
+            children: [
+              IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
+                Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
+              }),
+            ],
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 30),
+            child: Align(
+              alignment: Alignment.center,
+              child: _columnUI(context),
+            ),
+          ),
+        ]
       ),
     );
   }

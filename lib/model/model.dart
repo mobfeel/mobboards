@@ -1,1 +1,1 @@
-export 'generic_pitogram_card.dart';
+export 'generic_pitogram_board.dart';

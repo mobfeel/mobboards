@@ -24,9 +24,9 @@ Alunos Curso Técnico em Informática - QI Escolas e Faculdades
 
 - Welinton Prediger
 
-- [LinkedIn](https://#)
+- [LinkedIn](https://www.linkedin.com/in/welintonprediger/)
 - [Instagram](https://#)
-- [Facebook](https://#)
+- [Facebook](https://www.facebook.com/welinton.prediger)
 
 Aluna Terapia Ocupacional na FSG - Centro Universitário da Serra Gaúcha - Caxias do Sul/RS
 

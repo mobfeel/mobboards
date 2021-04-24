@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/component/component.dart';
-import 'package:mobcards/views/views.dart';
+import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/component/component.dart';
+import 'package:mobboards/translate/translate.dart';
+import 'package:mobboards/views/views.dart';
 
 class PainPage extends StatefulWidget {
   @override
@@ -9,20 +11,14 @@ class PainPage extends StatefulWidget {
 
 class _PainPageState extends State<PainPage> {
   String _text = "";
-  String _where = "Frente";
   Color _color = Colors.white;
+  String _where = '...';
 
   double _width = 50.0;
   double _height = 50.0;
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  /// lista de niveis de dor com icones
   buildContainerInformation(
-      BuildContext context, String message, Color color, String image) {
+      BuildContext context, String message, String image) {
     return Container(
       width: MediaQuery.of(context).size.width / 2,
       child: Row(
@@ -42,7 +38,6 @@ class _PainPageState extends State<PainPage> {
               height: 50,
               child: Image.asset(
                 image,
-                color: color,
               ),
             ),
           ),
@@ -54,7 +49,6 @@ class _PainPageState extends State<PainPage> {
     );
   }
 
-  /// tabela de niveis de cores de 0 a 10
   buildContainerLevelPain(Color color, int level) {
     return Container(
       color: color,
@@ -62,11 +56,12 @@ class _PainPageState extends State<PainPage> {
       height: _height,
       child: TextButton(
         onPressed: () {
-          print('clicou');
-          setState(() {
-            _text = "$level";
-            _color = color;
-          });
+          setState(
+            () {
+              _text = "$level";
+              _color = color;
+            },
+          );
         },
         child: Text(
           '$level',
@@ -76,7 +71,6 @@ class _PainPageState extends State<PainPage> {
     );
   }
 
-  /// botões para informar onde a dor se encontra
   buildButtonFrontBack(String wherePain, String image) {
     return Container(
       decoration: BoxDecoration(
@@ -91,10 +85,10 @@ class _PainPageState extends State<PainPage> {
       height: 150,
       child: TextButton(
         onPressed: () {
-          print('clicou');
           setState(
             () {
               _where = wherePain;
+              _alertBody(context);
             },
           );
         },
@@ -111,11 +105,11 @@ class _PainPageState extends State<PainPage> {
   }
 
   testWherePain() {
-    if (_where == 'Frente') {
+    if (_where ==
+        "${AppLocalizations.of(context).translate('pain_page_front')}")
       return Constant.front;
-    } else {
+    else
       return Constant.back;
-    }
   }
 
   void _alertBody(BuildContext context) {
@@ -123,7 +117,7 @@ class _PainPageState extends State<PainPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Onde dói?'),
+          title: Text(AppLocalizations.of(context).translate('pain_page_where_is_the_pain')),
           content: SingleChildScrollView(
             child: Image.asset(testWherePain()),
           ),
@@ -137,7 +131,6 @@ class _PainPageState extends State<PainPage> {
       onTap: () {
         setState(
           () {
-            print('clicou');
             _alertBody(context);
           },
         );
@@ -150,7 +143,8 @@ class _PainPageState extends State<PainPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Clique para mostrar onde está a dor',
+              AppLocalizations.of(context)
+                  .translate("pain_page_where_is_the_pain"),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
@@ -165,10 +159,17 @@ class _PainPageState extends State<PainPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.screenPainTitle),
+        title: Text(
+          AppLocalizations.of(context).translate('screen_pain'),
+        ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
@@ -178,26 +179,30 @@ class _PainPageState extends State<PainPage> {
             padding: const EdgeInsets.all(12.0),
             child: Column(
               children: [
-                ///Text dor e nota
                 Padding(
                   padding: const EdgeInsets.only(bottom: 15),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
+                        Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
+                      }),
                       Text(
-                        "Local da Dor: $_where",
+                        "${AppLocalizations.of(context).translate('pain_page_pain_location')} $_where",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        "Nota: $_text",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: Text(
+                          "${AppLocalizations.of(context).translate('pain_page_grade')}: $_text",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ],
                   ),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -210,9 +215,9 @@ class _PainPageState extends State<PainPage> {
                             children: [
                               buildContainerInformation(
                                   context,
-                                  'Pior Dor Possível',
-                                  Colors.red[900],
-                                  Constant.painFour),
+                                  AppLocalizations.of(context)
+                                      .translate("pain_page_worst_pain"),
+                                  Constant.worstPossiblePain),
                               Column(
                                 children: [
                                   Container(
@@ -228,9 +233,9 @@ class _PainPageState extends State<PainPage> {
                             children: [
                               buildContainerInformation(
                                   context,
-                                  'Dor Muito Severa',
-                                  Colors.deepOrange,
-                                  Constant.painFour),
+                                  AppLocalizations.of(context)
+                                      .translate("pain_page_very_severe_pain"),
+                                  Constant.verySeverePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red, 8),
@@ -241,8 +246,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Dor Severa',
-                                  Colors.red[100], Constant.painThree),
+                              buildContainerInformation(
+                                  context,
+                                  AppLocalizations.of(context)
+                                      .translate("pain_page_severe_pain"),
+                                  Constant.severePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.red[100], 6),
@@ -254,8 +262,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Dor Moderada',
-                                  Colors.yellow, Constant.painTwo),
+                              buildContainerInformation(
+                                  context,
+                                  AppLocalizations.of(context)
+                                      .translate("pain_page_moderate_pain"),
+                                  Constant.moderatePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(
@@ -267,8 +278,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Dor Leve',
-                                  Colors.green[200], Constant.painTwo),
+                              buildContainerInformation(
+                                  context,
+                                  AppLocalizations.of(context)
+                                      .translate("pain_page_mild pain"),
+                                  Constant.littlePain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[400], 2),
@@ -279,8 +293,11 @@ class _PainPageState extends State<PainPage> {
                           ),
                           Row(
                             children: [
-                              buildContainerInformation(context, 'Sem Dor',
-                                  Colors.green[900], Constant.painOne),
+                              buildContainerInformation(
+                                  context,
+                                  AppLocalizations.of(context)
+                                      .translate("pain_page_no_pain"),
+                                  Constant.noPain),
                               Column(
                                 children: [
                                   buildContainerLevelPain(Colors.green[900], 0),
@@ -291,21 +308,23 @@ class _PainPageState extends State<PainPage> {
                         ],
                       ),
                     ),
-
-                    //Imagem do corpo humano na lateral
                     _containerRow('${Constant.front}'),
                   ],
                 ),
-
-                //Botões Frente e costas.....
                 SizedBox(
                   height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    buildButtonFrontBack('Frente', Constant.front),
-                    buildButtonFrontBack('Costas', Constant.back),
+                    buildButtonFrontBack(
+                        AppLocalizations.of(context)
+                            .translate('pain_page_front'),
+                        Constant.front),
+                    buildButtonFrontBack(
+                        AppLocalizations.of(context)
+                            .translate('pain_page_back'),
+                        Constant.back),
                   ],
                 )
               ],

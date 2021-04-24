@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mobcards/component/component.dart';
+import 'package:mobboards/component/component.dart';
+import 'package:mobboards/translate/translate.dart';
 import '../../app/app_routes.dart';
 import '../../constant.dart';
 import '../views.dart';
 
 class HomePage extends StatefulWidget {
-  final String title;
-
-  HomePage(this.title);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -23,13 +20,13 @@ class _HomePageState extends State<HomePage> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(Constant.logoOfficial),
+                image: AssetImage(Constant.logoApp),
               ),
             ),
           ),
         ),
         Text(
-          Constant.appName,
+          AppLocalizations.of(context).translate("app_title"),
           style: TextStyle(
             fontSize: 32,
           ),
@@ -38,17 +35,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Padding columnButtons() {
+  Padding columnButtons(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildTextButton(Constant.symbols, 0),
+          buildTextButton(AppLocalizations.of(context).translate("symbols"), 0),
           SizedBox(
             height: 20,
           ),
-          buildTextButton(Constant.spell, 1),
+          buildTextButton(AppLocalizations.of(context).translate("spell"), 1),
         ],
       ),
     );
@@ -58,8 +55,13 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(Constant.description,
-          textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+          child: Text(
+            AppLocalizations.of(context).translate("home_page_description"),
+            textAlign: TextAlign.justify,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
       ],
     );
@@ -73,12 +75,9 @@ class _HomePageState extends State<HomePage> {
           padding:
               MaterialStateProperty.all(EdgeInsets.only(top: 15, bottom: 15))),
       onPressed: () {
-        print('Navigation');
-        if (cod == 0) {
-          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ILUSTRATION);
-        } else {
-          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-        }
+        cod == 0
+            ? Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS)
+            : Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
       },
       child: Text(
         buttonName,
@@ -92,7 +91,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Constant.appName),
+        title: Text('${AppLocalizations.of(context).translate('screen_home')}'),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
@@ -102,13 +101,13 @@ class _HomePageState extends State<HomePage> {
             children: [
               columnLogo(),
               SizedBox(
-                height: 50,
+                height: 40,
               ),
               columnEffectPhrase(),
               SizedBox(
                 height: 50,
               ),
-              columnButtons(),
+              columnButtons(context),
             ],
           ),
         ],

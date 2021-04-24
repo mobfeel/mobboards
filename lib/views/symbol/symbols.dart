@@ -1,20 +1,18 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:mobboards/app/app.dart';
 import 'package:mobboards/translate/translate.dart';
-import 'package:mobboards/views/about/about_page_mobile.dart';
+import '../../app/app.dart';
+import '../views.dart';
 
-class About extends StatelessWidget {
+class Ilustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       supportedLocales: AppLocalizations.locales,
       localizationsDelegates: AppLocalizations.delegates,
-      builder: DevicePreview.appBuilder,
-      title: "...",
+      title: '...',
       debugShowCheckedModeBanner: false,
+      home: SymbolPage(),
       onGenerateRoute: App().getAppRoutes().getRoutes,
-      home: AboutPageMobilePortrait(),
     );
   }
 }
