@@ -3,12 +3,13 @@
 
   "snackbar_empty_field": "Campo vazio!",
 
-  "screen_about" : "Sobre",
-  "screen_home" : "Página inicial",
-  "screen_symbols" : "Símbolos",
-  "screen_pain" : "Indique a Dor",
-  "screen_settings" : "Configurações",
-  "screen_spell" : "Soletrar",
+  "menu_screen_home": "Página inicial",
+  "menu_screen_symbols": "Símbolos",
+  "menu_screen_spell": "Soletrar",
+  "menu_screen_pain": "Indique a Dor",
+  "menu_screen_settings": "Configurações",
+  "menu_screen_about": "Sobre",
+  "menu_exit_app": "Sair",
 
   "home_page_description" : "O aplicativo  (Mob-Boards) é um projeto colaborativo, open source e em construção que derivou do projeto Pranchas Hospitalares de Comunicação Alternativa. A ideia principal do aplicativo é transformar as pranchas de comunicação impressas em pranchas interativas e com voz sintetizada, para acesso a partir de dispositivos moveis.",
 
@@ -101,7 +102,6 @@
   "button_delete" : "Apagar",
 
   "symbols" : "Símbolos",
-  "spell" : "Soletrar",
-  "exit": "Sair"
+  "spell" : "Soletrar"
 
 }

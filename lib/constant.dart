@@ -5,9 +5,6 @@ class Constant {
   // ...
   static final String homologationKey = '';
 
-  // create constant AppName
-  static final String appName = 'MobBoards';
-
   //Logo
   static final String logoUfrgs = 'assets/logo_ufrgs.png';
   static final String logoAssistiva = 'assets/logo_assistiva.jpeg';
@@ -128,29 +125,4 @@ class Constant {
   static final String worstPossiblePain = 'assets/worst_possible_pain.png';
   static final String yes = 'assets/yes.png';
 
-  //About Screen
-  static final String aboutUsText =
-      'Eduardo Cardoso e a aluna do Programa de Pós-Graduação' //->feito
-      ' em Design e terapeuta ocupacional Daianne Serafim Martins, '
-      'que fazem coordenação da equipe, que também conta com a '
-      'fisioterapeuta Rita Bersch, a fonoaudióloga Michelle Borges '
-      'e a enfermeira Ana Beust da Silva.';
-  static final String welcomeToMobBoards =
-      'Seja bem vindo ao App MobCards'; //-> feito
-  static final String shortDescription =
-      'Fazer uma descrição do App neste espaço'; // -> feito
-  static final String baseProject =
-      'O app foi desenvolvido com base no projeto de'; // -> feito
-  static final String developmentBy = 'Desenvolvido por: '; // -> feito
-
-  static final String names = 'Thiago Cury - (prof.)\n' // ->feito
-      'Eduardo Rambo - (Aluno)\n'
-      'Welinton Prediger - (Aluno)\n'
-      'Joana Eberle Dorigan - (Estudante do curso de Terapia Ocupacional pelo '
-      'Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul)';
-  static final String arasaac = // ->feito
-      'Autor de pictogramas: Sergio Palao\n'
-      'Origem: ARASAAC (http://www.arasaac.org)\n'
-      'Licença: CC (BY-NC-SA)\n'
-      'Proprietário: Governo de Aragão (Espanha)';
 }
