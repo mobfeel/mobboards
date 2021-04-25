@@ -25,7 +25,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text(
-              AppLocalizations.of(context).translate('screen_home'),
+              AppLocalizations.of(context).translate('menu_screen_home'),
             ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
@@ -35,7 +35,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.image),
             title: Text(
-              AppLocalizations.of(context).translate('screen_symbols'),
+              AppLocalizations.of(context).translate('menu_screen_symbols'),
             ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
@@ -45,7 +45,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.sort_by_alpha),
             title: Text(
-              AppLocalizations.of(context).translate('screen_spell'),
+              AppLocalizations.of(context).translate('menu_screen_spell'),
             ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
@@ -55,7 +55,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.perm_contact_calendar),
             title: Text(
-              AppLocalizations.of(context).translate('screen_pain'),
+              AppLocalizations.of(context).translate('menu_screen_pain'),
             ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
@@ -65,7 +65,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text(
-              AppLocalizations.of(context).translate('screen_settings'),
+              AppLocalizations.of(context).translate('menu_screen_settings'),
             ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SETTINGS);
@@ -75,7 +75,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.info),
             title: Text(
-              AppLocalizations.of(context).translate('screen_about'),
+              AppLocalizations.of(context).translate('menu_screen_about'),
             ),
             onTap: () {
               Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
@@ -85,7 +85,7 @@ class DrawerComponent extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.directions_run),
             title: Text(
-              AppLocalizations.of(context).translate('exit'),
+              AppLocalizations.of(context).translate('menu_exit_app'),
             ),
             onTap: () {
               exit(0);

@@ -11,7 +11,7 @@
   "menu_screen_about": "Sobre",
   "menu_exit_app": "Salir",
 
-  "home_page_description" : "La aplicación (Mob-Boards) es un proyecto colaborativo, de código abierto y en construcción que derivó del proyecto Pranchas Hospitalares de Comunicación Alternativa. La idea principal de la aplicación es transformar las tablas de surf comunicaciones impresas en pizarrones interactivos y con voz sintetizada, para acceder desde dispositivos móviles.",
+  "home_page_description" : "Tableros de comunicación alternativos",
 
   "pain_page_where_is_the_pain" : "Dónde está el dolor?",
   "pain_page_pain_location" : "Ubicación del dolor:",
@@ -32,14 +32,14 @@
   "settings_page_test_sound_message" : "Hola, esta es una prueba de volumen, tono y velocidad.",
   "settings_page_change_button" : "Cambiar el número de columnas",
 
-  "about_page_welcome_to_MobBoards" : "Bienvenido a la aplicación MobCards",
-  "about_page_description" : "Haga una descripción de la aplicación en este espacio",
-  "about_page_base_project" : "La aplicación fue desarrollada en base al proyecto de",
+  "about_page_welcome_to_MobBoards" : "Bienvenido a la aplicación MobBoards",
+  "about_page_description" : "",
+  "about_page_base_project" : "",
+  "about_page_about_us_text" : "La App MobBoards es un proyecto colaborativo, de código abierto y en construcción que se deriva del proyecto \"Planchas Hospitalarias Alternativas\" del grupo COM Acesso de la Universidad Federal de Rio Grande do Sul - UFRGS.\nLa idea principal de la aplicación es transformar tableros de comunicación impresos en tableros interactivos y con voz sintetizada, para el acceso desde dispositivos móviles. El grupo multidisciplinar y colaborativo de este proyecto involucra a profesionales de las áreas de salud, diseño, tecnologías de la información y cuenta con el apoyo de\n\nISAAC - Brasil (Sociedad Internacional de Comunicación Alternativa y Aumentativa - Capitulo Brasileiro)\n\ny empresas\n\nSoluciones Mobfeel em TI Ltda\n\nQI Escuelas y Facultades Ltda.",
   "about_page_developed_by" : "Desarrollado por",
-  "about_page_about_us_text" : "Eduardo Cardoso y la estudiante del Programa de Postgrado en Diseño y la terapeuta ocupacional Daianne Serafim Martins, quienes coordinan el equipo, que también cuenta con la fisioterapeuta Rita Bersch, la logopeda Michelle Borges y la enfermera Ana Beust da Silva",
-  "about_page_names" : "Thiago Cury - (Prof.)\n Eduardo Rambo - (Estudiante)\nWelinton Prediger - (Estudiante)\nJoana Eberle Dorigan - (Alumna del curso de Terapia Ocupacional en el Centro Universitario de Serra Gaúcha - FSG, Caxias do Sul)",
+  "about_page_names" : "Thiago Cury - (Prof.)\nEduardo Rambo - (Estudiante)\nWelinton Prediger - (Estudiante)\nJoana Eberle Dorigan - (Alumna del curso de Terapia Ocupacional en el Centro Universitario de Serra Gaúcha - FSG, Caxias do Sul)",
   "about_page_partnership" : "Socios",
-  "about_page_arasaac" : "Autor de pictogramas: Sergio Palao\nFuente: ARASAAC (http://www.arasaac.org)\nLicencia: CC (BY-NC-SA)\nPropietario: Gobierno de Aragón (España)",
+  "about_page_arasaac" : "Pictogramas adaptados del original: Sergio Palao\nFuente: ARASAAC (http://www.arasaac.org)\nLicencia: CC (BY-NC-SA)\nPropietario: Gobierno de Aragón (España)",
 
   "button_turn_on_the_light" : "Encender la luz",
   "button_turn_on_turn_off" : "Encender o apagar",
@@ -102,5 +102,6 @@
   "button_delete" : "Borrar",
 
   "symbols" : "Símbolos",
-  "spell" : "Deletrear"
+  "spell" : "Deletrear",
+  "version" : "Versión"
 }

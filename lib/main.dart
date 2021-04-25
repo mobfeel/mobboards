@@ -7,7 +7,7 @@ import 'views/views.dart';
 void main() {
   Constant.appHomolog = false;
 
-  if (Constant.appHomolog == true)
+  if (Constant.appHomolog)
     return runApp(
       DevicePreview(
         builder: (context) => Home(),

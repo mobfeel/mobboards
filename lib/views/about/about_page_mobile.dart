@@ -1,17 +1,17 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:mobboards/app/app_routes.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utilities/utilities.dart';
 import '../../constant.dart';
 import '../views.dart';
 
-///criado a stateless About para a navegação por routes
 class AboutPageMobilePortrait extends StatelessWidget {
   Widget _rowImage() {
     return Container(
-      width: 150,
-      height: 150,
+      width: 100,
+      height: 100,
       child: Image.asset(Constant.logoApp),
     );
   }
@@ -42,18 +42,18 @@ class AboutPageMobilePortrait extends StatelessWidget {
     );
   }
 
-  Widget _rowTextTwo(BuildContext context) {
-    return Text(
-      AppLocalizations.of(context).translate("about_page_description"),
-      textAlign: TextAlign.center,
-    );
-  }
-
-  Widget _rowTextThree(BuildContext context) {
-    return Text(
-      AppLocalizations.of(context).translate("about_page_base_project"),
-    );
-  }
+  // Widget _rowTextTwo(BuildContext context) {
+  //   return Text(
+  //     AppLocalizations.of(context).translate("about_page_description"),
+  //     textAlign: TextAlign.center,
+  //   );
+  // }
+  //
+  // Widget _rowTextThree(BuildContext context) {
+  //   return Text(
+  //     AppLocalizations.of(context).translate("about_page_base_project"),
+  //   );
+  // }
 
   Widget _rowTextFour(BuildContext context) {
     return Text(
@@ -65,6 +65,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
   Widget _rowTextFive(BuildContext context) {
     return Text(
       AppLocalizations.of(context).translate("about_page_developed_by"),
+        style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600)
     );
   }
 
@@ -74,14 +75,22 @@ class AboutPageMobilePortrait extends StatelessWidget {
     );
   }
 
+  _getVersionByOS(BuildContext context, AsyncSnapshot<String> snapshot) {
+    if(Platform.isIOS || Platform.isAndroid) {
+      return Text(
+          "${AppLocalizations.of(context)
+              .translate("version")} ${snapshot.data}",
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16.0)
+      );
+    }
+    return Text('');
+  }
+
   Widget _rowVersion(BuildContext context) {
     return FutureBuilder(
       future: Version.getVersion(),
-      builder: (context, AsyncSnapshot<String> snapshot) => Text(
-        "Versão ${snapshot.data}",
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16.0),
-      ),
+      builder: (context, AsyncSnapshot<String> snapshot) => _getVersionByOS(context, snapshot),
     );
   }
 
@@ -96,10 +105,10 @@ class AboutPageMobilePortrait extends StatelessWidget {
         SizedBox(height: 10),
         _rowVersion(context),
         SizedBox(height: 15),
-        _rowTextTwo(context),
-        SizedBox(height: 15),
-        _rowTextThree(context),
-        SizedBox(height: 15),
+        // _rowTextTwo(context),
+        // SizedBox(height: 15),
+        // _rowTextThree(context),
+        // SizedBox(height: 15),
         _rowTextFour(context),
         SizedBox(
           height: 20,
@@ -140,20 +149,13 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate("screen_about"),
+          AppLocalizations.of(context).translate("menu_screen_about"),
         ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: ListView(
         children:[
-          Row(
-            children: [
-              IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
-                Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
-              }),
-            ],
-          ),
           Padding(
             padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 30),
             child: Align(

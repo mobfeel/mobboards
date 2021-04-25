@@ -302,7 +302,7 @@ class _SymbolPageState extends State<SymbolPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('screen_symbols')),
+        title: Text(AppLocalizations.of(context).translate('menu_screen_symbols')),
         actions: [
           IconButton(
               icon:
