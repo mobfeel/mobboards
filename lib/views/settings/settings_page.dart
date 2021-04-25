@@ -128,7 +128,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate('screen_settings'),
+          AppLocalizations.of(context).translate('menu_screen_settings'),
         ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),

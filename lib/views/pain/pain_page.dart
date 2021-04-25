@@ -168,7 +168,7 @@ class _PainPageState extends State<PainPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate('screen_pain'),
+          AppLocalizations.of(context).translate('menu_screen_pain'),
         ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
@@ -184,9 +184,6 @@ class _PainPageState extends State<PainPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
-                        Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
-                      }),
                       Text(
                         "${AppLocalizations.of(context).translate('pain_page_pain_location')} $_where",
                         style: TextStyle(

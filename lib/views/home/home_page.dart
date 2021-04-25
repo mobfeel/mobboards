@@ -15,9 +15,9 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 30),
           child: Container(
-            height: 200,
+            height: 150,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(Constant.logoApp),
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${AppLocalizations.of(context).translate('screen_home')}'),
+        title: Text(AppLocalizations.of(context).translate('app_title')),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),

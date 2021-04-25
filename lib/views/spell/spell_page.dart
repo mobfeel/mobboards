@@ -115,9 +115,9 @@ class _SpellPageState extends State<SpellPage> {
       onPressed: () {
 
         if(message == AppLocalizations.of(context).translate("button_pain")) {
-        Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
 
-        } else if(message == AppLocalizations.of(context).translate("button_symbols")){
+        } else if(message == AppLocalizations.of(context).translate("button_symbols")) {
           Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
 
         } else if(message == AppLocalizations.of(context).translate("button_space")) {
@@ -142,7 +142,7 @@ class _SpellPageState extends State<SpellPage> {
       },
       onLongPress: () {
 
-        if(message == AppLocalizations.of(context).translate("button_delete")){
+        if(message == AppLocalizations.of(context).translate("button_delete")) {
           setState(() {
             if (_words.isEmpty)
               return onClickSnackbar(context);
@@ -225,7 +225,7 @@ class _SpellPageState extends State<SpellPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate('screen_spell'),
+          AppLocalizations.of(context).translate('menu_screen_spell'),
         ),
         backgroundColor: CustomColors.primaryMobfeel,
       ),
