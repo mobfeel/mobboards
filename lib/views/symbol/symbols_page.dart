@@ -151,8 +151,8 @@ class _SymbolPageState extends State<SymbolPage> {
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_another_thing"),
           image: Constant.anotherThing),
-      _button(CustomColors.blue2,
-          AppLocalizations.of(context).translate("button_delete"),
+      _button(
+          Colors.white, AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_i_dont_know"),
@@ -302,7 +302,8 @@ class _SymbolPageState extends State<SymbolPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('menu_screen_symbols')),
+        title:
+            Text(AppLocalizations.of(context).translate('menu_screen_symbols')),
         actions: [
           IconButton(
               icon:
