@@ -27,102 +27,93 @@ class _SymbolPageState extends State<SymbolPage> {
   }
 
   Widget _button(Color color, String message, {String image}) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: TextButton(
-        style: TextButton.styleFrom(
-          primary: CustomColors.primaryMobfeel,
-          shadowColor: Colors.grey,
+    double widthFactor = MediaQuery.of(context).size.width / 360;
+    return TextButton(
+      style: TextButton.styleFrom(
+        primary: CustomColors.primaryMobfeel,
+        shadowColor: Colors.grey,
+        padding: EdgeInsets.all(0),
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(2),
+          ),
+        ),
+      ),
+      child: Card(
+        color: color,
+        child: Container(
           padding: EdgeInsets.all(0),
-          elevation: 3,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(2),
-            ),
-          ),
-        ),
-        child: Card(
-          color: color,
-          child: Container(
-            // decoration: message == AppLocalizations.of(context).translate('button_pain')
-            //     ? BoxDecoration(
-            //         border: Border.all(width: 3, color: Colors.red),
-            //         borderRadius: BorderRadius.circular(5))
-            //     : null,
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 3.5,
-                  child: Container(
-                    child: Text(
-                      message,
-                      style: TextStyle(fontSize: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Container(
+                width: 100 * widthFactor,
+                child: Text(
+                  message,
+                  style: TextStyle(fontSize: 11 * widthFactor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
-                AspectRatio(
-                  aspectRatio: 1.4,
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    padding: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(image),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-        onPressed: () {
-          if (message ==
-              AppLocalizations.of(context).translate("button_pain")) {
-            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-          } else if (message ==
-              AppLocalizations.of(context).translate("button_alphabet")) {
-            Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-          } else if (message ==
-              AppLocalizations.of(context).translate("button_delete")) {
-            setState(
-              () {
-                if (_words.isEmpty)
-                  return onClickSnackbar(context);
-                else
-                  _words.removeAt(_words.length - 1);
-                _text = TextEditingController(text: _showWords());
-              },
-            );
-          } else {
-            setState(
-              () {
-                _words.add('$message ');
-                if (TextToSpeech.onOff) {
-                  textToSpeech.speechMessage = message;
-                  textToSpeech.speak();
-                }
-                _text = TextEditingController(text: _showWords());
-              },
-            );
-          }
-        },
-        onLongPress: () {
-          if (message ==
-              AppLocalizations.of(context).translate('button_delete')) {
-            setState(() {
+      ),
+      onPressed: () {
+        if (message == AppLocalizations.of(context).translate("button_pain")) {
+          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+        } else if (message ==
+            AppLocalizations.of(context).translate("button_alphabet")) {
+          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+        } else if (message ==
+            AppLocalizations.of(context).translate("button_delete")) {
+          setState(
+            () {
               if (_words.isEmpty)
                 return onClickSnackbar(context);
               else
-                _words.clear();
-            });
-            _text = TextEditingController(text: _showWords());
-          }
-        },
-      ),
+                _words.removeAt(_words.length - 1);
+              _text = TextEditingController(text: _showWords());
+            },
+          );
+        } else {
+          setState(
+            () {
+              _words.add('$message ');
+              if (TextToSpeech.onOff) {
+                textToSpeech.speechMessage = message;
+                textToSpeech.speak();
+              }
+              _text = TextEditingController(text: _showWords());
+            },
+          );
+        }
+      },
+      onLongPress: () {
+        if (message ==
+            AppLocalizations.of(context).translate('button_delete')) {
+          setState(() {
+            if (_words.isEmpty)
+              return onClickSnackbar(context);
+            else
+              _words.clear();
+          });
+          _text = TextEditingController(
+            text: _showWords(),
+          );
+        }
+      },
     );
   }
 
@@ -138,6 +129,32 @@ class _SymbolPageState extends State<SymbolPage> {
     textToSpeech.stop();
   }
 
+  _deleteButton() {
+    return TextButton(
+      onPressed: () {},
+      style: TextButton.styleFrom(
+        primary: CustomColors.primaryMobfeel,
+        shadowColor: Colors.grey,
+        padding: EdgeInsets.all(0),
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(2),
+          ),
+        ),
+      ),
+      child: Column(
+        children: [
+          // Text(AppLocalizations.of(context).translate("button_delete")),
+          Image.asset(
+            Constant.backspace,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     _buttons = [
@@ -151,6 +168,7 @@ class _SymbolPageState extends State<SymbolPage> {
       _button(CustomColors.blue2,
           AppLocalizations.of(context).translate("button_another_thing"),
           image: Constant.anotherThing),
+      // _deleteButton(),
       _button(
           Colors.white, AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),
