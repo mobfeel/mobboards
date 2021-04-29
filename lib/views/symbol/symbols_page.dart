@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/component/appbar.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utilities/utilities.dart';
 import 'package:mobboards/component/component.dart';
@@ -319,16 +320,10 @@ class _SymbolPageState extends State<SymbolPage> {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title:
-            Text(AppLocalizations.of(context).translate('menu_screen_symbols')),
-        actions: [
-          IconButton(
-              icon:
-                  Icon(TextToSpeech.onOff ? Icons.volume_up : Icons.volume_off),
-              onPressed: _changeIconVolume)
-        ],
-        backgroundColor: CustomColors.primaryMobfeel,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppBarComponent(
+            AppLocalizations.of(context).translate('menu_screen_symbols')),
       ),
       drawer: DrawerComponent(),
       body: Column(
@@ -363,17 +358,6 @@ class _SymbolPageState extends State<SymbolPage> {
         ],
       ),
     );
-  }
-
-  _changeIconVolume() {
-    if (TextToSpeech.onOff)
-      setState(() {
-        TextToSpeech.onOff = false;
-      });
-    else
-      setState(() {
-        TextToSpeech.onOff = true;
-      });
   }
 
   _showWords() {
