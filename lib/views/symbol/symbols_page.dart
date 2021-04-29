@@ -27,6 +27,7 @@ class _SymbolPageState extends State<SymbolPage> {
   }
 
   Widget _button(Color color, String message, {String image}) {
+    double widthFactor = MediaQuery.of(context).size.width / 360;
     return TextButton(
       style: TextButton.styleFrom(
         primary: CustomColors.primaryMobfeel,
@@ -48,10 +49,10 @@ class _SymbolPageState extends State<SymbolPage> {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Container(
-                width: 100,
+                width: 100 * widthFactor,
                 child: Text(
                   message,
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 11 * widthFactor),
                   textAlign: TextAlign.center,
                 ),
               ),
