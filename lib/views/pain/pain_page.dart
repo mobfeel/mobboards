@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobboards/app/app_routes.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/views/views.dart';
@@ -117,7 +116,8 @@ class _PainPageState extends State<PainPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(AppLocalizations.of(context).translate('pain_page_where_is_the_pain')),
+          title: Text(AppLocalizations.of(context)
+              .translate('pain_page_where_is_the_pain')),
           content: SingleChildScrollView(
             child: Image.asset(testWherePain()),
           ),
@@ -166,11 +166,11 @@ class _PainPageState extends State<PainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppBarComponent(
           AppLocalizations.of(context).translate('menu_screen_pain'),
         ),
-        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: ListView(

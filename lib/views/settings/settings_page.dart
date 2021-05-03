@@ -126,11 +126,11 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: AppBarComponent(
           AppLocalizations.of(context).translate('menu_screen_settings'),
         ),
-        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: SingleChildScrollView(

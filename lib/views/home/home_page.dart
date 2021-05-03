@@ -90,9 +90,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('app_title')),
-        backgroundColor: CustomColors.primaryMobfeel,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppBarComponent(
+          AppLocalizations.of(context).translate('app_title'),
+        ),
       ),
       drawer: DrawerComponent(),
       body: ListView(

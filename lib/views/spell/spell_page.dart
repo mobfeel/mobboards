@@ -76,11 +76,6 @@ class _SpellPageState extends State<SpellPage> {
       child: Card(
         color: color,
         child: Container(
-          // decoration: message == AppLocalizations.of(context).translate('button_pain')
-          //     ? BoxDecoration(
-          //         border: Border.all(width: 3, color: Colors.red),
-          //         borderRadius: BorderRadius.circular(5))
-          //     : null,
           padding: EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
@@ -111,20 +106,18 @@ class _SpellPageState extends State<SpellPage> {
           ),
         ),
       ),
-
       onPressed: () {
-
-        if(message == AppLocalizations.of(context).translate("button_pain")) {
+        if (message == AppLocalizations.of(context).translate("button_pain")) {
           Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
-
-        } else if(message == AppLocalizations.of(context).translate("button_symbols")) {
+        } else if (message ==
+            AppLocalizations.of(context).translate("button_symbols")) {
           Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
-
-        } else if(message == AppLocalizations.of(context).translate("button_space")) {
+        } else if (message ==
+            AppLocalizations.of(context).translate("button_space")) {
           _words.add(' ');
           _textSpell = TextEditingController(text: _showWords());
-
-        } else if(message == AppLocalizations.of(context).translate("button_delete")) {
+        } else if (message ==
+            AppLocalizations.of(context).translate("button_delete")) {
           setState(() {
             if (_words.isEmpty)
               return onClickSnackbar(context);
@@ -132,7 +125,6 @@ class _SpellPageState extends State<SpellPage> {
               _words.removeAt(_words.length - 1);
             _textSpell = TextEditingController(text: _showWords());
           });
-
         } else {
           setState(() {
             _words.add('$message');
@@ -141,8 +133,8 @@ class _SpellPageState extends State<SpellPage> {
         }
       },
       onLongPress: () {
-
-        if(message == AppLocalizations.of(context).translate("button_delete")) {
+        if (message ==
+            AppLocalizations.of(context).translate("button_delete")) {
           setState(() {
             if (_words.isEmpty)
               return onClickSnackbar(context);
@@ -175,8 +167,7 @@ class _SpellPageState extends State<SpellPage> {
           image: Constant.pain, color: Colors.redAccent),
       _auxiliaryButton(AppLocalizations.of(context).translate("button_symbols"),
           image: Constant.cards),
-      _auxiliaryButton(
-          AppLocalizations.of(context).translate("button_space"),
+      _auxiliaryButton(AppLocalizations.of(context).translate("button_space"),
           image: Constant.space),
       _auxiliaryButton(AppLocalizations.of(context).translate("button_delete"),
           image: Constant.backspace),
@@ -223,11 +214,11 @@ class _SpellPageState extends State<SpellPage> {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppBarComponent(
           AppLocalizations.of(context).translate('menu_screen_spell'),
         ),
-        backgroundColor: CustomColors.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: Column(
