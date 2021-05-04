@@ -336,10 +336,15 @@ class _SymbolPageState extends State<SymbolPage> {
           SizedBox(
             height: 5,
           ),
-          TextField(
-            controller: _text,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
+          Padding(
+            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+            child: TextField(
+              controller: _text,
+              showCursor: false,
+              readOnly: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           SizedBox(
@@ -377,7 +382,9 @@ class _SymbolPageState extends State<SymbolPage> {
   }
 
   _showWords() {
+
     String _text = "";
+
     for (String word in _words) {
       _text += "$word";
     }
