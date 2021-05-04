@@ -27,6 +27,8 @@ class _SpellPageState extends State<SpellPage> {
   }
 
   Widget _button(String message, {Color color}) {
+    double widthFactor = MediaQuery.of(context).size.width / 360;
+
     return TextButton(
       style: TextButton.styleFrom(
         padding: EdgeInsets.all(0),
@@ -46,7 +48,8 @@ class _SpellPageState extends State<SpellPage> {
               Center(
                 child: Text(
                   message,
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  style: TextStyle(
+                      fontSize: 20 * widthFactor, color: Colors.black),
                 ),
               ),
               SizedBox(
@@ -66,6 +69,8 @@ class _SpellPageState extends State<SpellPage> {
   }
 
   Widget _auxiliaryButton(String message, {Color color, String image}) {
+    double widthFactor = MediaQuery.of(context).size.width / 360;
+
     return TextButton(
       style: TextButton.styleFrom(
         primary: CustomColors.primaryMobfeel,
@@ -76,24 +81,22 @@ class _SpellPageState extends State<SpellPage> {
       child: Card(
         color: color,
         child: Container(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              AspectRatio(
-                aspectRatio: 3.5,
-                child: Container(
-                  child: Text(
-                    message,
-                    style: TextStyle(fontSize: 10),
+              Container(
+                child: Text(
+                  message,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 11 * widthFactor,
                   ),
                 ),
               ),
-              AspectRatio(
-                aspectRatio: 1.4,
+              Expanded(
                 child: Container(
-                  width: 100,
-                  height: 100,
-                  padding: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(image),
