@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/app/app_routes.dart';
 import 'package:mobboards/translate/translate.dart';
-import '../views.dart';
 
-class Ilustration extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    final AppRouter _appRouter = AppRouter();
+
     return MaterialApp(
       supportedLocales: AppLocalizations.locales,
       localizationsDelegates: AppLocalizations.delegates,
-      title: '...',
       debugShowCheckedModeBanner: false,
-      home: SymbolPage(),
+      onGenerateRoute: _appRouter.onGenerateRoute,
     );
   }
 }

@@ -135,7 +135,6 @@ class AboutPageMobilePortrait extends StatelessWidget {
           AppLocalizations.of(context).translate("menu_screen_about"),
         ),
       ),
-      drawer: DrawerComponent(),
       body: ListView(children: [
         Padding(
           padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 30),

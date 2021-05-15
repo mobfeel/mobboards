@@ -23,65 +23,51 @@ class DrawerComponent extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text(
-              AppLocalizations.of(context).translate('menu_screen_home'),
-            ),
-            onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_HOME);
-            },
-          ),
-
-          ListTile(
             leading: Icon(Icons.image),
             title: Text(
               AppLocalizations.of(context).translate('menu_screen_symbols'),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
+              Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_SYMBOLS);
             },
           ),
-
           ListTile(
             leading: Icon(Icons.sort_by_alpha),
             title: Text(
               AppLocalizations.of(context).translate('menu_screen_spell'),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+              Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_SPELL);
             },
           ),
-
           ListTile(
             leading: Icon(Icons.perm_contact_calendar),
             title: Text(
               AppLocalizations.of(context).translate('menu_screen_pain'),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+              Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_PAIN);
             },
           ),
-
           ListTile(
             leading: Icon(Icons.settings),
             title: Text(
-              AppLocalizations.of(context).translate('menu_screen_settings'),
+              AppLocalizations.of(context)
+                  .translate('menu_screen_visual_pain_scale'),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SETTINGS);
+              Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_SETTINGS);
             },
           ),
-
           ListTile(
             leading: Icon(Icons.info),
             title: Text(
               AppLocalizations.of(context).translate('menu_screen_about'),
             ),
             onTap: () {
-              Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_ABOUT);
+              Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_ABOUT);
             },
           ),
-
           ListTile(
             leading: Icon(Icons.directions_run),
             title: Text(

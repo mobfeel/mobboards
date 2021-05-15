@@ -172,7 +172,6 @@ class _PainPageState extends State<PainPage> {
           AppLocalizations.of(context).translate('menu_screen_pain'),
         ),
       ),
-      drawer: DrawerComponent(),
       body: ListView(
         children: [
           Padding(

@@ -111,10 +111,10 @@ class _SpellPageState extends State<SpellPage> {
       ),
       onPressed: () {
         if (message == AppLocalizations.of(context).translate("button_pain")) {
-          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+          Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_PAIN);
         } else if (message ==
             AppLocalizations.of(context).translate("button_symbols")) {
-          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
+          Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_SYMBOLS);
         } else if (message ==
             AppLocalizations.of(context).translate("button_space")) {
           _words.add(' ');
@@ -223,7 +223,6 @@ class _SpellPageState extends State<SpellPage> {
           AppLocalizations.of(context).translate('menu_screen_spell'),
         ),
       ),
-      drawer: DrawerComponent(),
       body: Column(
         children: [
           SizedBox(

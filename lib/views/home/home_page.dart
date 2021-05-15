@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/app/app_routes.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
-import '../../app/app_routes.dart';
 import '../../constant.dart';
 import '../views.dart';
 
@@ -35,22 +35,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Padding columnButtons(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          buildTextButton(AppLocalizations.of(context).translate("symbols"), 0),
-          SizedBox(
-            height: 20,
-          ),
-          buildTextButton(AppLocalizations.of(context).translate("spell"), 1),
-        ],
-      ),
-    );
-  }
-
   Widget columnEffectPhrase() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,22 +51,60 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildTextButton(String buttonName, int cod) {
-    return TextButton(
-      style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.all(CustomColors.primaryMobfeel),
-          padding:
-              MaterialStateProperty.all(EdgeInsets.only(top: 15, bottom: 15))),
-      onPressed: () {
-        cod == 0
-            ? Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS)
-            : Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
-      },
-      child: Text(
-        buttonName,
-        style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+  Widget buttonRow(context) {
+    return Container(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          FractionallySizedBox(
+            widthFactor: 0.25,
+            child: MaterialButton(
+              minWidth: 200,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRouter.APP_ROUTE_SYMBOLS);
+              },
+              child: Text(
+                AppLocalizations.of(context).translate('menu_screen_symbols'),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              color: CustomColors.primaryMobfeel,
+            ),
+          ),
+          SizedBox(height: 24),
+          FractionallySizedBox(
+            widthFactor: 0.25,
+            child: MaterialButton(
+              minWidth: 200,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRouter.APP_ROUTE_SPELL);
+              },
+              color: CustomColors.primaryMobfeel,
+              child: Text(
+                AppLocalizations.of(context).translate('menu_screen_spell'),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+          SizedBox(height: 24),
+          FractionallySizedBox(
+            widthFactor: 0.25,
+            child: MaterialButton(
+              minWidth: 200,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRouter.APP_ROUTE_PAIN);
+              },
+              color: CustomColors.primaryMobfeel,
+              child: Text(
+                AppLocalizations.of(context)
+                    .translate('menu_screen_visual_pain_scale'),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -109,7 +131,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 50,
               ),
-              columnButtons(context),
+              buttonRow(context),
             ],
           ),
         ],
