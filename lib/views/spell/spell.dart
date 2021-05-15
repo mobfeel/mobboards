@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/translate/translate.dart';
-import '../../app/app.dart';
 import '../views.dart';
 
 class Spell extends StatelessWidget {
@@ -12,7 +11,6 @@ class Spell extends StatelessWidget {
       title: '...',
       debugShowCheckedModeBanner: false,
       home: SpellPage(),
-      onGenerateRoute: App().getAppRoutes().getRoutes,
     );
   }
 }

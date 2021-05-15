@@ -11,9 +11,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateRoute: getAppRoutes().getRoutes,
+      onGenerateRoute: getAppRoutes().onGenerateRoute,
     );
   }
 
-  AppRoutes getAppRoutes() => AppRoutes();
+  AppRouter getAppRoutes() => AppRouter();
 }

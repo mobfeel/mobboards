@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/component/component.dart';
-import 'package:mobboards/views/views.dart';
 import 'package:mobboards/utilities/utilities.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -132,7 +131,6 @@ class _SettingsPageState extends State<SettingsPage> {
           AppLocalizations.of(context).translate('menu_screen_settings'),
         ),
       ),
-      drawer: DrawerComponent(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(32),

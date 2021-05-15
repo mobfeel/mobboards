@@ -73,10 +73,10 @@ class _SymbolPageState extends State<SymbolPage> {
       ),
       onPressed: () {
         if (message == AppLocalizations.of(context).translate("button_pain")) {
-          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
+          Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_PAIN);
         } else if (message ==
             AppLocalizations.of(context).translate("button_alphabet")) {
-          Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SPELL);
+          Navigator.popAndPushNamed(context, AppRouter.APP_ROUTE_SPELL);
         } else if (message ==
             AppLocalizations.of(context).translate("button_delete")) {
           setState(
@@ -325,7 +325,6 @@ class _SymbolPageState extends State<SymbolPage> {
         child: AppBarComponent(
             AppLocalizations.of(context).translate('menu_screen_symbols')),
       ),
-      drawer: DrawerComponent(),
       body: Column(
         children: [
           SizedBox(
@@ -366,7 +365,6 @@ class _SymbolPageState extends State<SymbolPage> {
   }
 
   _showWords() {
-
     String _text = "";
 
     for (String word in _words) {

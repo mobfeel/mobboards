@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/translate/translate.dart';
-import '../../app/app.dart';
 import '../views.dart';
 
 class Settings extends StatelessWidget {
@@ -13,7 +12,6 @@ class Settings extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: SettingsPage(),
-      onGenerateRoute: App().getAppRoutes().getRoutes,
     );
   }
 }
