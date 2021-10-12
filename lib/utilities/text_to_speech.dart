@@ -12,7 +12,7 @@ class TextToSpeech {
   static bool onOff = false;
 
   FlutterTts flutterTts = FlutterTts();
-  String speechMessage;
+  String? speechMessage;
 
   Future speak() async {
     await flutterTts.setVolume(volume);

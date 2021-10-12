@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:mobboards/app/app.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utilities/utilities.dart';
@@ -38,7 +39,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
 
   Widget _rowTextOne(BuildContext context) {
     return Text(
-      AppLocalizations.of(context).translate("about_page_welcome_to_MobBoards"),
+      AppLocalizations.of(context)!.translate("about_page_welcome_to_MobBoards")!,
     );
   }
 
@@ -57,29 +58,28 @@ class AboutPageMobilePortrait extends StatelessWidget {
 
   Widget _rowTextFour(BuildContext context) {
     return Text(
-      AppLocalizations.of(context).translate("about_page_about_us_text"),
+      AppLocalizations.of(context)!.translate("about_page_about_us_text")!,
       textAlign: TextAlign.center,
     );
   }
 
   Widget _rowTextFive(BuildContext context) {
     return Text(
-      AppLocalizations.of(context).translate("about_page_developed_by"),
+      AppLocalizations.of(context)!.translate("about_page_developed_by")!,
         style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600)
     );
   }
 
   Widget _rowTextSix(BuildContext context) {
     return Text(
-      AppLocalizations.of(context).translate("about_page_names"),
+      AppLocalizations.of(context)!.translate("about_page_names")!,
     );
   }
 
   _getVersionByOS(BuildContext context, AsyncSnapshot<String> snapshot) {
     if(Platform.isIOS || Platform.isAndroid) {
       return Text(
-          "${AppLocalizations.of(context)
-              .translate("version")} ${snapshot.data}",
+          "${AppLocalizations.of(context)!.translate("version")} ${snapshot.data}",
           textAlign: TextAlign.center,
           style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16.0)
       );
@@ -122,7 +122,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
           height: 20,
         ),
         Text(
-          AppLocalizations.of(context).translate("about_page_partnership"),
+          AppLocalizations.of(context)!.translate("about_page_partnership")!,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
         ),
         SizedBox(
@@ -139,7 +139,7 @@ class AboutPageMobilePortrait extends StatelessWidget {
           height: 15,
         ),
         Text(
-          AppLocalizations.of(context).translate("about_page_arasaac"),
+          AppLocalizations.of(context)!.translate("about_page_arasaac")!,
         )
       ],
     );
@@ -149,9 +149,9 @@ class AboutPageMobilePortrait extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate("menu_screen_about"),
+          AppLocalizations.of(context)!.translate("menu_screen_about")!,
         ),
-        backgroundColor: CustomColors.primaryMobfeel,
+        backgroundColor: AppStyle.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: ListView(

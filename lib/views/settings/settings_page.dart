@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mobboards/app/app.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/views/views.dart';
@@ -69,13 +70,12 @@ class _SettingsPageState extends State<SettingsPage> {
         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.zero),
       ),
       child: Text(
-        AppLocalizations.of(context).translate('settings_page_test_sound'),
+        AppLocalizations.of(context)!.translate('settings_page_test_sound')!,
       ),
       onPressed: () {
         setState(
           () {
-            textToSpeech.speechMessage = AppLocalizations.of(context)
-                .translate('settings_page_test_sound_message');
+            textToSpeech.speechMessage = AppLocalizations.of(context)!.translate('settings_page_test_sound_message');
             textToSpeech.speak();
           },
         );
@@ -109,14 +109,12 @@ class _SettingsPageState extends State<SettingsPage> {
             setState(
               () {
                 if (columnRowNumberController.text.isNotEmpty)
-                  return ColumnSettings.columnNumber =
-                      int.parse(columnRowNumberController.text);
+                  ColumnSettings.columnNumber = int.parse(columnRowNumberController.text);
               },
             );
           },
           child: Text(
-            AppLocalizations.of(context)
-                .translate('settings_page_change_button'),
+            AppLocalizations.of(context)!.translate('settings_page_change_button')!,
           ),
         ),
       ],
@@ -128,9 +126,9 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate('menu_screen_settings'),
+          AppLocalizations.of(context)!.translate('menu_screen_settings')!,
         ),
-        backgroundColor: CustomColors.primaryMobfeel,
+        backgroundColor: AppStyle.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: SingleChildScrollView(
@@ -139,15 +137,15 @@ class _SettingsPageState extends State<SettingsPage> {
           child: Column(
             children: [
               Text(
-                AppLocalizations.of(context).translate("settings_page_volume"),
+                AppLocalizations.of(context)!.translate("settings_page_volume")!,
               ),
               _volumeSliderRow(),
               Text(
-                AppLocalizations.of(context).translate("settings_page_pitch"),
+                AppLocalizations.of(context)!.translate("settings_page_pitch")!,
               ),
               _pitchSliderRow(),
               Text(
-                AppLocalizations.of(context).translate("settings_page_rate"),
+                AppLocalizations.of(context)!.translate("settings_page_rate")!,
               ),
               _rateSliderRow(),
               _testConfigRow(),

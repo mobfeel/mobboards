@@ -1,6 +1,7 @@
 class Constant {
   // criado a constant com o nome do app
-  static bool appHomolog = true;
+  static bool appHomolog = false;
+  static String appName = 'MobBoards';
 
   // ...
   static final String homologationKey = '';

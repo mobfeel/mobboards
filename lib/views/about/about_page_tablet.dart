@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../custom_colors.dart';
+import 'package:mobboards/app/app.dart';
 
 class AboutPageTablet extends StatefulWidget {
   @override
@@ -12,7 +11,7 @@ class _AboutPageTabletState extends State<AboutPageTablet> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: CustomColors.primaryMobfeel,
+        color: AppStyle.primaryMobfeel,
       ),
     );
   }

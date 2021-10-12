@@ -1,3 +1,3 @@
 class ColumnSettings {
-  static int columnNumber;
+  static int? columnNumber;
 }

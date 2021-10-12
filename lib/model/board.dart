@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 
 class Board {
 
-  String name;
-  String description;
-  List<Widget> buttons;
-  String createdAt;
+  final String name;
+  final String description;
+  final List<Widget> buttons;
+  final String createdAt;
 
-  Board(this.name, this.description, this.buttons, this.createdAt);
+  Board({required this.name, required this.description, required this.buttons, required this.createdAt});
 
   @override
   String toString() {
