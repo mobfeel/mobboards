@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobboards/app/app.dart';
 import 'package:mobboards/component/component.dart';
+import 'package:mobboards/controller/initializer_controllers.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utilities/utilities.dart';
 import '../../app/app_routes.dart';
@@ -259,7 +260,7 @@ class _SpellPageState extends State<SpellPage> {
           Expanded(
             flex: 9,
             child: GridView.count(
-              crossAxisCount: ColumnSettings.columnNumber ?? 4,
+              crossAxisCount: symbolController.columnNumber.value,
               children: List.generate(
                 _buttons!.length,
                 (index) {

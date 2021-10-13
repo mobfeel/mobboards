@@ -28,16 +28,20 @@
   "settings_page_volume" : "Volume",
   "settings_page_pitch" : "Tom",
   "settings_page_rate" : "Velocidade",
-  "settings_page_test_sound" : "Clique aqui para testar o som",
+  "settings_page_test_sound" : "Clique no botão para testar o som",
   "settings_page_test_sound_message" : "Olá, esse é um teste de volume, tom e velocidade",
   "settings_page_change_button" : "Alterar número de colunas",
+  "settings_button_save": "Salvar Configurações",
 
   "about_page_welcome_to_MobBoards" : "Seja bem vindo ao App MobBoards",
   "about_page_description" : "",
   "about_page_base_project" : "",
-  "about_page_about_us_text" : "O App MobBoards é um projeto colaborativo, open source e em construção que derivou do projeto Pranchas Hospitalares de Comunicação Alternativa do grupo COM Acesso da Universidade Federal do Rio Grande do Sul - UFRGS.\nA ideia principal do aplicativo é transformar as pranchas de comunicação impressas em pranchas interativas e com voz sintetizada, para acesso a partir de dispositivos móveis. O grupo multidisciplinar e colaborativo deste projeto envolve profissionais das áreas da saúde, design, informática e tem apoio da\n\nISAAC – Brasil (International  Society for Augmentative and Alternative Communication – Capitulo Brasileiro)\n\ne das empresas\n\nMobfeel Soluções em TI Ltda\n\nQI Escolas e Faculdades Ltda.",
+  "about_page_about_us_text" : "O App MobBoards é um projeto colaborativo, open source e em construção que derivou do projeto Pranchas Hospitalares de Comunicação Alternativa do grupo COM Acesso da Universidade Federal do Rio Grande do Sul - UFRGS.",
+  "about_page_about_us_text_2" : "A ideia principal do aplicativo é transformar as pranchas de comunicação impressas em pranchas interativas e com voz sintetizada, para acesso a partir de dispositivos móveis. O grupo multidisciplinar e colaborativo deste projeto envolve profissionais das áreas da saúde, design, informática e tem apoio da ISAAC – Brasil (International  Society for Augmentative and Alternative Communication – Capitulo Brasileiro) e das empresas Mobfeel Soluções em TI Ltda QI Escolas e Faculdades Ltda.",
   "about_page_developed_by" : "Desenvolvido por",
-  "about_page_names" : "Thiago Cury - (Prof.)\nEduardo Rambo - (Aluno)\nWelinton Prediger - (Aluno)\nJoana Eberle Dorigan - (Estudante do curso de Terapia Ocupacional pelo Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul)",
+  "about_page_teacher" : "Professor",
+  "about_page_student" : "Aluno",
+  "about_page_student2" : "Estudante do curso de Terapia Ocupacional pelo Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul",
   "about_page_partnership" : "Parceiros",
   "about_page_arasaac" : "Pictogramas adaptados do original: Sergio Palao\nOrigem: ARASAAC (http://www.arasaac.org)\nLicença: CC (BY-NC-SA)\nProprietário: Governo de Aragão (Espanha)",
 
@@ -103,5 +107,7 @@
 
   "symbols" : "Símbolos",
   "spell" : "Soletrar",
-  "version" : "Versão"
+  "version" : "Versão",
+
+  "hint_symbol_page" : "Sua mensagem aparecerá aqui..."
 }

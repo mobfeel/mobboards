@@ -18,7 +18,6 @@ class TextToSpeech {
     await flutterTts.setVolume(volume);
     await flutterTts.setSpeechRate(rate);
     await flutterTts.setPitch(pitch);
-
     await flutterTts.speak('$speechMessage');
   }
 

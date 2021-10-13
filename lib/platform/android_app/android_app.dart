@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobboards/app/app.dart';
 import 'package:mobboards/app/app_routes.dart';
+import 'package:mobboards/controller/controller.dart';
 import 'package:mobboards/translate/translate.dart';
 
 class AndroidApp extends StatelessWidget {
@@ -10,6 +11,7 @@ class AndroidApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SymbolController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: AppRoutes.pages,
@@ -20,6 +22,8 @@ class AndroidApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppStyle.primary,
         primaryColor: AppStyle.primaryMobfeel,
+        iconTheme: IconThemeData(color: Colors.white),
+        textTheme: TextTheme(headline1: TextStyle(color: Colors.white))
       ),
     );
   }

@@ -28,16 +28,20 @@
   "settings_page_volume" : "Volumen",
   "settings_page_pitch" : "Tono",
   "settings_page_rate" : "Velocidad",
-  "settings_page_test_sound" : "Haga clic aquí para probar el sonido",
+  "settings_page_test_sound" : "Haga clic en el botón para probar el sonido",
   "settings_page_test_sound_message" : "Hola, esta es una prueba de volumen, tono y velocidad.",
   "settings_page_change_button" : "Cambiar el número de columnas",
+  "settings_button_save": "Guardar ajustes",
 
   "about_page_welcome_to_MobBoards" : "Bienvenido a la aplicación MobBoards",
   "about_page_description" : "",
   "about_page_base_project" : "",
-  "about_page_about_us_text" : "La App MobBoards es un proyecto colaborativo, de código abierto y en construcción que se deriva del proyecto \"Planchas Hospitalarias Alternativas\" del grupo COM Acesso de la Universidad Federal de Rio Grande do Sul - UFRGS.\nLa idea principal de la aplicación es transformar tableros de comunicación impresos en tableros interactivos y con voz sintetizada, para el acceso desde dispositivos móviles. El grupo multidisciplinar y colaborativo de este proyecto involucra a profesionales de las áreas de salud, diseño, tecnologías de la información y cuenta con el apoyo de\n\nISAAC - Brasil (Sociedad Internacional de Comunicación Alternativa y Aumentativa - Capitulo Brasileiro)\n\ny empresas\n\nSoluciones Mobfeel em TI Ltda\n\nQI Escuelas y Facultades Ltda.",
+  "about_page_about_us_text" : "La App MobBoards es un proyecto colaborativo, de código abierto y en construcción que se deriva del proyecto \"Planchas Hospitalarias Alternativas\" del grupo COM Acesso de la Universidad Federal de Rio Grande do Sul - UFRGS.",
+  "about_page_about_us_text_2" : "La idea principal de la aplicación es transformar tableros de comunicación impresos en tableros interactivos y con voz sintetizada, para el acceso desde dispositivos móviles. El grupo multidisciplinar y colaborativo de este proyecto involucra a profesionales de las áreas de salud, diseño, tecnologías de la información y cuenta con el apoyo de ISAAC - Brasil (Sociedad Internacional de Comunicación Alternativa y Aumentativa - Capitulo Brasileiro) y empresas Soluciones Mobfeel em TI Ltda QI Escuelas y Facultades Ltda.",
   "about_page_developed_by" : "Desarrollado por",
-  "about_page_names" : "Thiago Cury - (Prof.)\nEduardo Rambo - (Estudiante)\nWelinton Prediger - (Estudiante)\nJoana Eberle Dorigan - (Alumna del curso de Terapia Ocupacional en el Centro Universitario de Serra Gaúcha - FSG, Caxias do Sul)",
+  "about_page_teacher" : "Maestro",
+  "about_page_student" : "Alumno",
+  "about_page_student2" : "Estudiante del curso de Terapia Ocupacional en el Centro Universitário da Serra Gaúcha - FSG, Caxias do Sul",
   "about_page_partnership" : "Socios",
   "about_page_arasaac" : "Pictogramas adaptados del original: Sergio Palao\nFuente: ARASAAC (http://www.arasaac.org)\nLicencia: CC (BY-NC-SA)\nPropietario: Gobierno de Aragón (España)",
 
@@ -103,5 +107,7 @@
 
   "symbols" : "Símbolos",
   "spell" : "Deletrear",
-  "version" : "Versión"
+  "version" : "Versión",
+
+  "hint_symbol_page" : "Su mensaje aparecerá aquí..."
 }

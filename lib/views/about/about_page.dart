@@ -6,10 +6,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: OrientationLayout(
-        portrait: AboutPageMobilePortrait(),
-        landscape: AboutPageMobileLandscape(),
-      ),
+      mobile: AboutPageMobile(),
       tablet: AboutPageTablet(),
       desktop: AboutPageDesktop(),
     );
