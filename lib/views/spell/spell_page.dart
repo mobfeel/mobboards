@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobboards/app/app.dart';
 import 'package:mobboards/component/component.dart';
+import 'package:mobboards/controller/initializer_controllers.dart';
 import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/utilities/utilities.dart';
 import '../../app/app_routes.dart';
@@ -11,26 +13,25 @@ class SpellPage extends StatefulWidget {
 }
 
 class _SpellPageState extends State<SpellPage> {
-  List<Widget> _buttons;
+  List<Widget>? _buttons;
   List<String> _words = [];
-  TextEditingController _textSpell;
+  TextEditingController? _textSpell;
   TextToSpeech textToSpeech = TextToSpeech();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   onClickSnackbar(BuildContext context) {
     final snackBar = SnackBar(
       duration: Duration(seconds: 1),
-      content:
-          Text(AppLocalizations.of(context).translate("snackbar_empty_field")),
+      content: Text(AppLocalizations.of(context)!.translate("snackbar_empty_field")!),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
-  Widget _button(String message, {Color color}) {
+  Widget _button(String message, {Color? color}) {
     return TextButton(
       style: TextButton.styleFrom(
         padding: EdgeInsets.all(0),
-        primary: CustomColors.primaryMobfeel,
+        primary: AppStyle.primaryMobfeel,
         shadowColor: Colors.grey,
         elevation: 3,
       ),
@@ -65,10 +66,10 @@ class _SpellPageState extends State<SpellPage> {
     );
   }
 
-  Widget _auxiliaryButton(String message, {Color color, String image}) {
+  Widget _auxiliaryButton(String message, {Color? color, String? image}) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: CustomColors.primaryMobfeel,
+        primary: AppStyle.primaryMobfeel,
         shadowColor: Colors.blueAccent,
         padding: EdgeInsets.all(0),
         elevation: 3,
@@ -101,7 +102,7 @@ class _SpellPageState extends State<SpellPage> {
                   padding: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(image),
+                      image: AssetImage(image!),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -114,17 +115,17 @@ class _SpellPageState extends State<SpellPage> {
 
       onPressed: () {
 
-        if(message == AppLocalizations.of(context).translate("button_pain")) {
+        if(message == AppLocalizations.of(context)!.translate("button_pain")) {
           Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_PAIN);
 
-        } else if(message == AppLocalizations.of(context).translate("button_symbols")) {
+        } else if(message == AppLocalizations.of(context)!.translate("button_symbols")) {
           Navigator.popAndPushNamed(context, AppRoutes.APP_ROUTE_SYMBOLS);
 
-        } else if(message == AppLocalizations.of(context).translate("button_space")) {
+        } else if(message == AppLocalizations.of(context)!.translate("button_space")) {
           _words.add(' ');
           _textSpell = TextEditingController(text: _showWords());
 
-        } else if(message == AppLocalizations.of(context).translate("button_delete")) {
+        } else if(message == AppLocalizations.of(context)!.translate("button_delete")) {
           setState(() {
             if (_words.isEmpty)
               return onClickSnackbar(context);
@@ -142,7 +143,7 @@ class _SpellPageState extends State<SpellPage> {
       },
       onLongPress: () {
 
-        if(message == AppLocalizations.of(context).translate("button_delete")) {
+        if(message == AppLocalizations.of(context)!.translate("button_delete")) {
           setState(() {
             if (_words.isEmpty)
               return onClickSnackbar(context);
@@ -171,18 +172,18 @@ class _SpellPageState extends State<SpellPage> {
   @override
   Widget build(BuildContext context) {
     _buttons = [
-      _auxiliaryButton(AppLocalizations.of(context).translate("button_pain"),
+      _auxiliaryButton(AppLocalizations.of(context)!.translate("button_pain")!,
           image: Constant.pain, color: Colors.redAccent),
-      _auxiliaryButton(AppLocalizations.of(context).translate("button_symbols"),
+      _auxiliaryButton(AppLocalizations.of(context)!.translate("button_symbols")!,
           image: Constant.cards),
       _auxiliaryButton(
-          AppLocalizations.of(context).translate("button_space"),
+          AppLocalizations.of(context)!.translate("button_space")!,
           image: Constant.space),
-      _auxiliaryButton(AppLocalizations.of(context).translate("button_delete"),
+      _auxiliaryButton(AppLocalizations.of(context)!.translate("button_delete")!,
           image: Constant.backspace),
-      _auxiliaryButton(AppLocalizations.of(context).translate("button_yes"),
+      _auxiliaryButton(AppLocalizations.of(context)!.translate("button_yes")!,
           image: Constant.yes),
-      _auxiliaryButton(AppLocalizations.of(context).translate("button_no"),
+      _auxiliaryButton(AppLocalizations.of(context)!.translate("button_no")!,
           image: Constant.no),
       _button('A'),
       _button('B'),
@@ -225,9 +226,9 @@ class _SpellPageState extends State<SpellPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context).translate('menu_screen_spell'),
+          AppLocalizations.of(context)!.translate('menu_screen_spell')!,
         ),
-        backgroundColor: CustomColors.primaryMobfeel,
+        backgroundColor: AppStyle.primaryMobfeel,
       ),
       drawer: DrawerComponent(),
       body: Column(
@@ -259,12 +260,12 @@ class _SpellPageState extends State<SpellPage> {
           Expanded(
             flex: 9,
             child: GridView.count(
-              crossAxisCount: ColumnSettings.columnNumber ?? 4,
+              crossAxisCount: symbolController.columnNumber.value,
               children: List.generate(
-                _buttons.length,
+                _buttons!.length,
                 (index) {
                   return Center(
-                    child: _buttons[index],
+                    child: _buttons![index],
                   );
                 },
               ),

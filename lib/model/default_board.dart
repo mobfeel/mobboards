@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 
 class DefaultBoard {
 
-  BuildContext context;
+  final BuildContext context;
 
-  DefaultBoard(this.context);
+  DefaultBoard({required this.context});
 
   List<Widget> getSpellButtons() {
     return [];

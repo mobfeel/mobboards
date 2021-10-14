@@ -28,17 +28,20 @@
   "settings_page_volume" : "Volume",
   "settings_page_pitch" : "Pitch",
   "settings_page_rate" : "Rate",
-  "settings_page_test_sound" : "Click here to test sound",
+  "settings_page_test_sound" : "Click the button to test sound",
   "settings_page_test_sound_message" : "Hello, this is a test of volume, pitch and speed",
   "settings_page_change_button" : "Change number of columns",
+  "settings_button_save": "Save Settings",
 
   "about_page_welcome_to_MobBoards" : "Welcome To MobBoards",
   "about_page_description" : "",
   "about_page_base_project" : "",
-  "about_page_about_us_text" : "The MobBoards App is a collaborative, open source and under construction project that derived from the \"Pranchas Hospitalares de Comunicação Alternativa\" project by the COM Acesso group at the Federal University of Rio Grande do Sul - UFRGS.\nThe main idea of the application is to transform printed communication boards into interactive boards and with synthesized voice, for access from mobile devices. The multidisciplinary and collaborative group of this project involves professionals in the areas of health, design, information technology and is supported by\n\nISAAC - Brasil (International Society for Augmentative and Alternative Communication - Capitulo Brasileiro)\n\nand companies\n\nMobfeel Solutions em TI Ltda\n\nQI Schools and Faculties Ltda.",
-
+  "about_page_about_us_text" : "The MobBoards App is a collaborative, open source and under construction project that derived from the \"Pranchas Hospitalares de Comunicação Alternativa\" project by the COM Acesso group at the Federal University of Rio Grande do Sul - UFRGS.",
+  "about_page_about_us_text_2" : "The main idea of the application is to transform printed communication boards into interactive boards and with synthesized voice, for access from mobile devices. The multidisciplinary and collaborative group of this project involves professionals in the areas of health, design, information technology and is supported by ISAAC - Brasil (International Society for Augmentative and Alternative Communication - Capitulo Brasileiro) and companies Mobfeel Solutions em TI Ltda QI Schools and Faculties Ltda.",
   "about_page_developed_by" : "Developed by",
-  "about_page_names" : "Thiago Cury - (Teacher)\nEduardo Rambo - (Student)\nWelinton Prediger - (Student)\nJoana Eberle Dorigan - (Student of the Occupational Therapy course at the University Center of Serra Gaúcha - FSG, Caxias do Sul) ",
+  "about_page_teacher" : "Teacher",
+  "about_page_student" : "Student",
+  "about_page_student2" : "Student of the Occupational Therapy course at the University Center of Serra Gaúcha - FSG, Caxias do Sul",
   "about_page_partnership" : "Partnership",
   "about_page_arasaac" : "Pictograms adapted from the original: Sergio Palao \nSource: ARASAAC (http://www.arasaac.org) \nLicense: CC (BY-NC-SA) \nOwner: Government of Aragon (Spain)",
 
@@ -104,6 +107,8 @@
 
   "symbols" : "Symbols",
   "spell" : "Spell",
-  "version" : "Version"
+  "version" : "Version",
+
+  "hint_symbol_page" : "Your message will appear here..."
 
 }
