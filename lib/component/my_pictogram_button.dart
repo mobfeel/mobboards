@@ -4,12 +4,12 @@ import 'package:mobboards/app/app.dart';
 class MyPictogramButton extends StatelessWidget {
 
   final String title;
-  final String image;
+  final String? image;
   final double size;
   final GestureTapCallback onTap;
   final Color? backgroundColor;
 
-  const MyPictogramButton({Key? key, required this.title, required this.image, required this.size, required this.onTap, this.backgroundColor}) : super(key: key);
+  const MyPictogramButton({Key? key, required this.title, this.image, required this.size, required this.onTap, this.backgroundColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class MyPictogramButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(title, textAlign: TextAlign.center, style: TextStyle(fontSize: size  / 10)),
-            Image.asset(image, height: size / 2)
+            image != null ? Image.asset(image!, height: size / 2) : SizedBox()
           ],
         ),
       ),

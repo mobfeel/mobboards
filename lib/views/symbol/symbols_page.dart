@@ -13,18 +13,9 @@ import '../views.dart';
 
 class SymbolPage extends GetView<SymbolController> {
 
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   List<Pictogram> listPictograms = [];
 
-  onClickSnackBar(BuildContext context) {
-    final snackBar = SnackBar(
-      content: Text(AppLocalizations.of(context)!.translate("snackbar_empty_field")!),
-      duration: Duration(seconds: 1),
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
-
-  _createList(BuildContext context) {
+  _createList({required BuildContext context}) {
     listPictograms = [
       Pictogram(
         title: AppLocalizations.of(context)!.translate("button_pain")!,
@@ -482,7 +473,9 @@ class SymbolPage extends GetView<SymbolController> {
 
   @override
   Widget build(BuildContext context) {
-    _createList(context);
+
+    _createList(context: context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.translate('menu_screen_symbols')!, style: TextStyle(color: Colors.white)),
@@ -534,7 +527,7 @@ class SymbolPage extends GetView<SymbolController> {
                       child: MyPictogramButton(
                           onTap: listPictograms[index].onTap,
                           title: listPictograms[index].title,
-                          image: listPictograms[index].image,
+                          image: listPictograms[index].image!,
                           size: MediaQuery.of(context).size.width / symbolController.columnNumber.value,
                           backgroundColor: listPictograms[index].backgroundColor
                       ),

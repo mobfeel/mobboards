@@ -48,6 +48,15 @@ class SymbolController extends GetxController {
     return text;
   }
 
+  /// show all letter in the list
+  String showSpelledMessage() {
+    String text = '';
+    for(String word in words) {
+      text += word;
+    }
+    return text;
+  }
+
   /// Change sound text to speech to mute or sound
   void changeSound() {
     textToSpeechOnOff.value = !textToSpeechOnOff.value;
