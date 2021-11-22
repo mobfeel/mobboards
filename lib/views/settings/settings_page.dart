@@ -7,101 +7,89 @@ import 'package:mobboards/translate/translate.dart';
 import 'package:mobboards/component/component.dart';
 import 'package:mobboards/utilities/utilities.dart';
 
-class SettingsPage extends StatefulWidget {
-  @override
-  _SettingsPageState createState() => _SettingsPageState();
-}
+class SettingsPage extends StatelessWidget {
 
-class _SettingsPageState extends State<SettingsPage> {
-  TextToSpeech textToSpeech = new TextToSpeech();
-  TextEditingController columnRowNumberController = TextEditingController();
-
-  _volumeSliderRow() {
-    return Slider(
-      onChanged: (newVolume) {
-        setState(
-          () {
-            TextToSpeech.volume = newVolume;
-          },
-        );
-      },
-      value: TextToSpeech.volume,
-      min: 0.0,
-      max: 1.0,
-      divisions: 10,
-      activeColor: TextToSpeech.volume >= 0 && TextToSpeech.volume < 0.4
-          ? Colors.yellow
-          : TextToSpeech.volume >= 0.4 && TextToSpeech.volume < 0.8
-              ? Colors.green
-              : Colors.red,
-    );
-  }
-
-  _pitchSliderRow() {
-    return Slider(
-      value: TextToSpeech.pitch,
-      min: 0,
-      max: 1.0,
-      divisions: 10,
-      label: 'Pitch: ${TextToSpeech.pitch}',
-      onChanged: (newPitch) {
-        setState(() {
-          TextToSpeech.pitch = newPitch;
-        });
-      },
-      activeColor: TextToSpeech.pitch < 0.8 ? Colors.red : Colors.green,
-    );
-  }
-
-  _rateSliderRow() {
-    return Slider(
-      value: TextToSpeech.rate,
-      onChanged: (newRate) {
-        setState(() {
-          TextToSpeech.rate = newRate;
-        });
-      },
-      min: 0.0,
-      max: 1.0,
-      divisions: 10,
-      label: "Rate: ${TextToSpeech.rate}",
-      activeColor: TextToSpeech.rate >= 0 && TextToSpeech.rate < 0.3
-          ? Colors.red
-          : TextToSpeech.rate > 0.3 && TextToSpeech.rate < 0.7
-              ? Colors.green
-              : Colors.yellow,
-    );
-  }
-
-  _testConfigRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Icon(Icons.speaker, color: Colors.black54),
-            SizedBox(width: 5.0),
-            Text(AppLocalizations.of(context)!.translate('settings_page_test_sound')!)
-          ],
-        ),
-        FloatingActionButton(
-            child: Icon(Icons.speaker, color: Colors.white),
-            backgroundColor: AppStyle.primaryMobfeel,
-            onPressed: () {
-              setState(
-                () {
-                  textToSpeech.speechMessage = AppLocalizations.of(context)!.translate('settings_page_test_sound_message');
-                  textToSpeech.speak();
-                },
-              );
-            })
-      ],
-    );
-  }
+  // TextToSpeech textToSpeech = new TextToSpeech();
+  // TextEditingController columnRowNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
     double dividerSize = 6.0;
+
+    _volumeSliderRow() {
+      return Obx(() => Slider(
+          onChanged: (newVolume) {
+            settingsController.setNewVolume(newVolume: newVolume);
+          },
+          label: 'Volume: ${TextToSpeech.volume}',
+          value: settingsController.volume.value,
+          min: 0.0,
+          max: 1.0,
+          divisions: 10,
+          activeColor: TextToSpeech.volume >= 0 && TextToSpeech.volume < 0.4
+              ? Colors.yellow
+              : TextToSpeech.volume >= 0.4 && TextToSpeech.volume < 0.8
+              ? Colors.green
+              : Colors.red,
+        ),
+      );
+    }
+
+    _pitchSliderRow() {
+      return Obx(() => Slider(
+          value: settingsController.pitch.value,
+          min: 0,
+          max: 1.0,
+          divisions: 10,
+          label: 'Pitch: ${TextToSpeech.pitch}',
+          onChanged: (newPitch) {
+            settingsController.setNewPitch(newPitch: newPitch);
+          },
+          activeColor: TextToSpeech.pitch < 0.8 ? Colors.red : Colors.green,
+        ),
+      );
+    }
+
+    _rateSliderRow() {
+      return Obx(() => Slider(
+          value: settingsController.rate.value,
+          onChanged: (newRate) {
+            settingsController.setNewRate(newRate: newRate);
+          },
+          min: 0.0,
+          max: 1.0,
+          divisions: 10,
+          label: "Rate: ${TextToSpeech.rate}",
+          activeColor: TextToSpeech.rate >= 0 && TextToSpeech.rate < 0.3
+              ? Colors.red
+              : TextToSpeech.rate > 0.3 && TextToSpeech.rate < 0.7
+              ? Colors.green
+              : Colors.yellow,
+        ),
+      );
+    }
+
+    _testConfigRow() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.speaker, color: Colors.black54),
+              SizedBox(width: 5.0),
+              Text(AppLocalizations.of(context)!.translate('settings_page_test_sound')!)
+            ],
+          ),
+          FloatingActionButton(
+              child: Icon(Icons.speaker, color: Colors.white),
+              backgroundColor: AppStyle.primaryMobfeel,
+              onPressed: () {
+                settingsController.testConfiguration(context: context);
+              })
+        ],
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -133,9 +121,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     Icon(Icons.surround_sound_rounded, color: Colors.black54),
                     SizedBox(width: 5.0),
                     Text(AppLocalizations.of(context)!.translate("settings_page_pitch")!, style: TextStyle(fontWeight: FontWeight.w600)),
-                    Expanded(
-                      child: _pitchSliderRow(),
-                    )
+                    Expanded(child: _pitchSliderRow())
                   ],
                 ),
                 SizedBox(height: 5.0),
@@ -146,9 +132,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     Icon(Icons.speed_rounded, color: Colors.black54),
                     SizedBox(width: 5.0),
                     Text(AppLocalizations.of(context)!.translate("settings_page_rate")!, style: TextStyle(fontWeight: FontWeight.w600)),
-                    Expanded(
-                      child: _rateSliderRow(),
-                    )
+                    Expanded(child: _rateSliderRow())
                   ],
                 ),
                 SizedBox(height: 5.0),

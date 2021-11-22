@@ -12,6 +12,7 @@ class AndroidApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(SymbolController());
+    Get.put(SettingsController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: AppRoutes.pages,
